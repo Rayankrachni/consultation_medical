@@ -1,0 +1,12 @@
+const String path="assets/icon";
+const String emailIcon="$path/email.png";
+const String logoutIcon="$path/logout.png";
+const String cardIcon="$path/money.png";
+const String dealIcon="$path/price.png";
+const String profileIcon="$path/profile.png";
+const String userIcon="$path/user.png";
+const String masterCard="$path/mastercard.png";
+const String homeIcon="$path/home.png";
+const String cartIcon="$path/cart.png";
+const String notificationIcon="$path/notification.png";
+const String cardChipIcon="$path/card_chip.png";
