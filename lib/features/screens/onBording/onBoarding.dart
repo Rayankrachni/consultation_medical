@@ -20,7 +20,7 @@ class _OnBoardingState extends State<OnBoarding> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
   List<String> _titles = ['onBoarding.title1'.tr(), 'onBoarding.title2'.tr(),'onBoarding.title3'.tr()];
-  List<String> _imgs = ['onBoarding.title1'.tr(), 'onBoarding.title2'.tr(),'onBoarding.title3'.tr()];
+  List<String> _imgs = ['assets/images/onBorad1.png', 'assets/images/onBorad2.png','assets/images/onBorad3.png'];
   List<String> _descriptions = [
     "Welcome to our app! Explore the amazing features.",
     "Discover a world of possibilities with our app.",
@@ -66,17 +66,17 @@ class _OnBoardingState extends State<OnBoarding> {
                           SizedBox(height: AppSize.height*0.05),
                           Container(
                             height: AppSize.height*0.4,
-                            width: AppSize.height*0.4,
-                            child:  Image.asset("assets/images/onBoarding2.PNG"),  ),
+                            width: AppSize.height*0.9,
+                            child:  Image.asset(_imgs[index]),  ),
                           SizedBox(height: AppSize.height*0.03,),
                           Padding(
-                            padding: const EdgeInsets.only(left: 15.0,right: 15),
+                            padding: const EdgeInsets.only(left: 0.0,right: 0),
                             child: Text(
-                              _descriptions[index],
+                              _titles[index],
 
 
                               style: TextStyle(
-                                  fontSize: 22,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
+                                  fontSize: 25,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
                               ),
 
                               textAlign: TextAlign.center,

@@ -65,11 +65,11 @@ class RegisterScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: 170,
+                      width: 180,
                       height: 50,
                       decoration: BoxDecoration(
                           color:Theme.of(context).cardColor,
-                          borderRadius:const BorderRadius.all(Radius.circular(10)),
+                          borderRadius:const BorderRadius.all(Radius.circular(5)),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.withOpacity(0.2),
@@ -93,11 +93,11 @@ class RegisterScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 170,
+                      width: 180,
                       height:50,
                       decoration: BoxDecoration(
                           color:Theme.of(context).cardColor,
-                          borderRadius:const BorderRadius.all(Radius.circular(10)),
+                          borderRadius:const BorderRadius.all(Radius.circular(5)),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.withOpacity(0.2),

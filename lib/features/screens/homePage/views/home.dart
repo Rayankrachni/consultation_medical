@@ -22,15 +22,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.only(left: 15.0,right: 15.0,top: 15.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20,),
-            IconButton(onPressed: (){push(context: context, screen: SearchScreen());}, icon: Icon(Icons.search)),
-            const Row(
+             Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                  Row(
                   children: [
@@ -48,12 +48,25 @@ class _HomeState extends State<Home> {
                         ),),
                         Text("User Full Name",style: TextStyle(
                             color: Colors.black,
-                            fontSize: 16,fontWeight: FontWeight.w600
+                            fontSize: 16,fontWeight: FontWeight.w500
                         ),),
                       ],
                     )
                   ],
-                )
+                ),
+                InkWell(
+                  onTap: (){push(context: context, screen: SearchScreen());},
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration:const BoxDecoration(
+                        color: filledColor,
+                        shape: BoxShape.circle
+                    ),
+                    child: Icon(Icons.notifications_none,color: primaryColor,size: 25,),
+                  ),
+                ),
+
               ],
             ),
             const SizedBox(height: 20,),
@@ -107,12 +120,12 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
-            Text("Services ",style: TextStyle(
+            SizedBox(height: 10,),
+            const  Text("Services ",style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
-
+            const SizedBox(height: 10,),
             SizedBox(
               height: 100,
               child: ListView(
@@ -128,10 +141,19 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            Text("Previous Doctor ",style: TextStyle(
+            const Text("Previous Doctor ",style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
+            const SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FistHomeCard(title: "Dr Daryl Nehls",category: "Family Doctor",),
+                FistHomeCard(title: "Dr Daryl Nehls",category: "Psychologist",isAvailable: false,),
+              ],
+            ),
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

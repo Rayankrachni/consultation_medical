@@ -45,32 +45,50 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            CustomTextFormField(controller: name, hintText: "Search  Doctor", prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Search History",   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400
-                ),),
-                IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline_outlined))
-              ],
-            ) ,
-            ChipList(
-              listOfChipNames: _searchHistory,
-              activeBgColorList: [placeHolderColor],
-              inactiveBgColorList: [placeHolderColor],
-              activeTextColorList: [textColor2],
-              inactiveTextColorList: [textColor2],
-              listOfChipIndicesCurrentlySeclected: [0],
-              //borderColorList: [Theme.of(context).primaryColor],
-            ),
-            SearchCard(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomTextFormField(controller: name, hintText: "Search  Doctor", prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
+              SizedBox(height: 10,),
+              SearchCard(),
+              SearchCard(),
 
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Search History",   style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400
+                  ),),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline_outlined))
+                ],
+              ) ,
+              Wrap(
+                children: _searchHistory
+                    .map(
+                      (chip) => Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: Chip(
+                    label: Text(chip +
+                          ' ' +
+                          chip.toString()),
+                    onDeleted: () {
+                          setState(() {
+                            _searchHistory.remove(chip);
+                          });
+
+                    },
+                  ),
+                      ),
+                )
+                    .toList(),
+
+              ),
+
+
+            ],
+          ),
         ),
       ),
     );

@@ -11,8 +11,8 @@ void main() async {
   runApp(
 
       EasyLocalization(
-          supportedLocales:const [Locale('en', 'US')],
-          path: 'assets/local/en-US.json', // <-- change the path of the translation files
+          supportedLocales:const [Locale('en', 'US'),Locale('el', '')],
+          path: 'assets/local', // <-- change the path of the translation files
           fallbackLocale:const Locale('en', 'US'),
           saveLocale: true,// Set the initial locale
           child: const MyApp(),));
@@ -53,6 +53,9 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                   title: 'Flutter Demo',
                   debugShowCheckedModeBanner: false,
+                  localizationsDelegates: context.localizationDelegates,
+                  supportedLocales: context.supportedLocales,
+                  locale: context.locale,
                   theme: appModel.darkTheme ? buildDarkTheme() : buildLightTheme(context),
 
                   home:  SplashScreen()

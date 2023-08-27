@@ -32,3 +32,4 @@ const Color typing = Color(0xff5089FD);
 
 
 const Color witeColor2 = Color(0xffF6F7FC);
+const Color witeColor3 = Color(0xffE8E9EA);
