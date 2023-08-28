@@ -1,4 +1,9 @@
+import 'package:consultation_medical/features/screens/homePage/views/appointment.dart';
+import 'package:consultation_medical/features/screens/homePage/views/favorite.dart';
 import 'package:consultation_medical/features/screens/homePage/views/home.dart';
+import 'package:consultation_medical/features/screens/homePage/views/messages.dart';
+import 'package:consultation_medical/features/screens/homePage/views/notificationScreen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,9 +18,10 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     Home(),
-    Home(),
-    Home(),
-    Home(),
+    AppointmentScreen(),
+    MessagesScreen(),
+    //NotificationScreen(),
+    FavoriteScreen(),
   ];
 
   @override
@@ -33,20 +39,20 @@ class _HomePageState extends State<HomePage> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'HomePage.home'.tr(),
 
           ),
-          BottomNavigationBarItem(
+           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_month),
-            label: 'Appointment',
+            label: 'HomePage.appointment'.tr(),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            label: 'Messages',
+            label: 'HomePage.messages'.tr(),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
+            label: 'HomePage.favorites'.tr(),
 
           ),
         ],

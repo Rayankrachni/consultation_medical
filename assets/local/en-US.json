@@ -7,5 +7,78 @@
     "title1": "Fined Your Specialist Doctor here",
     "title2": "Easy to Contacting your Doctor",
     "title3": "Book face to face appointments"
-  }
+  },
+  "Login": {
+    "signIn-title": "Sign In to Your account",
+    "signIn-subtitle": "Welcome Back! Please enter your details",
+    "signIn-Button": "Sign In",
+    "signIn-or": "or Sign in with",
+    "google": "google",
+    "apple": "apple",
+    "dont-have-account":"Don't have an account?",
+    "forget-password": "Forget Password"
+  },
+  "Register": {
+    "signUp-title": "Create an Account",
+    "signUp-subtitle": "Create an Medicate account enjoy all services",
+    "signUp-Button": "Sign Up",
+    "signIn-or": "or Sign in with",
+    "google": "google",
+    "apple": "apple",
+    "forget-password": "Forget Password",
+    "have-account":"Already have account?"
+  },
+  "Otp": {
+    "Otp-title": "Verify Code",
+    "Otp-subtitle1": "We sent a code to ",
+    "Otp-subtitle2": "Enter the code here to verify your identify",
+    "resendCode": "Resend Code in",
+    "verify": "Verify"
+  },
+  "Placeholder": {
+    "name": "Full Name",
+    "search-doctor": "Search  Doctor",
+    "email": "Email",
+    "search": "Search",
+    "password": "Password",
+      "confirm-password": "Confirm Password"
+  },
+
+  "HomePage": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+
+  "Home": {
+    "services": "Services",
+    "doctors": "Doctors",
+    "medicine": "Medicine",
+    "hospital": "Hospital",
+    "consult": "Consult",
+    "more": "More",
+    "prev-doctors": "Previous Doctors",
+    "available-docts": "Available Doctors",
+    "health-new": "Health News",
+    "see-all": "See All",
+    "good-morning": "Good Morning"
+  },
+
+  "Appointment": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+
+  "Favorites": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+
+  "Messages": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" }
 }

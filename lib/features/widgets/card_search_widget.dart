@@ -9,11 +9,12 @@ class SearchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
+      padding: const EdgeInsets.only(bottom: 15.0),
       child: Container(
 
         decoration: BoxDecoration(
             color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(5)),
             boxShadow: [
               BoxShadow(
                   color: Colors.grey.withOpacity(0.2),
@@ -58,15 +59,15 @@ class SearchCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                           children: [
-                            const Column(
+                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Dr Mary Rose c",style: TextStyle(
-                                    color: Colors.black,
+                                    color:Theme.of(context).colorScheme.secondary,
                                     fontSize: 15,fontWeight: FontWeight.w600
                                 ),),
                                 Text("Psychiatrist",style: TextStyle(
-                                    color: Colors.black,
+                                    color:Theme.of(context).colorScheme.secondary,
                                     fontSize: 12,fontWeight: FontWeight.normal
                                 ),),
                               ],
@@ -79,10 +80,10 @@ class SearchCard extends StatelessWidget {
                         SizedBox(
 
                           width: AppSize.width*0.65,
-                          child: const Row(
+                          child:  Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
+                             const Row(
                                 children: [
                                   Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
                                   Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
@@ -94,7 +95,7 @@ class SearchCard extends StatelessWidget {
                               Row(
                                 children: [
                                   Text("4.4",style: TextStyle(
-                                      color: Colors.black,
+                                      color: Theme.of(context).colorScheme.secondary,
                                       fontSize: 14,fontWeight: FontWeight.bold
                                   ),),
                                   SizedBox(width: 5,),
@@ -122,7 +123,7 @@ class SearchCard extends StatelessWidget {
 
                       style: ElevatedButton.styleFrom(
                       primary: witeColor3, // Set the button's background color
-                      onPrimary: Colors.black, // Set the text color
+                      onPrimary: Theme.of(context).colorScheme.secondary,
                       elevation: 1, // Set the elevation (shadow) of the button
                      shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5), // Set the border radius

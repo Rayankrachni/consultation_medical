@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/const/strings.dart';
 import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
@@ -62,7 +63,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         children: <Widget>[
                           Align(
                               alignment:Alignment.topRight,
-                              child: TextButton(onPressed: (){}, child: Text('Skip',style: TextStyle(color: primaryColor),))),
+                              child: TextButton(onPressed: (){}, child: Text('Skip',style: TextStyle(color: primary_Color),))),
                           SizedBox(height: AppSize.height*0.05),
                           Container(
                             height: AppSize.height*0.4,
@@ -76,7 +77,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
 
                               style: TextStyle(
-                                  fontSize: 25,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
+                                  fontSize: 25,fontWeight: FontWeight.bold,fontFamily: regularfontFamilyName,color:Theme.of(context).colorScheme.secondary
                               ),
 
                               textAlign: TextAlign.center,
@@ -135,7 +136,7 @@ class _OnBoardingState extends State<OnBoarding> {
       height: 6.0,
       width: isActive ? 30.0 : 10.0,
       decoration: BoxDecoration(
-        color: isActive ? primaryColor :primaryColor3,
+        color: isActive ? primary_Color :primaryColor3,
         borderRadius: BorderRadius.circular(12),
       ),
     );

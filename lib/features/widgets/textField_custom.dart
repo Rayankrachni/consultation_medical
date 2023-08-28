@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 
-class CustomTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
     super.key,
     required this.controller,
@@ -31,19 +31,26 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType textInputType;
 
   @override
+  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+}
+
+class _CustomTextFormFieldState extends State<CustomTextFormField> {
+
+  bool show_password=true;
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
 
-        if(!hide) Padding(
+        if(!widget.hide) Padding(
           padding: const EdgeInsets.only(top: 10,bottom: 10),
-          child: Text(hintText,style: Theme.of(context).textTheme.headline3,),
+          child: Text(widget.hintText,style: Theme.of(context).textTheme.headline3,),
         ),
 
         TextFormField(
-          controller: controller,
+          controller: widget.controller,
 
           validator: (value) {
             if (value!.isEmpty) {
@@ -51,21 +58,21 @@ class CustomTextFormField extends StatelessWidget {
             }
             return null;
           },
-          keyboardType: textInputType,
+          keyboardType: widget.textInputType,
           textInputAction: TextInputAction.next,
 
-          style:const TextStyle(color: Colors.black),
-          obscureText: obscureText,
-          maxLines: lines,
+          style: TextStyle(color: Theme.of(context).colorScheme.secondary,),
+          obscureText: show_password,
+          maxLines: widget.lines,
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: widget.hintText,
 
             contentPadding: const EdgeInsets.symmetric(
               vertical: 5.0,
               horizontal: 20.0,
             ),
             prefixIcon: Icon(
-              prefixIcon,
+              widget.prefixIcon,
               size: 20,
             ),
             hintStyle: const TextStyle(
@@ -74,12 +81,20 @@ class CustomTextFormField extends StatelessWidget {
                 fontSize: 14,
                 color: Colors.grey
             ),
+             suffixIcon:widget.obscureText? IconButton(
+              onPressed: (){
+                setState(() {
+                  show_password=!show_password;
+                });
+              },
+              icon: Icon(show_password? Icons.visibility_off: Icons.visibility,size: 20,)
+            ): null,
 
-            suffix: suffixIcon != null
+            suffix: widget.suffixIcon != null
                 ? InkWell(
-              onTap: onTapSuffix,
+              onTap: widget.onTapSuffix,
               child: Icon(
-                suffixIcon,
+                widget.suffixIcon,
                 color: primaryColor,
                 size: 20,
               ),

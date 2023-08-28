@@ -1,4 +1,4 @@
-const String fontFamilyName='ZonaPro-ExtraLight';
+const String regularfontFamilyName='Inter-Regular';
 const String shakeDialg="isShake";
 const String appName="Captiva";
 

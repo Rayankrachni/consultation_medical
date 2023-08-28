@@ -2,6 +2,7 @@
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:consultation_medical/features/widgets/textField_custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -23,21 +24,21 @@ class RegisterScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Create an Account",style: Theme.of(context).textTheme.headline1,),
+                Text('Register.signUp-title'.tr(),style: Theme.of(context).textTheme.headline1,),
                 SizedBox(height: 10,),
-                Text("Create an Medicate account enjoy all services",style: Theme.of(context).textTheme.headline3,),
+                Text('Register.signUp-subtitle'.tr(),style: Theme.of(context).textTheme.headline3,),
                 SizedBox(height: 20,),
-                CustomTextFormField(controller: name, hintText: "Full Name", prefixIcon: Icons.person, textInputType: TextInputType.emailAddress),
+                CustomTextFormField(controller: name, hintText:'Placeholder.name'.tr(), prefixIcon: Icons.person, textInputType: TextInputType.emailAddress),
 
                 SizedBox(height: 10,),
-                CustomTextFormField(controller: name, hintText: "Email", prefixIcon: Icons.email, textInputType: TextInputType.emailAddress),
+                CustomTextFormField(controller: name, hintText: 'Placeholder.email'.tr(), prefixIcon: Icons.email, textInputType: TextInputType.emailAddress),
                 SizedBox(height: 10,),
-                CustomTextFormField(controller: name, hintText: "PassWord", prefixIcon: Icons.password, textInputType: TextInputType.emailAddress),
+                CustomTextFormField(controller: name, hintText: 'Placeholder.password'.tr(), prefixIcon: Icons.password, textInputType: TextInputType.emailAddress),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: TextButton(onPressed: (){},child: Text("Forget Password?",style: TextStyle(color: primaryColor2),),),
+                  child: TextButton(onPressed: (){},child: Text('Register.forget-password'.tr(),style: TextStyle(color: primaryColor2),),),
                 ),
-                DefaultButton(onPressed: (){}, text: "Sign In"),
+                DefaultButton(onPressed: (){}, text: 'Register.signUp-Button'.tr()),
                 SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0,right: 8),
-                      child: Text("or Sign in with",style: Theme.of(context).textTheme.headline3,),
+                      child: Text('Register.signIn-or'.tr(),style: Theme.of(context).textTheme.headline3,),
                     ),
                     Container(
                       width: 100,
@@ -88,7 +89,7 @@ class RegisterScreen extends StatelessWidget {
                               width: 20,
                               child: Image.asset("assets/images/google-icon.png")),
                           SizedBox(width: 10,),
-                          Text("Google",style: Theme.of(context).textTheme.headline3,),
+                          Text('Login.google'.tr(),style: Theme.of(context).textTheme.headline3,),
                         ],
                       ),
                     ),
@@ -115,7 +116,7 @@ class RegisterScreen extends StatelessWidget {
                               width: 20,
                               child: Image.asset("assets/images/apple-icon.png")),
                           SizedBox(width: 10,),
-                          Text("Apple",style: Theme.of(context).textTheme.headline3,),
+                          Text('Login.apple'.tr(),style: Theme.of(context).textTheme.headline3,),
                         ],
                       ),
                     ),
@@ -127,10 +128,10 @@ class RegisterScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("Already have account?",style:Theme.of(context).textTheme.headline3),
+                Text('Register.have-account'.tr(),style:Theme.of(context).textTheme.headline3),
                 TextButton(onPressed: (){
                   Navigator.pop(context);
-                }, child:Text("Login",style:Theme.of(context).textTheme.headline4,),
+                }, child:Text('Login.signIn-Button'.tr(),style:Theme.of(context).textTheme.headline4,),
                 ),
 
 

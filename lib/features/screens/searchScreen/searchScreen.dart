@@ -70,9 +70,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       (chip) => Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: Chip(
-                    label: Text(chip +
-                          ' ' +
-                          chip.toString()),
+                    label: Text(chip),
                     onDeleted: () {
                           setState(() {
                             _searchHistory.remove(chip);

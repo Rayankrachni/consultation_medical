@@ -31,7 +31,7 @@ class CustomOtpTextFormField extends StatelessWidget {
         keyboardType: TextInputType.number,
         textInputAction: TextInputAction.next,
 
-        style:const TextStyle(color: Colors.black),
+        style: TextStyle(color:Theme.of(context).colorScheme.secondary,),
         obscureText: false,
         decoration:const InputDecoration(
           contentPadding: const EdgeInsets.symmetric(

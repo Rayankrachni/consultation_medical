@@ -1,7 +1,11 @@
 import 'package:consultation_medical/core/styles/app_colors.dart';
+import 'package:consultation_medical/features/screens/profile/views/profileScreen.dart';
 import 'package:consultation_medical/features/screens/searchScreen/searchScreen.dart';
+import 'package:consultation_medical/features/screens/services/doctors/availableDoctorScreen.dart';
+import 'package:consultation_medical/features/screens/services/hospital/hospitalScreen.dart';
 import 'package:consultation_medical/features/widgets/service_widget.dart';
 import 'package:consultation_medical/features/widgets/textField_custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -9,6 +13,7 @@ import 'package:flutter/rendering.dart';
 import '../../../../core/helper/app_navigator.dart';
 import '../../../../core/styles/app_size.dart';
 import '../../../widgets/card_home_widget.dart';
+import '../../services/medicine/medicineScreen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -34,20 +39,23 @@ class _HomeState extends State<Home> {
               children: [
                  Row(
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
+                    InkWell(
+                      onTap: (){push(context: context, screen: ProfileScreen());},
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
+                      ),
                     ),
                     SizedBox(width: 10,),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning 👋",style: TextStyle(
-                          color: Colors.grey,
+                        Text("${'home.good-morning'.tr()}👋",style: TextStyle(
+                          color: textColor2,
                           fontSize: 12,fontWeight: FontWeight.w600
                         ),),
                         Text("User Full Name",style: TextStyle(
-                            color: Colors.black,
+                            color:Theme.of(context).colorScheme.secondary,
                             fontSize: 16,fontWeight: FontWeight.w500
                         ),),
                       ],
@@ -71,7 +79,7 @@ class _HomeState extends State<Home> {
             ),
             const SizedBox(height: 20,),
 
-            CustomTextFormField(controller: name, hintText: "Search  Doctor", prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
+            CustomTextFormField(controller: name, hintText: 'Placeholder.search-doctor'.tr(), prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
             const SizedBox(height: 20,),
             Container(
               width: AppSize.width,
@@ -121,8 +129,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 10,),
-            const  Text("Services ",style: TextStyle(
-                color: Colors.black,
+            Text('home.services'.tr(),style: TextStyle(
+                color:Theme.of(context).colorScheme.secondary,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
             const SizedBox(height: 10,),
@@ -133,16 +141,16 @@ class _HomeState extends State<Home> {
                 scrollDirection: Axis.horizontal,
                 children: [
 
-                  ServicesWidget(title: 'Doctors',),
-                  ServicesWidget(title: 'Consult',),
-                  ServicesWidget(title: 'Hospital',),
-                  ServicesWidget(title: 'Medicine',),
-                  ServicesWidget(title: 'More',),
+                  ServicesWidget(title: 'home.doctors'.tr(),onPressed: (){push(context: context, screen: AvailableDoctorScreen());},),
+                  ServicesWidget(title: 'home.consult'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
+                  ServicesWidget(title: 'home.hospital'.tr(),onPressed: (){push(context: context, screen: HospitalScreen());},),
+                  ServicesWidget(title: 'home.medicine'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
+                  ServicesWidget(title: 'home.more'.tr(),onPressed: (){},),
                 ],
               ),
             ),
-            const Text("Previous Doctor ",style: TextStyle(
-                color: Colors.black,
+             Text('home.prev-doctors'.tr(),style: TextStyle(
+                color:Theme.of(context).colorScheme.secondary,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
             const SizedBox(height: 10,),
@@ -157,8 +165,27 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                FistHomeCard(title: "Dr Daryl Nehls",category: "Family Doctor",),
-                FistHomeCard(title: "Dr Daryl Nehls",category: "Psychologist",isAvailable: false,),
+                Text('home.available-docts'.tr(),style: TextStyle(
+                    color:Theme.of(context).colorScheme.secondary,
+                    fontSize: 18,fontWeight: FontWeight.w500
+                ),),
+                Text('home.see-all'.tr(),style: TextStyle(
+                    color:primaryColor,
+                    fontSize: 14,fontWeight: FontWeight.w500
+                ),),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('home.health-new'.tr(),style: TextStyle(
+                    color:Theme.of(context).colorScheme.secondary,
+                    fontSize: 18,fontWeight: FontWeight.w500
+                ),),
+                Text('home.see-all'.tr(),style: TextStyle(
+                    color:primaryColor,
+                    fontSize: 14,fontWeight: FontWeight.w500
+                ),),
               ],
             )
 

@@ -16,7 +16,7 @@ class FistHomeCard extends StatelessWidget {
       height:AppSize.width*0.5,
       decoration: BoxDecoration(
 
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(Radius.circular(5)),
           boxShadow: [
             BoxShadow(
@@ -53,12 +53,12 @@ class FistHomeCard extends StatelessWidget {
             ),
             const SizedBox(height: 10,),
              Text(title,style: TextStyle(
-                color: Colors.black,
+                 color:Theme.of(context).colorScheme.secondary,
                 fontSize: 15,fontWeight: FontWeight.w600
             ),),
             SizedBox(height: 5,),
             Text(category,style: TextStyle(
-                color: Colors.black,
+                color:Theme.of(context).colorScheme.secondary,
                 fontSize: 11,fontWeight: FontWeight.normal
             ),),
             const SizedBox(height: 10,),

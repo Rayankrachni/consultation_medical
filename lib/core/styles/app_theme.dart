@@ -3,14 +3,16 @@ import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../const/strings.dart';
+
 ThemeData buildLightTheme(BuildContext context) {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    colorScheme:const  ColorScheme(brightness: Brightness.light,
-      primary: primaryColor,
-      onPrimary: primaryColor,
-      secondary: secondaryColor,
-      onSecondary:secondaryColor,
+    colorScheme:  ColorScheme(brightness: Brightness.light,
+      primary: primary_Color,
+      onPrimary: primary_Color,
+      secondary: secondary_Color,
+      onSecondary:secondary_Color,
       error: Color(0xFFF32424),
       onError: Color(0xFFF32424),
       background: Color(0xFFF1F2F3),
@@ -20,7 +22,7 @@ ThemeData buildLightTheme(BuildContext context) {
     //useMaterial3: true,
     cardColor: Colors.white,
 
-    primaryColor: primaryColor,
+    primaryColor: primary_Color,
     iconTheme: const IconThemeData(
       color: Colors.grey
     ),
@@ -28,11 +30,11 @@ ThemeData buildLightTheme(BuildContext context) {
       //prefixIconColor: Colors.grey,
 
       hintStyle: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: regularfontFamilyName,
           fontSize: 10,
       ),
       labelStyle: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: regularfontFamilyName,
           fontSize: 14,
       ),
       // Customize other input decoration properties as needed
@@ -43,7 +45,7 @@ ThemeData buildLightTheme(BuildContext context) {
      unselectedLabelStyle: TextStyle(color:textColor2,fontSize: 14),
      selectedIconTheme: IconThemeData(color:primaryColor2),
      unselectedIconTheme: IconThemeData(color:textColor2),
-     selectedLabelStyle: TextStyle(color:primaryColor,fontSize: 14),
+     selectedLabelStyle: TextStyle(color:primary_Color,fontSize: 14),
    ),
 
     textTheme:const TextTheme(
@@ -58,7 +60,7 @@ ThemeData buildLightTheme(BuildContext context) {
           fontSize: 14,fontWeight: FontWeight.normal,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
       ),
       headline4: TextStyle(
-          fontSize: 15, color: primaryColor,fontFamily: 'ZonaPro-ExtraLight'
+          fontSize: 15, color: primary_Color,fontFamily: 'ZonaPro-ExtraLight'
       ),
       headline5: TextStyle(
           fontFamily: 'ZonaPro-ExtraLight',
@@ -73,7 +75,7 @@ ThemeData buildLightTheme(BuildContext context) {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: primaryColor, // Set the button's background color
+        primary: primary_Color, // Set the button's background color
         onPrimary: Colors.white, // Set the text color
         elevation: 8, // Set the elevation (shadow) of the button
         shape: RoundedRectangleBorder(
@@ -89,13 +91,13 @@ ThemeData buildLightTheme(BuildContext context) {
     ),
 
 
-    scaffoldBackgroundColor: witeColor2,
+    scaffoldBackgroundColor: witeColor1,
     textSelectionTheme:const TextSelectionThemeData(
-      cursorColor:  primaryColor,
+      cursorColor:  primary_Color,
     ),
 
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(primaryColor),
+      thumbColor: MaterialStateProperty.all<Color>(primary_Color),
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
           return Colors.blue.withOpacity(0.5);
@@ -119,9 +121,9 @@ ThemeData buildDarkTheme() {
 
   return base.copyWith(
     colorScheme:const  ColorScheme(brightness: Brightness.dark,
-      primary: primaryColor,
-      onPrimary: primaryColor,
-      secondary:Colors.black54,
+      primary: primary_Color,
+      onPrimary: primary_Color,
+      secondary:Colors.white,
       onSecondary:Colors.white,
       error: Color(0xFFF32424),
       onError: Color(0xFFF32424),
@@ -142,12 +144,12 @@ ThemeData buildDarkTheme() {
       //prefixIconColor: Colors.grey,
 
       hintStyle: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: regularfontFamilyName,
           fontSize: 10,
           color: Colors.white54
       ),
       labelStyle: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: regularfontFamilyName,
           fontSize: 14,
           color: Colors.white54
       ),
@@ -157,16 +159,16 @@ ThemeData buildDarkTheme() {
 
     textTheme:const TextTheme(
       headline1: TextStyle(
-          fontSize: 37,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.white
+          fontSize: 37,fontWeight: FontWeight.bold,fontFamily: regularfontFamilyName,color: Colors.white
       ),
       headline2: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.white,fontFamily: 'ZonaPro-ExtraLight'
+          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.white,fontFamily:regularfontFamilyName
       ),
       headline3: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,fontFamily: 'ZonaPro-ExtraLight',color: Colors.white
+          fontSize: 16,fontWeight: FontWeight.normal,fontFamily: regularfontFamilyName,color: Colors.white
       ),
       headline4: TextStyle(
-          fontSize: 15, color: primaryColor,fontFamily: 'ZonaPro-ExtraLight'
+          fontSize: 15, color: primary_Color,fontFamily: regularfontFamilyName
       ),
       headline5: TextStyle(
           fontFamily: 'ZonaPro-ExtraLight',
@@ -180,7 +182,7 @@ ThemeData buildDarkTheme() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: primaryColor, // Set the button's background color
+        primary: primary_Color, // Set the button's background color
         onPrimary: Colors.white, // Set the text color
         elevation: 8, // Set the elevation (shadow) of the button
         /*shape: RoundedRectangleBorder(
@@ -197,7 +199,7 @@ ThemeData buildDarkTheme() {
 
 
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(primaryColor), // Replace with your desired color for the switch thumb
+      thumbColor: MaterialStateProperty.all<Color>(primary_Color), // Replace with your desired color for the switch thumb
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
           return Colors.blue.withOpacity(0.5); // Replace with your desired color for the active track
@@ -206,7 +208,7 @@ ThemeData buildDarkTheme() {
       }),
     ),
     cardColor: Colors.grey[850],
-    primaryColor: primaryColor,
+    primaryColor: primary_Color,
     scaffoldBackgroundColor: Colors.grey[900],
   );
 }

@@ -5,6 +5,7 @@ import 'package:consultation_medical/features/screens/authentication/views/regis
 import 'package:consultation_medical/features/screens/homePage/homeScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:consultation_medical/features/widgets/textField_custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/helper/app_navigator.dart';
@@ -28,18 +29,18 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Sign In to Your account",style: Theme.of(context).textTheme.headline1,),
+                Text('Login.signIn-title'.tr(),style: Theme.of(context).textTheme.headline1,),
                 SizedBox(height: 10,),
-                Text("Welcome Back! Please enter your details",style: Theme.of(context).textTheme.headline3,),
+                Text('Login.signIn-subtitle'.tr(),style: Theme.of(context).textTheme.headline3,),
                 SizedBox(height: 20,),
-                CustomTextFormField(controller: name, hintText: "Email", prefixIcon: Icons.email, textInputType: TextInputType.emailAddress),
+                CustomTextFormField(controller: name, hintText: 'Placeholder.email'.tr(), prefixIcon: Icons.email, textInputType: TextInputType.emailAddress),
                 SizedBox(height: 10,),
-                CustomTextFormField(controller: name, hintText: "PassWord", prefixIcon: Icons.password, textInputType: TextInputType.emailAddress),
+                CustomTextFormField(controller: name, hintText: 'Placeholder.password'.tr(), prefixIcon: Icons.password, textInputType: TextInputType.emailAddress),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: TextButton(onPressed: (){ push(context: context, screen: OtpScreen());},child: Text("Forget Password?",style: TextStyle(color: primaryColor2),),),
+                  child: TextButton(onPressed: (){ push(context: context, screen: OtpScreen());},child: Text('Login.forget-password'.tr(),style: TextStyle(color: primaryColor2),),),
                 ),
-                DefaultButton(onPressed: (){  push(context: context, screen: HomePage());}, text: "Sign In"),
+                DefaultButton(onPressed: (){  push(context: context, screen: HomePage());}, text: 'Login.signIn-Button'.tr()),
                 SizedBox(height: 30,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -52,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0,right: 8),
-                      child: Text("or Sign in with",style: Theme.of(context).textTheme.headline3,),
+                      child: Text('Login.signIn-or'.tr(),style: Theme.of(context).textTheme.headline3,),
                     ),
                     Container(
                       width: 100,
@@ -90,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                               width: 20,
                               child: Image.asset("assets/images/google-icon.png")),
                           SizedBox(width: 10,),
-                          Text("Google",style: Theme.of(context).textTheme.headline3,),
+                          Text('Login.google'.tr(),style: Theme.of(context).textTheme.headline3,),
                         ],
                       ),
                     ),
@@ -117,10 +118,11 @@ class LoginScreen extends StatelessWidget {
                               width: 20,
                               child: Image.asset("assets/images/apple-icon.png")),
                           SizedBox(width: 10,),
-                          Text("Apple",style: Theme.of(context).textTheme.headline3,),
+                          Text('Login.apple'.tr(),style: Theme.of(context).textTheme.headline3,),
                         ],
                       ),
                     ),
+                    //
                   ],
                 )
               ],
@@ -129,10 +131,10 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                 Text("Don't have an account?",style:Theme.of(context).textTheme.headline3),
+                 Text('Login.dont-have-account'.tr(),style:Theme.of(context).textTheme.headline3),
                  TextButton(onPressed: (){
                   push(context: context, screen: RegisterScreen());
-                  }, child:Text(" Sign Up",style:Theme.of(context).textTheme.headline4,),
+                  }, child:Text('Register.signUp-Button'.tr(),style:Theme.of(context).textTheme.headline4,),
                 ),
 
 
