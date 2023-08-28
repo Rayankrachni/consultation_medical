@@ -1,5 +1,6 @@
 
 import 'package:consultation_medical/core/styles/app_colors.dart';
+import 'package:consultation_medical/features/screens/authentication/views/otpScree.dart';
 import 'package:consultation_medical/features/screens/authentication/views/registerScreen.dart';
 import 'package:consultation_medical/features/screens/homePage/homeScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
@@ -15,7 +16,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      //appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -36,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                 CustomTextFormField(controller: name, hintText: "PassWord", prefixIcon: Icons.password, textInputType: TextInputType.emailAddress),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: TextButton(onPressed: (){},child: Text("Forget Password?",style: TextStyle(color: primaryColor2),),),
+                  child: TextButton(onPressed: (){ push(context: context, screen: OtpScreen());},child: Text("Forget Password?",style: TextStyle(color: primaryColor2),),),
                 ),
                 DefaultButton(onPressed: (){  push(context: context, screen: HomePage());}, text: "Sign In"),
                 SizedBox(height: 30,),

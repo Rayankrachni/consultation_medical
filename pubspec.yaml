@@ -74,7 +74,7 @@ flutter:
     - assets/images/onBorad1.png
     - assets/images/onBorad2.png
     - assets/images/onBorad3.png
-    - assets/local
+    - assets/local/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
