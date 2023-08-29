@@ -55,19 +55,19 @@ ThemeData buildLightTheme(BuildContext context) {
     textTheme:const TextTheme(
       subtitle1:  TextStyle(color: Colors.black),
       headline1: TextStyle(
-          fontSize: 28,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
+          fontSize: 28,fontWeight: FontWeight.bold,fontFamily: 'inter',color: Colors.black
       ),
       headline2: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.grey,fontFamily: 'ZonaPro-ExtraLight'
+          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.grey,fontFamily: 'inter'
       ),
       headline3: TextStyle(
-          fontSize: 14,fontWeight: FontWeight.normal,fontFamily: 'ZonaPro-ExtraLight',color: Colors.black
+          fontSize: 14,fontWeight: FontWeight.normal,fontFamily: 'inter',color: Colors.black
       ),
       headline4: TextStyle(
-          fontSize: 15, color: primary_Color,fontFamily: 'ZonaPro-ExtraLight'
+          fontSize: 15, color: primary_Color,fontFamily: 'inter'
       ),
       headline5: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: 'inter',
           fontSize: 12,
           color: Colors.grey
       ),
@@ -95,7 +95,7 @@ ThemeData buildLightTheme(BuildContext context) {
     ),
 
 
-    scaffoldBackgroundColor: witeColor1,
+    scaffoldBackgroundColor: Colors.white,
     textSelectionTheme:const TextSelectionThemeData(
       cursorColor:  primary_Color,
     ),
@@ -148,12 +148,13 @@ ThemeData buildDarkTheme() {
       //prefixIconColor: Colors.grey,
 
       hintStyle: TextStyle(
-          fontFamily: regularfontFamilyName,
+          fontFamily: 'inter',
           fontSize: 14,
+
           color: Colors.white54
       ),
       labelStyle: TextStyle(
-          fontFamily: regularfontFamilyName,
+          fontFamily: 'inter',
           fontSize: 14,
           color: Colors.white54
       ),

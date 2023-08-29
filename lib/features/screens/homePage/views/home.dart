@@ -13,6 +13,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:horizontal_list/horizontal_list.dart';
 
 import '../../../../core/helper/app_navigator.dart';
 import '../../../../core/styles/app_size.dart';
@@ -39,10 +40,11 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20,),
+             const SizedBox(height: 40,),
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+
                  Row(
                   children: [
                     InkWell(
@@ -56,15 +58,16 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("${'Home.good-morning'.tr()}👋",style: TextStyle(
+                        Text("${'Home.good-morning'.tr()} 👋",style:const TextStyle(
                           color: textColor2,
-                          fontFamily: regularfontFamilyName,
+                          fontFamily: 'inter',
                           fontSize: 12,fontWeight: FontWeight.w400
                         ),),
-                        SizedBox(height: 3,),
+                        const SizedBox(height: 3,),
                         Text("User Full Name",style: TextStyle(
+                            fontFamily: 'inter',
                             color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 16,fontWeight: FontWeight.w500
+                            fontSize: 16,fontWeight: FontWeight.w600
                         ),),
                       ],
                     )
@@ -177,28 +180,28 @@ class _HomeState extends State<Home> {
               children: [
                 Text('Home.available-docts'.tr(),style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 18,fontWeight: FontWeight.w500
+                    fontSize: 18,fontWeight: FontWeight.w500,
+                    fontFamily: 'inter'
                 ),),
                 Text('Home.see-all'.tr(),style: TextStyle(
                     color:primary_Color,
+                    fontFamily: 'inter',
                     fontSize: 14,fontWeight: FontWeight.w500
                 ),),
               ],
             ),
             SizedBox(height: 10,),
-            SizedBox(
-              height: AppSize.width*0.55,
-              width: AppSize.width,
-              child: ListView.builder(
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,// Number of iterations
-                  itemBuilder: (context, index) {
-                    return  Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: AvailableDoctorCard()
-                    );
-                  }),
+
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  AvailableDoctorCard(),
+                  AvailableDoctorCard(),
+                  AvailableDoctorCard(),
+                  AvailableDoctorCard(),
+                ],
+              ),
             ),
             SizedBox(height: 20,),
             Row(
@@ -206,26 +209,25 @@ class _HomeState extends State<Home> {
               children: [
                 Text('Home.health-new'.tr(),style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
-                    fontFamily: regularfontFamilyName,
+                    fontFamily: 'inter',
                     fontSize: 18,fontWeight: FontWeight.w500
                 ),),
                 Text('Home.see-all'.tr(),style:const TextStyle(
                     color:primary_Color,
-                    fontFamily: regularfontFamilyName,
+                    fontFamily: 'inter',
                     fontSize: 14,fontWeight: FontWeight.w500
                 ),),
               ],
             ),
 
-            SizedBox(
-              height: 400,
-              child: ListView.builder(
-                  itemCount: 6,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context ,int index){
-                    return  HealthCard();
-                  }),
-            ),
+            Column(
+              children: [
+                HealthCard(),
+                HealthCard(),
+                HealthCard(),
+                HealthCard(),
+              ],
+            )
 
           ],
         ),

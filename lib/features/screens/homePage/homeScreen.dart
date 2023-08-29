@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
 
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {

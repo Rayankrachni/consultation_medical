@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xff246BFD);
-const Color primary_Color = Color(0xff246BFD);
+const Color primaryColor = Color(0xff276BFD);
+const Color primary_Color = Color(0xff276BFD);
 const Color primaryColor0 = Color(0xff0748CE);
 const Color primaryColor1 = Color(0xff5089FD);
 const Color primaryColor2 = Color(0xff7CA6FE);
@@ -30,7 +30,9 @@ const Color successColor =Color(0xff1EC24C);
 const Color disableColor = Color(0xffD8D8D8);
 const Color disablebuttonColor = Color(0xffA3A5AC);
 const Color placeHolderColor = Color(0xffD1D2D5);
-const Color filledColor = Color(0xffE8E9EA);
+const Color filledColor = Color(0xffF7F8FD);
+const Color homebutolor = Color(0xffF0F7FD);
+
 const Color typing = Color(0xff5089FD);
 
 const Color witeColor1 = Color(0xfffafaff);

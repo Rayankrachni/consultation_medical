@@ -10,30 +10,32 @@ class AvailableDoctorCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: AppSize.height*0.02,
-      width: AppSize.width*0.35,
-      decoration: BoxDecoration(
+    return Padding(
+      padding: const EdgeInsets.only(right: 10.0,top: 10.0,bottom: 10.0),
+      child: Container(
+        height: AppSize.height*0.25,
+        width: AppSize.width*0.4,
+        decoration: BoxDecoration(
 
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                blurRadius: 1.0,
-                offset:const Offset(0.1, 3)
-            )
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  blurRadius:4.0,
+                  spreadRadius: 1.0,
+                  offset:const Offset(2, 3)
+              )
 
-          ],
-          color:Theme.of(context).cardColor,
-       ),
-      child: SingleChildScrollView(
+            ],
+            color:Theme.of(context).cardColor,
+         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
 
             Container(
-              height: AppSize.height*0.17,
+              height: AppSize.height*0.15,
               decoration: BoxDecoration(
 
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -72,7 +74,7 @@ class AvailableDoctorCard extends StatelessWidget {
                       Text("4.8",style: TextStyle(
                           color:Theme.of(context).colorScheme.secondary,
                           fontSize: 12,fontWeight: FontWeight.normal,
-                          fontFamily: regularfontFamilyName
+                          fontFamily: 'inter'
                       ),),
                     ],
                   ),
@@ -87,7 +89,7 @@ class AvailableDoctorCard extends StatelessWidget {
                 child: Text("Dr Wilson",style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
                     fontSize: 16,fontWeight: FontWeight.w500,
-                    fontFamily: regularfontFamilyName,
+                    fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),
               ),
@@ -99,7 +101,7 @@ class AvailableDoctorCard extends StatelessWidget {
                 child:const Text("Cardiology",style: TextStyle(
                     color:textColor2,
                     fontSize: 12,fontWeight: FontWeight.normal,
-                    fontFamily: regularfontFamilyName,
+                    fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),
               ),

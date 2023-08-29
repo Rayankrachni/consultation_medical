@@ -46,13 +46,13 @@ class HealthCard extends StatelessWidget {
                 children: [
                   SizedBox(
                       width: AppSize.width*0.55,
-                      child: Text("This is just a reminder when you  when you have a chance could",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:16,fontWeight: FontWeight.w500,overflow: TextOverflow.ellipsis,fontFamily: regularfontFamilyName),maxLines: 2,)),
+                      child: Text("This is just a reminder when you  when you have a chance could",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:16,overflow: TextOverflow.ellipsis,fontFamily: 'Inter-Medium',fontWeight: FontWeight.w600),maxLines: 2,)),
 
                   SizedBox(height: 10,),
                   SizedBox(
                       width: AppSize.width*0.5,
                       child: Text("Aug 17,2023 . 4min read ",
-                        style: TextStyle(color: textColor2,fontSize:12,fontFamily: regularfontFamilyName),maxLines: 2,overflow: TextOverflow.ellipsis,)),
+                        style: TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                 ],
               ),
             )

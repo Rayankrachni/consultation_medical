@@ -20,9 +20,10 @@ class FistHomeCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(5)),
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                blurRadius: 1.0,
-                offset:const Offset(0.1, 3)
+                color: Colors.grey.withOpacity(0.3),
+                blurRadius:4.0,
+                spreadRadius: 1.0,
+                offset:const Offset(2, 3)
             )
 
           ]
@@ -65,8 +66,8 @@ class FistHomeCard extends StatelessWidget {
             Container(
               width: 100,
               decoration: BoxDecoration(
-               color: filledColor,
-                borderRadius: BorderRadius.all(Radius.circular(15)),
+               color: homebutolor,
+                borderRadius: BorderRadius.all(Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
                         color: Colors.grey.withOpacity(0.2),
@@ -81,10 +82,12 @@ class FistHomeCard extends StatelessWidget {
                 child: Center(
                   child: isAvailable ? Text("Available",style: TextStyle(
                       color: primaryColor,
+                      fontFamily: 'inter',
                       fontSize: 11,fontWeight: FontWeight.normal
                   ),):
                   Text("Busy now",style: TextStyle(
                       color: Colors.red,
+                      fontFamily: 'inter',
                       fontSize: 11,fontWeight: FontWeight.normal
                   ),),
                 ),

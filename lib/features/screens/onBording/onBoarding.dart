@@ -63,13 +63,16 @@ class _OnBoardingState extends State<OnBoarding> {
                         children: <Widget>[
                           Align(
                               alignment:Alignment.topRight,
-                              child: TextButton(onPressed: (){}, child: Text('Skip',style: TextStyle(color: primary_Color),))),
-                          SizedBox(height: AppSize.height*0.05),
-                          Container(
-                            height: AppSize.height*0.4,
+                              child: TextButton(onPressed: (){
+
+                                push(context: context, screen: LoginScreen());
+
+                              }, child:const Text('Skip',style: TextStyle(color: primary_Color),))),
+
+                          SizedBox(
+                            height: AppSize.height*0.6,
                             width: AppSize.height*0.9,
                             child:  Image.asset(_imgs[index]),  ),
-                          SizedBox(height: AppSize.height*0.03,),
                           Padding(
                             padding: const EdgeInsets.only(left: 0.0,right: 0),
                             child: Text(
@@ -77,18 +80,14 @@ class _OnBoardingState extends State<OnBoarding> {
 
 
                               style: TextStyle(
-                                  fontSize: 25,fontWeight: FontWeight.bold,fontFamily: regularfontFamilyName,color:Theme.of(context).colorScheme.secondary
+                                  fontSize: 30,fontWeight: FontWeight.bold,fontFamily: 'inter',color:Theme.of(context).colorScheme.secondary
                               ),
 
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          SizedBox(height: AppSize.height*0.02,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: _buildPageIndicator(),
-                          ),
-                          SizedBox(height: 14.0),
+
+
 
 
                         ],
@@ -97,8 +96,13 @@ class _OnBoardingState extends State<OnBoarding> {
                   },
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: _buildPageIndicator(),
+              ),
+              SizedBox(height:40.0),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0,right: 20),
+                padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 0),
                 child: DefaultButton(
                   isOnboading: true,
                   onPressed:

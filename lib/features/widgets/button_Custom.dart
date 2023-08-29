@@ -35,12 +35,13 @@ class DefaultButton extends StatelessWidget {
               text,
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
-                fontSize:18,
+                fontSize:16,
+                fontFamily: 'inter',
                 color: Colors.white,
               ),
             ),
-            SizedBox(width: 20,),
-            if(isOnboading)Icon(Icons.arrow_forward,color: Colors.white,)
+            const SizedBox(width: 20,),
+            if(isOnboading) const Icon(Icons.arrow_forward,color: Colors.white,)
           ],
         ),
       ),
