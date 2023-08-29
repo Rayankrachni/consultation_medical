@@ -4,7 +4,9 @@ import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:flutter/material.dart';
 
 class SearchCard extends StatelessWidget {
-  const SearchCard({super.key});
+  SearchCard({super.key,required this.onPressed});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +145,7 @@ class SearchCard extends StatelessWidget {
                   ),
                   SizedBox(
                     width: AppSize.width*0.41,
-                    child: ElevatedButton(onPressed: (){},
+                    child: ElevatedButton(onPressed: onPressed,
 
                         style: ElevatedButton.styleFrom(
                           primary: primaryColor, // Set the button's background color

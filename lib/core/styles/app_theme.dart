@@ -26,12 +26,14 @@ ThemeData buildLightTheme(BuildContext context) {
     iconTheme: const IconThemeData(
       color: Colors.grey
     ),
+
+
     inputDecorationTheme:const InputDecorationTheme(
       //prefixIconColor: Colors.grey,
 
       hintStyle: TextStyle(
           fontFamily: regularfontFamilyName,
-          fontSize: 10,
+          fontSize: 14,
       ),
       labelStyle: TextStyle(
           fontFamily: regularfontFamilyName,
@@ -39,7 +41,9 @@ ThemeData buildLightTheme(BuildContext context) {
       ),
       // Customize other input decoration properties as needed
     ),
-   bottomNavigationBarTheme: BottomNavigationBarThemeData(
+   bottomNavigationBarTheme:const BottomNavigationBarThemeData(
+     showSelectedLabels: true,
+     showUnselectedLabels: true,
      selectedItemColor: primaryColor2,
      unselectedItemColor: textColor2,
      unselectedLabelStyle: TextStyle(color:textColor2,fontSize: 14),
@@ -145,7 +149,7 @@ ThemeData buildDarkTheme() {
 
       hintStyle: TextStyle(
           fontFamily: regularfontFamilyName,
-          fontSize: 10,
+          fontSize: 14,
           color: Colors.white54
       ),
       labelStyle: TextStyle(

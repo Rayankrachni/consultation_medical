@@ -20,7 +20,7 @@ class AvailableDoctorScreen extends StatelessWidget {
           ListView.builder(
               itemCount: 7,
               itemBuilder: (BuildContext context ,int index){
-                return  SearchCard();
+                return  SearchCard(onPressed: (){},);
               }) ,
         ),
       ),

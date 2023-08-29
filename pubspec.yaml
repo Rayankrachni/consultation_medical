@@ -43,6 +43,7 @@ dependencies:
   provider: ^6.0.5
   easy_localization: ^3.0.2
   chip_list: ^2.4.3+8
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +75,8 @@ flutter:
     - assets/images/onBorad1.png
     - assets/images/onBorad2.png
     - assets/images/onBorad3.png
+    - assets/images/paypal.png
+    - assets/images/mastercard.png
     - assets/local/
   #   - images/a_dot_ham.jpeg
 

@@ -68,7 +68,22 @@
     "home": "Home",
     "appointment": "Appointment",
     "messages": "Messages",
-    "favorites": "Favorites" },
+    "favorites": "Favorites",
+    "select-pack": "Select Package",
+    "patient-detail": "Patient Detail",
+    "select-duration": "Select Duration",
+    "messaging": "  Messaging",
+    "messaging-desc": "Chat Message with Doctor",
+    "name": "Name",
+    "duration": "/30 Minits",
+    "gender": "Gender",
+    "age": "Age",
+    "write-prbl": "Write Your Problem",
+    "video-call": "Video Call",
+    "video-call-desc": "Video Call with Doctor",
+    "voice-call": "Voice Call",
+    "voice-call-desc": "Voice Call with Doctor"
+  },
 
   "Favorites": {
     "home": "Home",
@@ -80,5 +95,45 @@
     "home": "Home",
     "appointment": "Appointment",
     "messages": "Messages",
-    "favorites": "Favorites" }
+    "favorites": "Favorites" },
+  "Payment": {
+    "payment": "Payment",
+    "google-play": "Google Play",
+    "credit-card": "Credit/Debit Card",
+    "paypal": "Paypal",
+    "card-name":"CardHolder Name",
+    "card-number":"Card Number",
+    "cvv": "Cvv",
+    "date-expiry":"Expiry Date"
+  },
+
+  "Button": {
+    "next": "Next",
+    "pay": "Pay",
+    "view-app": "View Appointment",
+    "go-home": "Go Home",
+    "try-again": "Try Again",
+    "ok": "Ok",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+
+
+  "Diag": {
+    "Congratulations": "Congratulations",
+    "review-success": "Review Successful",
+    "review-text": "your review has been Successfully submitted, thanks you very much!",
+    "Oops": "Oops, Failed",
+    "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
+    "credit-card": "Credit/Debit Card",
+    "paypal": "Paypal" },
+
+  "Review": {
+    "write-review": "Write a Review",
+    "review-title": "How was your experience with Dr.",
+    "review-text": "your review has been Successfully submitted, thanks you very much!",
+    "review-placeholder": "Write your review",
+    "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
+    "write-here": "Write here",
+    "paypal": "Paypal" }
 }

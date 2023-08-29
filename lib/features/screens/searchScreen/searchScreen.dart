@@ -50,8 +50,8 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               CustomTextFormField(controller: name, hintText: "Search  Doctor", prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
               SizedBox(height: 10,),
-              SearchCard(),
-              SearchCard(),
+              SearchCard(onPressed: (){},),
+              SearchCard(onPressed: (){},),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

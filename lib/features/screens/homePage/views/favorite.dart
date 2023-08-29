@@ -1,8 +1,13 @@
 
 
+import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/features/widgets/card_search_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../Appointment/makeAppointementScreen.dart';
+import '../../Appointment/patientDetailScreen.dart';
+import '../../Appointment/selectPackageScreen.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -26,7 +31,8 @@ class FavoriteScreen extends StatelessWidget {
                 ListView.builder(
                  itemCount: 7,
                  itemBuilder: (BuildContext context ,int index){
-                  return  SearchCard();
+                   //SelectPackageScreen
+                  return  SearchCard(onPressed: (){push(context: context, screen: MakeAppointmentScreen());},);
                 }) ,
               ),
             ),

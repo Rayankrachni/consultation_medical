@@ -3,6 +3,7 @@ import 'package:consultation_medical/features/screens/homePage/views/favorite.da
 import 'package:consultation_medical/features/screens/homePage/views/home.dart';
 import 'package:consultation_medical/features/screens/homePage/views/messages.dart';
 import 'package:consultation_medical/features/screens/homePage/views/notificationScreen.dart';
+import 'package:consultation_medical/features/screens/payment/paymentScreen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     Home(),
     AppointmentScreen(),
-    MessagesScreen(),
+    Payment(),
+    //MessagesScreen(),
     //NotificationScreen(),
     FavoriteScreen(),
   ];

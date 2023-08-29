@@ -1,8 +1,12 @@
+import 'package:consultation_medical/core/const/strings.dart';
 import 'package:consultation_medical/core/styles/app_colors.dart';
+import 'package:consultation_medical/features/screens/homePage/views/notificationScreen.dart';
 import 'package:consultation_medical/features/screens/profile/views/profileScreen.dart';
+import 'package:consultation_medical/features/screens/reviews/writeReviewScreen.dart';
 import 'package:consultation_medical/features/screens/searchScreen/searchScreen.dart';
 import 'package:consultation_medical/features/screens/services/doctors/availableDoctorScreen.dart';
 import 'package:consultation_medical/features/screens/services/hospital/hospitalScreen.dart';
+import 'package:consultation_medical/features/widgets/healthNews_card_widget.dart';
 import 'package:consultation_medical/features/widgets/service_widget.dart';
 import 'package:consultation_medical/features/widgets/textField_custom.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -12,7 +16,9 @@ import 'package:flutter/rendering.dart';
 
 import '../../../../core/helper/app_navigator.dart';
 import '../../../../core/styles/app_size.dart';
+import '../../../widgets/availableDoctorCard_widget.dart';
 import '../../../widgets/card_home_widget.dart';
+import '../../../widgets/notification_widget.dart';
 import '../../services/medicine/medicineScreen.dart';
 
 class Home extends StatefulWidget {
@@ -50,10 +56,12 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("${'home.good-morning'.tr()}👋",style: TextStyle(
+                        Text("${'Home.good-morning'.tr()}👋",style: TextStyle(
                           color: textColor2,
-                          fontSize: 12,fontWeight: FontWeight.w600
+                          fontFamily: regularfontFamilyName,
+                          fontSize: 12,fontWeight: FontWeight.w400
                         ),),
+                        SizedBox(height: 3,),
                         Text("User Full Name",style: TextStyle(
                             color:Theme.of(context).colorScheme.secondary,
                             fontSize: 16,fontWeight: FontWeight.w500
@@ -63,7 +71,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 InkWell(
-                  onTap: (){push(context: context, screen: SearchScreen());},
+                  onTap: (){push(context: context, screen: NotificationScreen());},
                   child: Container(
                     height: 30,
                     width: 30,
@@ -71,7 +79,7 @@ class _HomeState extends State<Home> {
                         color: filledColor,
                         shape: BoxShape.circle
                     ),
-                    child: Icon(Icons.notifications_none,color: primaryColor,size: 25,),
+                    child: Icon(Icons.notifications_none,color: primary_Color,size: 25,),
                   ),
                 ),
 
@@ -87,7 +95,7 @@ class _HomeState extends State<Home> {
               decoration:const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 gradient: LinearGradient(
-                  colors: [primaryColor,primaryColor1,primaryColor2], // Define your gradient colors
+                  colors: [primary_Color,primaryColor1,primaryColor2], // Define your gradient colors
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -117,7 +125,7 @@ class _HomeState extends State<Home> {
                            color: Colors.white,
                          ),
 
-                         child:  Center(child: Text("Registration",style: TextStyle(fontSize: 12,color:primaryColor),)),
+                         child:  Center(child: Text("Registration",style: TextStyle(fontSize: 12,color:primary_Color),)),
                        ),
 
 
@@ -129,7 +137,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 10,),
-            Text('home.services'.tr(),style: TextStyle(
+            Text('Home.services'.tr(),style: TextStyle(
                 color:Theme.of(context).colorScheme.secondary,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
@@ -141,15 +149,15 @@ class _HomeState extends State<Home> {
                 scrollDirection: Axis.horizontal,
                 children: [
 
-                  ServicesWidget(title: 'home.doctors'.tr(),onPressed: (){push(context: context, screen: AvailableDoctorScreen());},),
-                  ServicesWidget(title: 'home.consult'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
-                  ServicesWidget(title: 'home.hospital'.tr(),onPressed: (){push(context: context, screen: HospitalScreen());},),
-                  ServicesWidget(title: 'home.medicine'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
-                  ServicesWidget(title: 'home.more'.tr(),onPressed: (){},),
+                  ServicesWidget(title: 'Home.doctors'.tr(),onPressed: (){push(context: context, screen: AvailableDoctorScreen());},),
+                  ServicesWidget(title: 'Home.consult'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
+                  ServicesWidget(title: 'Home.hospital'.tr(),onPressed: (){push(context: context, screen: HospitalScreen());},),
+                  ServicesWidget(title: 'Home.medicine'.tr(),onPressed: (){push(context: context, screen: MedicineScreen());},),
+                  ServicesWidget(title: 'Home.more'.tr(),onPressed: (){},),
                 ],
               ),
             ),
-             Text('home.prev-doctors'.tr(),style: TextStyle(
+             Text('Home.prev-doctors'.tr(),style: TextStyle(
                 color:Theme.of(context).colorScheme.secondary,
                 fontSize: 18,fontWeight: FontWeight.w500
             ),),
@@ -157,7 +165,9 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                FistHomeCard(title: "Dr Daryl Nehls",category: "Family Doctor",),
+                InkWell(
+                    onTap: (){push(context: context, screen: WriteReview());},
+                    child: FistHomeCard(title: "Dr Daryl Nehls",category: "Family Doctor",)),
                 FistHomeCard(title: "Dr Daryl Nehls",category: "Psychologist",isAvailable: false,),
               ],
             ),
@@ -165,29 +175,57 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('home.available-docts'.tr(),style: TextStyle(
+                Text('Home.available-docts'.tr(),style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
                     fontSize: 18,fontWeight: FontWeight.w500
                 ),),
-                Text('home.see-all'.tr(),style: TextStyle(
-                    color:primaryColor,
+                Text('Home.see-all'.tr(),style: TextStyle(
+                    color:primary_Color,
                     fontSize: 14,fontWeight: FontWeight.w500
                 ),),
               ],
             ),
+            SizedBox(height: 10,),
+            SizedBox(
+              height: AppSize.width*0.55,
+              width: AppSize.width,
+              child: ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,// Number of iterations
+                  itemBuilder: (context, index) {
+                    return  Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: AvailableDoctorCard()
+                    );
+                  }),
+            ),
+            SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('home.health-new'.tr(),style: TextStyle(
+                Text('Home.health-new'.tr(),style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
+                    fontFamily: regularfontFamilyName,
                     fontSize: 18,fontWeight: FontWeight.w500
                 ),),
-                Text('home.see-all'.tr(),style: TextStyle(
-                    color:primaryColor,
+                Text('Home.see-all'.tr(),style:const TextStyle(
+                    color:primary_Color,
+                    fontFamily: regularfontFamilyName,
                     fontSize: 14,fontWeight: FontWeight.w500
                 ),),
               ],
-            )
+            ),
+
+            SizedBox(
+              height: 400,
+              child: ListView.builder(
+                  itemCount: 6,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context ,int index){
+                    return  HealthCard();
+                  }),
+            ),
 
           ],
         ),
