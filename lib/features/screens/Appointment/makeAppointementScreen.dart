@@ -220,15 +220,8 @@ class MakeAppointmentScreen extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(10),
                                             border: Border.all(color: placeHolderColor),
-                                          color: Theme.of(context).scaffoldBackgroundColor,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.grey.withOpacity(0.2),
-                                              spreadRadius: 2,
-                                              blurRadius: 5,
-                                              offset: Offset(1, 2), // changes position of shadow
-                                            ),
-                                          ],
+                                          color: Colors.white,
+                                      
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,

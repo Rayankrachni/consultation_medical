@@ -74,6 +74,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ),
             prefixIcon: Icon(
               widget.prefixIcon,
+              color: Colors.grey,
               size: 20,
             ),
              suffixIcon:widget.obscureText? IconButton(

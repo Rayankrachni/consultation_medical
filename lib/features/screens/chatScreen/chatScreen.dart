@@ -59,169 +59,177 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 10.0,bottom: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
 
 
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment:ispair? CrossAxisAlignment.start:CrossAxisAlignment.end,
-                  children: msgs.asMap().entries.map((entry) {
-                    final index = entry.key;
-                    final message = entry.value;
-                    final isEven = index % 2 == 0;
-                    setState(() {
-                      ispair=isEven;
-                    });
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: AppSize.height*0.75,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment:ispair? CrossAxisAlignment.start:CrossAxisAlignment.end,
+                      children: msgs.asMap().entries.map((entry) {
+                        final index = entry.key;
+                        final message = entry.value;
+                        final isEven = index % 2 == 0;
+                        setState(() {
+                          ispair=isEven;
+                        });
 
-                    return Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Align(
-                        alignment:ispair?Alignment.topLeft: Alignment.topRight,
-                        child: Container(
-                          constraints: BoxConstraints(
-                            maxWidth: AppSize.width * 0.7, // Specify your desired max width
-                          ),
-                          decoration: BoxDecoration(
-                            color: ispair ? filledColor :primary_Color, // Replace with your desired colors
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                                bottomLeft:ispair ?Radius.circular(0): Radius.circular(10),
-                                bottomRight: ispair ?Radius.circular(10): Radius.circular(0),
-                            ),
-                          ),
-                          padding: EdgeInsets.all(10.0),
-                          child: IntrinsicWidth(
-                            child: Text(
-                              message,
-                              style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: ispair?Colors.black:Colors.white)
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                )
-
-              ),
-            ),
-
-            Container(
-              //height: AppSize.height * 0.09,
-              width: AppSize.width,
-              decoration: BoxDecoration(
-
-
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-
-                  Divider(color: placeHolderColor,),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12.0,right: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(CupertinoIcons.smiley),
-                        SizedBox(
-                          width: AppSize.width * 0.6,
-                          child: TextFormField(
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Theme.of(context).colorScheme.secondary,
-
-                              fontFamily: "inter",
-                            ),
-                            decoration: InputDecoration(
-                              hintText: "Type a Message",
-                              hintStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black,
-                                fontFamily: 'inter'
+                        return Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Align(
+                            alignment:ispair?Alignment.topLeft: Alignment.topRight,
+                            child: Container(
+                              constraints: BoxConstraints(
+                                maxWidth: AppSize.width * 0.7, // Specify your desired max width
                               ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide.none,
+                              decoration: BoxDecoration(
+                                color: ispair ? filledColor :primary_Color, // Replace with your desired colors
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                    bottomLeft:ispair ?Radius.circular(0): Radius.circular(10),
+                                    bottomRight: ispair ?Radius.circular(10): Radius.circular(0),
+                                ),
                               ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide.none,
+                              padding: EdgeInsets.all(10.0),
+                              child: IntrinsicWidth(
+                                child: Text(
+                                  message,
+                                  style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: ispair?Colors.black:Colors.white)
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.file_present_outlined, color: placeHolderColor),
-                            SizedBox(width: 20),
-                            Icon(Icons.send, color: primary_Color),
-                          ],
-                        ),
-                      ],
-                    ),
+                        );
+                      }).toList(),
+                    )
+
                   ),
-                ],
-              ),
-            ),
-
-
-           /* Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: AppSize.height*0.07,
-
-                decoration:const BoxDecoration(
-                  color: primary_Color,
-                  borderRadius: BorderRadius.all(Radius.circular(5))
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  //height: AppSize.height * 0.09,
+                  width: AppSize.width,
+                  decoration: BoxDecoration(
+
+
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
 
-                      SizedBox(
-                          width: AppSize.width*0.7,
-                          child: TextFormField(
-                            style:const  TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontFamily: regularfontFamilyName
+                      Divider(color: placeHolderColor,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12.0,right: 12),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(CupertinoIcons.smiley),
+                            SizedBox(
+                              width: AppSize.width * 0.6,
+                              child: TextFormField(
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Theme.of(context).colorScheme.secondary,
+
+                                  fontFamily: "inter",
+                                ),
+                                decoration: InputDecoration(
+                                  hintText: "Type a Message",
+                                  hintStyle: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.black,
+                                    fontFamily: 'inter'
+                                  ),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                  ),
+                                ),
+                              ),
                             ),
-                            decoration: InputDecoration(
-
-                              hintText: "Type a Message",
-                              hintStyle:
-                              AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),
-                              enabledBorder:UnderlineInputBorder(
-                                borderSide: BorderSide.none
-                              )
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(Icons.file_present_outlined, color: placeHolderColor),
+                                SizedBox(width: 20),
+                                Icon(Icons.send, color: primary_Color),
+                              ],
                             ),
-
-
-                          )),
-                      const Row(
-                        children: [
-                          Icon(Icons.file_present_outlined,color: Colors.white,),
-                          Icon(Icons.mic,color: Colors.white,)
-                        ],
+                          ],
+                        ),
                       ),
-
                     ],
                   ),
                 ),
               ),
-            )*/
 
-          ],
+
+             /* Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: AppSize.height*0.07,
+
+                  decoration:const BoxDecoration(
+                    color: primary_Color,
+                    borderRadius: BorderRadius.all(Radius.circular(5))
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+
+                        SizedBox(
+                            width: AppSize.width*0.7,
+                            child: TextFormField(
+                              style:const  TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontFamily: regularfontFamilyName
+                              ),
+                              decoration: InputDecoration(
+
+                                hintText: "Type a Message",
+                                hintStyle:
+                                AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),
+                                enabledBorder:UnderlineInputBorder(
+                                  borderSide: BorderSide.none
+                                )
+                              ),
+
+
+                            )),
+                        const Row(
+                          children: [
+                            Icon(Icons.file_present_outlined,color: Colors.white,),
+                            Icon(Icons.mic,color: Colors.white,)
+                          ],
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              )*/
+
+            ],
+          ),
         ),
       ),
     );

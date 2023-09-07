@@ -23,10 +23,10 @@ class CreditCradScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text('Payment.payment'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:20,fontWeight: FontWeight.w500),),
-        ),
-      ),
+        centerTitle: true,
+          title: Text('Payment.payment'.tr(),
+              style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary)
+          )),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(

@@ -17,7 +17,7 @@ class AvailableDoctorCard extends StatelessWidget {
         width: AppSize.width*0.37,
         decoration: BoxDecoration(
 
-            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderRadius: BorderRadius.all(Radius.circular(15)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.15),
@@ -35,15 +35,16 @@ class AvailableDoctorCard extends StatelessWidget {
 
             Container(
               height: AppSize.height*0.18,
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
 
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        blurRadius: 1.0,
-                        offset:const Offset(0.1, 3)
-                    )
+                      color: Color.fromRGBO(99, 99, 99, 0.2),
+                      offset: Offset(0, 2),
+                      blurRadius: 8,
+                      spreadRadius: 0,
+                    ),
 
                   ],
                   color: Colors.white,

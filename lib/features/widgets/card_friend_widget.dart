@@ -54,7 +54,7 @@ class FriendCardWidgets extends StatelessWidget {
                             ],
                           ),
                      ),
-                        isInvited? SizedBox(
+                        !isInvited? SizedBox(
                           width: AppSize.width*0.22,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(

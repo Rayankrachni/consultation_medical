@@ -18,6 +18,9 @@ class FistHomeCard extends StatelessWidget {
       decoration: BoxDecoration(
 
           color: Theme.of(context).cardColor,
+          border: Border.all(
+            color:isAvailable ? primary_Color:Colors.transparent
+          ),
           borderRadius: BorderRadius.all(Radius.circular(5)),
         boxShadow: [
           BoxShadow(

@@ -135,7 +135,7 @@ ThemeData buildDarkTheme() {
       color:  Colors.grey[900],
       elevation: 0,
       iconTheme:const IconThemeData(
-          color: Colors.white
+          color: Colors.grey
       ),
     ),
 
@@ -189,7 +189,7 @@ ThemeData buildDarkTheme() {
     ),
 
     listTileTheme: const ListTileThemeData(
-      iconColor: Colors.white,
+      iconColor: Colors.grey,
     ),
 
 

@@ -1,7 +1,9 @@
 
 import 'dart:ui';
 import 'package:consultation_medical/core/const/strings.dart';
+import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
+import 'package:consultation_medical/features/screens/homePage/homeScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -88,7 +90,9 @@ class _SuccessReviewDialogState extends State<SuccessReviewDialog> with TickerPr
                 SizedBox(
                   width: AppSize.width*0.5,
                   height: 50,
-                  child: ElevatedButton(onPressed: (){},
+                  child: ElevatedButton(onPressed: (){
+                    pushAndRemove(context: context, screen: HomePage());
+                  },
 
                       style: ElevatedButton.styleFrom(
                         primary: primary_Color, // Set the button's background color

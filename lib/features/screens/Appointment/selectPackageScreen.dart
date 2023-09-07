@@ -101,10 +101,10 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.2),
-                              spreadRadius: 7,
-                              blurRadius: 7,
-                              offset: Offset(0, 2), // changes position of shadow
+                              color: Color.fromRGBO(99, 99, 99, 0.2),
+                              offset: Offset(0, 2),
+                              blurRadius: 8,
+                              spreadRadius: 0,
                             ),
                           ],
                     ),
@@ -183,10 +183,10 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 7,
-                          blurRadius: 7,
-                          offset: Offset(2, 2), // changes position of shadow
+                          color: Color.fromRGBO(99, 99, 99, 0.2),
+                          offset: Offset(0, 2),
+                          blurRadius: 8,
+                          spreadRadius: 0,
                         ),
                       ],
                     ),
@@ -271,12 +271,12 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
 
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.all(Radius.circular(5)),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 7,
-                          blurRadius: 7,
-                          offset: Offset(0, 2), // changes position of shadow
+                          color: Color.fromRGBO(99, 99, 99, 0.2),
+                          offset: Offset(0, 2),
+                          blurRadius: 8,
+                          spreadRadius: 0,
                         ),
                       ],
                     ),

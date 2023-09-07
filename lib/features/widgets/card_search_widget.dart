@@ -21,10 +21,10 @@ class SearchCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(15)),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.15),
-              spreadRadius:3,
-              blurRadius:3,
-              offset: Offset(0, 3), // changes position of shadow
+              color: Color.fromRGBO(99, 99, 99, 0.2),
+              offset: Offset(0, 2),
+              blurRadius: 8,
+              spreadRadius: 0,
             ),
           ],
         ),

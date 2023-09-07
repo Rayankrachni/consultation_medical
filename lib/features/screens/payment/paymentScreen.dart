@@ -27,200 +27,208 @@ class _PaymentState extends State<Payment> {
         title: Text('Payment.payment'.tr(),
         style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary)
         )),
-      body:Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-
-        Column(
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 70,
-                decoration: BoxDecoration(
 
-                    color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.15),
-                      spreadRadius: 3,
-                      blurRadius: 4,
-                      offset: Offset(0, 2), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
+          Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
 
-                        height: 40,
-                        width:40,
-                        decoration:const BoxDecoration(
-                            color: filledColor,
-                            shape: BoxShape.circle
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow:const [
+                        BoxShadow(
+                          color: Color.fromRGBO(99, 99, 99, 0.2),
+                          offset: Offset(0, 2),
+                          blurRadius: 8,
+                          spreadRadius: 0,
                         ),
-                        child: Image.asset("assets/images/paypal.png",fit: BoxFit.fill,),
-                      ),
-                      SizedBox(
-                        width: AppSize.width*0.7,
-                        child: RadioListTile(
-                          title: Text('Payment.paypal'.tr(),
-                              style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
-                          value:'Payment.paypal'.tr(),
-                          groupValue: payment,
-                          onChanged: (value){
-                            setState(() {
-                              payment = value.toString();
-                            });
-                          },
-                          controlAffinity: ListTileControlAffinity.trailing,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 70,
-                decoration: BoxDecoration(
-
-                    color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.15),
-                      spreadRadius: 3,
-                      blurRadius: 4,
-                      offset: Offset(0, 2), // changes position of shadow
+                      ],
                     ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Center(
-                        child: Container(
-                          width:40.0,
-                          height: 40.0,
-                          decoration:const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: filledColor,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0,right: 12.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+
+                            height: 40,
+                            width:40,
+                            decoration:const BoxDecoration(
+                                color: filledColor,
+                                shape: BoxShape.circle
+                            ),
+                            child: Image.asset("assets/images/paypal.png",fit: BoxFit.fill,),
                           ),
-                          child: Center(
-                            child: Container(
-                              width: 20.0,
-                              height: 20.0,
-                              decoration:const BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.asset("assets/images/mastercard.png"),
+                          SizedBox(
+                            width: AppSize.width*0.7,
+                            child: RadioListTile(
+                              title: Text('Payment.paypal'.tr(),
+                                  style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
+                              value:'Payment.paypal'.tr(),
+                              groupValue: payment,
+                              onChanged: (value){
+                                setState(() {
+                                  payment = value.toString();
+                                });
+                              },
+                              controlAffinity: ListTileControlAffinity.trailing,
                             ),
                           ),
-                        ),
-
+                        ],
                       ),
-                      SizedBox(
-                        width: AppSize.width*0.7,
-                        child: RadioListTile(
-                          title: Text('Payment.credit-card'.tr(),
-                              style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
-                          value: 'Payment.credit-card'.tr(),
-                          groupValue: payment,
-                          onChanged: (value){
-                            setState(() {
-                              payment = value.toString();
-                            });
-                          },
-                          controlAffinity: ListTileControlAffinity.trailing,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                height: 70,
-                decoration: BoxDecoration(
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
 
-                    color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.15),
-                        spreadRadius: 3,
-                        blurRadius: 4,
-                        offset: Offset(0, 2), // changes position of shadow
-                      ),
-                    ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 12.0,right: 12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Center(
-                        child: Container(
-                          width:40.0,
-                          height: 40.0,
-                          decoration:const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: filledColor,
-                          ),
-                          child: Center(
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.15),
+                          spreadRadius: 3,
+                          blurRadius: 4,
+                          offset: Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0,right: 12.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Center(
                             child: Container(
-                              width: 20.0,
-                              height: 20.0,
+                              width:40.0,
+                              height: 40.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
+                                color: filledColor,
                               ),
-                              child: Image.asset("assets/images/google-icon.png"),
+                              child: Center(
+                                child: Container(
+                                  width: 20.0,
+                                  height: 20.0,
+                                  decoration:const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset("assets/images/mastercard.png"),
+                                ),
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(
+                            width: AppSize.width*0.7,
+                            child: RadioListTile(
+                              title: Text('Payment.credit-card'.tr(),
+                                  style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
+                              value: 'Payment.credit-card'.tr(),
+                              groupValue: payment,
+                              onChanged: (value){
+                                setState(() {
+                                  payment = value.toString();
+                                });
+                              },
+                              controlAffinity: ListTileControlAffinity.trailing,
                             ),
                           ),
-                        ),
-
+                        ],
                       ),
-                      SizedBox(
-                        width: AppSize.width*0.7,
-                        child: RadioListTile(
-                          title: Text('Payment.google-play'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
-
-                          value: 'Payment.google-play'.tr(),
-                          groupValue: payment,
-                          onChanged: (value){
-                            setState(() {
-                              payment = value.toString();
-                            });
-                          },
-                          controlAffinity: ListTileControlAffinity.trailing,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    height: 70,
+                    decoration: BoxDecoration(
+
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.15),
+                            spreadRadius: 3,
+                            blurRadius: 4,
+                            offset: Offset(0, 2), // changes position of shadow
+                          ),
+                        ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0,right: 12.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Center(
+                            child: Container(
+                              width:40.0,
+                              height: 40.0,
+                              decoration:const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: filledColor,
+                              ),
+                              child: Center(
+                                child: Container(
+                                  width: 20.0,
+                                  height: 20.0,
+                                  decoration:const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset("assets/images/google-icon.png"),
+                                ),
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(
+                            width: AppSize.width*0.7,
+                            child: RadioListTile(
+                              title: Text('Payment.google-play'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
+
+                              value: 'Payment.google-play'.tr(),
+                              groupValue: payment,
+                              onChanged: (value){
+                                setState(() {
+                                  payment = value.toString();
+                                });
+                              },
+                              controlAffinity: ListTileControlAffinity.trailing,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
+          ),
+
+
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15.0,left: 5),
+              child: SizedBox(
+                  width: AppSize.width*0.9,
+                  child: DefaultButton(onPressed: (){push(context: context, screen: CreditCradScreen());}, text: 'Button.next'.tr())),
+            )
           ],
         ),
-
-
-
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: DefaultButton(onPressed: (){push(context: context, screen: CreditCradScreen());}, text: 'Button.next'.tr()),
-          )
-        ],
       )
     );
   }

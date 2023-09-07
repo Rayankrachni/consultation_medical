@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 InkWell(
-                  onTap: (){push(context: context, screen: NotificationScreen());},
+                  onTap: (){push(context: context, screen:const NotificationScreen());},
                   child: Container(
                     height: 40,
                     width: 40,
@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Icon(Icons.notifications_none,color: primary_Color,size: 30,),
+                        const  Icon(Icons.notifications_none,color: primary_Color,size: 30,),
                       Positioned(
                         top: AppSize.height*0.012,
                         left: AppSize.height*0.027,
@@ -135,48 +135,83 @@ class _HomeState extends State<Home> {
               decoration:const BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(15)),
                 gradient: LinearGradient(
-                  colors: [primary_Color,primaryColor1,primaryColor2], // Define your gradient colors
+                  colors: [primary_Color,primary_Color,primary_Color], // Define your gradient colors
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: AppSize.width*0.3,
-                    child: Image.network("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png")
+                    width: AppSize.width*0.25,
+                    child: Image.network("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png",errorBuilder: (context, error, stackTrace) => SizedBox(),)
                   ),
-                 SizedBox(
-                   width: AppSize.width*0.6,
-                   child: Column(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text("Your invited to join the live stream",style: TextStyle(fontSize: 14,color: Colors.white),),
-                       SizedBox(height: 20,),
-                       Text("A online session for \n healthy living on the vacation",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,color: Colors.white),),
-                       SizedBox(height: 10,),
 
-                       Container(
-                         height: AppSize.height*0.04,
-                         width:AppSize.height*0.15,
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(10),
-                           color: Colors.white,
+                 Padding(
+                   padding: const EdgeInsets.only(left: 5.0),
+                   child: SizedBox(
+                     width: AppSize.width*0.63,
+                     child: Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         Text("Your invited to join the live stream",style: AppTextStyle(size: 12, fontweight: FontWeight.normal,color: Colors.white),),
+                         const SizedBox(height: 10,),
+                         Text("A online session for \n healthy living on the vacation",style:AppTextStyle(size: 15.5, fontweight: FontWeight.w600,color: Colors.white)),
+                         const SizedBox(height: 10,),
+
+                         Container(
+                           height: AppSize.height*0.04,
+                           width:AppSize.height*0.15,
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.circular(5),
+                             color: Colors.white,
+                           ),
+
+                           child:  Center(child: Text("Registration",
+                             style: AppTextStyle(size: 12, fontweight: FontWeight.normal,color: primary_Color),)),
                          ),
+                         const SizedBox(height: 10,),
+                         SizedBox(
+                           width:AppSize.height*0.14,
+                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.end,
+                             children: [
+                               Container(height: 5,width: 20,decoration:BoxDecoration(
+                                   color: Colors.white,
+                                   borderRadius: BorderRadius.circular(20)
+                               ),),
+                               const SizedBox(width: 5,),
+                               Container(height: 5,width: 5,decoration:const BoxDecoration(
+                                   color: placeHolderColor,
+                                   shape: BoxShape.circle
+                               ),),
+                               const SizedBox(width: 5,),
+                               Container(height: 5,width: 5,decoration:const BoxDecoration(
+                                   color: placeHolderColor,
+                                   shape: BoxShape.circle
+                               ),),
+                               const SizedBox(width: 5,),
+                               Container(height: 5,width: 5,decoration:const BoxDecoration(
+                                   color: placeHolderColor,
+                                   shape: BoxShape.circle
+                               ),),
 
-                         child:  Center(child: Text("Registration",style: TextStyle(fontSize: 12,color:primary_Color),)),
-                       ),
+                             ],
+                           ),
+                         )
 
 
-                     ],
+                       ],
+                     ),
                    ),
                  )
                  //
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             Text('Home.services'.tr(),style: AppTextStyle(size: 18, fontweight:  FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
             const SizedBox(height: 10,),
@@ -206,17 +241,19 @@ class _HomeState extends State<Home> {
                 FistHomeCard(title: "Dr Daryl Nehls",category: "Psychologist",isAvailable: false,),
               ],
             ),
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Home.available-docts'.tr(),style: AppTextStyle(size: 18, fontweight:  FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
-                Text('Home.see-all'.tr(),style: AppTextStyle(size: 15, fontweight:  FontWeight.w500,color:primaryColor1,)),
+                TextButton(onPressed: (){push(context: context, screen: AvailableDoctorScreen());}, child:Text('Home.see-all'.tr(),style: AppTextStyle(size: 15, fontweight:  FontWeight.w500,color:primaryColor1,)),
+                )
+
               ],
             ),
-            SizedBox(height:20,),
+            const SizedBox(height:20,),
 
-            SingleChildScrollView(
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
@@ -227,7 +264,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -236,7 +273,7 @@ class _HomeState extends State<Home> {
               ],
             ),
             SizedBox(height: 20,),
-            Column(
+            const Column(
               children: [
                 HealthCard(),
                 HealthCard(),
