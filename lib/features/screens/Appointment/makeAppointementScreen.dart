@@ -124,9 +124,9 @@ class MakeAppointmentScreen extends StatelessWidget {
                                  color: primaryColor2,
                                  shape: BoxShape.circle
                              ),
-                             child: Icon(Icons.people,color: Colors.white,size: 28,),
+                             child:const Icon(Icons.people,color: Colors.white,size: 28,),
                            ),
-                           SizedBox(width: 10,),
+                            const SizedBox(width: 10,),
                             Column(
                              mainAxisAlignment: MainAxisAlignment.start,
                              crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +140,7 @@ class MakeAppointmentScreen extends StatelessWidget {
                                  size: 12, fontweight: FontWeight.w400,),)
                              ],
                            ),
-                           SizedBox(width: 30,),
+                           const SizedBox(width: 30,),
                            Container(
                              height: 50,
                              width: 50,
@@ -148,9 +148,9 @@ class MakeAppointmentScreen extends StatelessWidget {
                                  color: primaryColor2,
                                  shape: BoxShape.circle
                              ),
-                             child: Icon(Icons.verified,color: Colors.white,size: 28,),
+                             child:const Icon(Icons.verified,color: Colors.white,size: 28,),
                            ),
-                           SizedBox(width: 10,),
+                           const SizedBox(width: 10,),
                            Column(
                              mainAxisAlignment: MainAxisAlignment.start,
                              crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +172,7 @@ class MakeAppointmentScreen extends StatelessWidget {
                         width: AppSize.width,
                         decoration:  BoxDecoration(
                             color: Theme.of(context).scaffoldBackgroundColor,
-                            borderRadius: BorderRadius.only(
+                            borderRadius:const BorderRadius.only(
                               topRight: Radius.circular(20),
                               topLeft: Radius.circular(20),
                             )
@@ -187,11 +187,11 @@ class MakeAppointmentScreen extends StatelessWidget {
                               Text('Appointment.biography'.tr(),style: AppTextStyle(
                                 color: Theme.of(context).colorScheme.secondary,
                                 size: 16, fontweight: FontWeight.w600,)),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               SizedBox(
                                 width: AppSize.width*0.9,
                                 child: ExpandableText(
-                                ' Appointment Appointment Appointment Appointment Appoin tment Appointmen t.biography Appointment biograph iography .biograph iography Appoi ntment. biography',
+                                'Appoint ment Appoint ment Appointment Appointment Appoin tment Appointmen t.biography Appointment biograph iography .biograph iography Appoi ntment. biography',
                                 expandText: 'See more',
                                 collapseText: 'show less',
                                 maxLines: 3,
@@ -202,11 +202,11 @@ class MakeAppointmentScreen extends StatelessWidget {
                                  ),
                               ),
 
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Text('Appointment.appointment'.tr(),style: AppTextStyle(
                                 color: Theme.of(context).colorScheme.secondary,
                                 size: 16, fontweight: FontWeight.w600,)),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
@@ -221,7 +221,7 @@ class MakeAppointmentScreen extends StatelessWidget {
                                             borderRadius: BorderRadius.circular(10),
                                             border: Border.all(color: placeHolderColor),
                                           color: Colors.white,
-                                      
+
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
@@ -247,11 +247,11 @@ class MakeAppointmentScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Text('Appointment.schedule'.tr(),style: AppTextStyle(
                                 color: Theme.of(context).colorScheme.secondary,
                                 size: 16, fontweight: FontWeight.w600,)),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               SingleChildScrollView(
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
@@ -292,7 +292,7 @@ class MakeAppointmentScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 50,),
+                              const SizedBox(height: 50,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [

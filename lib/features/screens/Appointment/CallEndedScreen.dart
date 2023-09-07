@@ -34,7 +34,7 @@ class _CallEndedScreenState extends State<CallEndedScreen> {
                      SizedBox(height: 10,),
                     Text("55:00 Minutes",style:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:primaryColor2)),
                     SizedBox(height: AppSize.height*0.051,),
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 80,
                       backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
 

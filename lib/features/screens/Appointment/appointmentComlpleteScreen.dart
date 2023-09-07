@@ -51,7 +51,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                             width: 85,
                             decoration: BoxDecoration(
 
-                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                                borderRadius:const BorderRadius.all(Radius.circular(5)),
                                 boxShadow: [
                                   BoxShadow(
                                       color: Colors.grey.withOpacity(0.2),
@@ -61,18 +61,18 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
 
                                 ],
                                 color: Colors.white,
-                                image: DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
+                                image:const DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
                             ),
 
                           ),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
 
                           SizedBox(
                             child:  Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Dr Mary Rose c",style:AppTextStyle(size: 16, fontweight: FontWeight.bold,color:Theme.of(context).colorScheme.secondary,)),
-                                SizedBox(height: 9,),
+                                const SizedBox(height: 9,),
                                 Text("Specialist: Psychiatrist",style:AppTextStyle(size: 11, fontweight: FontWeight.w500,color:textColor2)),
 
                                 Padding(
@@ -80,14 +80,14 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                                   child: Row(
                                     children: [
                                       Text("Video call",style:AppTextStyle(size: 12, fontweight: FontWeight.w600,color:textColor1)),
-                                      SizedBox(width: 10,),
+                                      const SizedBox(width: 10,),
                                       Text("scheduled",style:AppTextStyle(size: 12, fontweight: FontWeight.w500,color:primaryColor2)),
                                     ],
                                   ),
                                 ),
                                 Row(
                                   children: [
-                                    Icon(Icons.calendar_month,color: primary_Color,size: 18,),
+                                    const Icon(Icons.calendar_month,color: primary_Color,size: 18,),
                                     Text("Today 2:30 pm-3:00 pm",style: TextStyle(
                                         color:Theme.of(context).colorScheme.secondary,
                                         fontSize: 12,fontWeight: FontWeight.normal
@@ -107,16 +107,16 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                             color: filledColor,
                             shape: BoxShape.circle
                         ),
-                        child: Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 25,),
+                        child:const Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 25,),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10,),
-                Divider(color: textColor2,thickness: 1,),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
+                const Divider(color: textColor2,thickness: 1,),
+                const SizedBox(height: 10,),
                 Text("Patient Information",style:AppTextStyle(size: 18, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -128,9 +128,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text("Name",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           SizedBox(
                               width: AppSize.width*0.7,
                               child: Text("Full Name ",
@@ -154,9 +154,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                       child: Row(
                         children: [
                           Text("Gender",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           SizedBox(
                               width: AppSize.width*0.65,
                               child: Text("Male",
@@ -179,9 +179,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                       child: Row(
                         children: [
                           Text("Age",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           SizedBox(
                               width: AppSize.width*0.7,
                               child: Text("25",
@@ -206,9 +206,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text("Problem",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           SizedBox(
                               width: AppSize.width*0.65,
                               child: Text("Problem Problem Problem Problem ProblemProblem Problem ProblemProblem Problem Problem Problem Problem",
@@ -222,10 +222,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
 
                                 ),
                                 maxLines: 3,
-
-
-
-                              )),
+                           )),
                         ],
                       ),
                     ),
@@ -233,9 +230,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
 
                    ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Text("Your Package",style:AppTextStyle(size: 18, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Container(
                   decoration: BoxDecoration(
 
@@ -246,7 +243,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                         color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 7,
                         blurRadius: 7,
-                        offset: Offset(0, 2), // changes position of shadow
+                        offset:const Offset(0, 2), // changes position of shadow
                       ),
                     ],
                   ),
@@ -263,13 +260,13 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                               shape: BoxShape.circle,
                               color: filledColor,
                             ),
-                            child: Center(
+                            child:const Center(
                               child: Icon(CupertinoIcons.video_camera_solid,color: primary_Color,size: 30,),
                             ),
                           ),
 
                         ),
-                        SizedBox(width: 10,),
+                        const SizedBox(width: 10,),
 
                         SizedBox(
                           width: AppSize.width*0.65,
@@ -280,7 +277,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('Appointment.video-call'.tr(),style:AppTextStyle(size: 14, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
-                                  SizedBox(height: 5,),
+                                  const SizedBox(height: 5,),
                                   Text('Appointment.video-call-desc'.tr(),style: AppTextStyle(
                                     color: textColor2,
                                     size: 10, fontweight: FontWeight.w500, ) )
@@ -314,7 +311,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
             DefaultButton(
 
                 onPressed: (){
-                  push(context: context, screen: CallEndedScreen());
+                  push(context: context, screen:const CallEndedScreen());
                 }, text: 'Video Call Start 2:30 pm'.tr())
           ],
         ),
