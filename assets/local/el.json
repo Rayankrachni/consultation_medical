@@ -4,8 +4,147 @@
   },
   "name": "name12",
   "onBoarding": {
-    "title1": "Fined Your Specialist \n Doctor here",
-    "title2": "Easy to Contacting \n your Doctor",
-    "title3": "Book face to face \n appointments"
-  }
+    "title1": "Find your specialist doctor here",
+    "title2": "Easy to contacting your doctor",
+    "title3": "Book face-to face appointments",
+    "get-started": "Get Started"
+  },
+  "Login": {
+    "signIn-title": "Sign in to your account",
+    "signIn-subtitle": "Welcome back! Please enter your details",
+    "signIn-Button": "Sign in",
+    "signIn-or": "or Sign in with",
+    "google": "Google",
+    "apple": "Apple",
+    "dont-have-account":"Don't have an account?",
+    "forget-password": "Forgot Password?"
+  },
+  "Register": {
+    "signUp-title": "Create an Account",
+    "signUp-subtitle": "Create an Medicate account enjoy all services",
+    "signUp-Button": "Sign up",
+    "signIn-or": "or Sign in with",
+    "google": "google",
+    "apple": "apple",
+    "forget-password": "Forget Password",
+    "have-account":"Already have account?"
+  },
+  "Otp": {
+    "Otp-title": "Verify Code",
+    "Otp-subtitle1": "We sent a code to ",
+    "Otp-subtitle2": "Enter the code here to verify your identify",
+    "resendCode": "Resend Code in",
+    "verify": "Confirm"
+  },
+  "Placeholder": {
+    "name": "Full Name",
+    "search-doctor": "Search  Doctor",
+    "search-specialist": "Search  specialist",
+    "email": "Email",
+    "search": "Search",
+    "password": "Password",
+    "confirm-password": "Confirm Password"
+  },
+
+  "HomePage": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "my-appointment": "My appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+
+  "Home": {
+    "services": "Services",
+    "doctors": "Doctors",
+    "medicine": "Medicine",
+    "search-med": "Search  Medicine",
+    "hospital": "Hospital",
+    "our-hosp": "Our Partner Hospitals",
+    "consult": "Consult",
+    "more": "More",
+    "prev-doctors": "Previous Doctors",
+    "available-docts": "Available Doctors",
+    "health-new": "Health News",
+    "see-all": "See All",
+    "good-morning": "Good Morning"
+  },
+
+  "Appointment": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "biography": "Biography",
+    "schedule": "Schedule",
+
+    "messages": "Messages",
+    "favorites": "Favorites",
+    "select-pack": "Select Package",
+    "patient-detail": "Patient Detail",
+    "select-duration": "Select Duration",
+    "messaging": "  Messaging",
+    "messaging-desc": "Chat Message with Doctor",
+    "name": "Name",
+    "duration": "/30 Minits",
+    "gender": "Gender",
+    "age": "Age",
+    "write-prbl": "Write Your Problem",
+    "video-call": "Video Call",
+    "video-call-desc": "Video Call with Doctor",
+    "voice-call": "Voice Call",
+    "voice-call-desc": "Voice Call with Doctor"
+  },
+
+  "Favorites": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+
+  "Messages": {
+    "home": "Home",
+    "appointment": "Appointment",
+    "messages": "Messages",
+    "favorites": "Favorites" },
+  "Payment": {
+    "payment": "Payment",
+    "google-play": "Google Play",
+    "credit-card": "Credit/Debit Card",
+    "paypal": "Paypal",
+    "card-name":"CardHolder Name",
+    "card-number":"Card Number",
+    "cvv": "Cvv",
+    "date-expiry":"Expiry Date"
+  },
+
+  "Button": {
+    "next": "Next",
+    "make-appointment": "Make Appointment",
+    "skip": "Skip",
+    "pay": "Pay",
+    "view-app": "View Appointment",
+    "go-home": "Go Home",
+    "try-again": "Try Again",
+    "ok": "Ok",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+
+
+  "Diag": {
+    "Congratulations": "Congratulations",
+    "review-success": "Review Successful",
+    "review-text": "your review has been Successfully submitted, thanks you very much!",
+    "Oops": "Oops, Failed",
+    "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
+    "credit-card": "Credit/Debit Card",
+    "paypal": "Paypal" },
+
+  "Review": {
+    "write-review": "Write a Review",
+    "review-title": "How was your experience with Dr.",
+    "review-text": "Your review has been Successfully submitted, thank you very much!",
+    "review-placeholder": "Write your review",
+    "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
+    "write-here": "Write here",
+    "reviews": "Review",
+    "paypal": "Paypal" }
 }

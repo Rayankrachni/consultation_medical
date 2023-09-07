@@ -3,11 +3,13 @@ import 'package:consultation_medical/core/const/strings.dart';
 import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/screens/authentication/views/loginScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
 
@@ -67,21 +69,19 @@ class _OnBoardingState extends State<OnBoarding> {
 
                                 push(context: context, screen: LoginScreen());
 
-                              }, child:const Text('Skip',style: TextStyle(color: primary_Color),))),
+                              }, child: Text('Button.skip'.tr(),style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: primary_Color)))),
 
                           SizedBox(
-                            height: AppSize.height*0.6,
-                            width: AppSize.height*0.9,
+                            height: AppSize.height*0.57,
+                            width: AppSize.width,
                             child:  Image.asset(_imgs[index]),  ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 0.0,right: 0),
+                            padding: const EdgeInsets.only(left: 10.0,right: 10,bottom: 10),
                             child: Text(
                               _titles[index],
 
 
-                              style: TextStyle(
-                                  fontSize: 30,fontWeight: FontWeight.bold,fontFamily: 'inter',color:Theme.of(context).colorScheme.secondary
-                              ),
+                              style:AppTextStyle(size: 32, fontweight: FontWeight.bold,color: Theme.of(context).colorScheme.secondary),
 
                               textAlign: TextAlign.center,
                             ),
@@ -111,7 +111,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       curve: Curves.ease,
                     ),
 
-                  text: _currentPage == _titles.length - 1 ? "Get Started" : "Next",),
+                  text: _currentPage == _titles.length - 1 ? 'onBoarding.get-started'.tr() : 'Button.next'.tr(),),
               )
 
 
@@ -138,7 +138,7 @@ class _OnBoardingState extends State<OnBoarding> {
       duration: Duration(milliseconds: 150),
       margin: EdgeInsets.symmetric(horizontal: 8.0),
       height: 6.0,
-      width: isActive ? 30.0 : 10.0,
+      width: isActive ? 30.0 : 8.0,
       decoration: BoxDecoration(
         color: isActive ? primary_Color :primaryColor3,
         borderRadius: BorderRadius.circular(12),

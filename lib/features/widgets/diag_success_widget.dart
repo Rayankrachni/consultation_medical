@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 import 'package:consultation_medical/core/const/strings.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -61,20 +62,16 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                   height:65,
                   width: 65,
                   decoration:const BoxDecoration(
-                      color: filledColor,
+                      color: Colors.black,
                       shape: BoxShape.circle
                   ),
-                  child: Icon(Icons.calendar_month,color: primary_Color,size: 28,),
+                  child: Icon(Icons.calendar_month,color: Colors.white,size: 28,),
                 ),
                 SizedBox(height: 20,),
                 Text(
                   'Diag.Congratulations'.tr(),
-                  style: TextStyle(
-                    fontSize:20,
-                    fontFamily: regularfontFamilyName,
-                    color: Theme.of(context).colorScheme.onSecondary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: AppTextStyle(size:20, fontweight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondary,)
+
                 ),
                 const SizedBox(height: 20,),
                 Wrap(
@@ -82,19 +79,16 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                     Text(
                       'Diag.congrats-text'.tr(),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize:12,
-                        fontFamily: regularfontFamilyName,
-                        color: Theme.of(context).colorScheme.onSecondary,
-                        fontWeight: FontWeight.w400,
-                      ),
+                        style: AppTextStyle(size:12, fontweight: FontWeight.w500, color: Theme.of(context).colorScheme.onSecondary,)
+
                     ),
                   ]
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 20,),
 
                 SizedBox(
                   width: AppSize.width*0.45,
+                  height: 50,
                   child: ElevatedButton(onPressed: (){},
 
                       style: ElevatedButton.styleFrom(
@@ -108,10 +102,11 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                         // Add more properties as needed, e.g., padding, textStyle, etc.
                       ),
 
-                      child:  Text( 'Button.view-app'.tr(),style: TextStyle(fontSize: 12,fontFamily: regularfontFamilyName),)),
-                ),
+                      child:  Text( 'Button.view-app'.tr(),style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Colors.white)))),
+                SizedBox(height: 20,),
                 SizedBox(
                   width: AppSize.width*0.45,
+                  height: 50,
                   child: ElevatedButton(onPressed: (){},
 
                       style: ElevatedButton.styleFrom(
@@ -127,7 +122,7 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                         // Add more properties as needed, e.g., padding, textStyle, etc.
                       ),
 
-                      child: Text( 'Button.go-home'.tr(),style: TextStyle(fontSize: 12,fontFamily: regularfontFamilyName),)),
+                      child: Text( 'Button.go-home'.tr(),style:AppTextStyle(size: 15, fontweight: FontWeight.w500,color:  Theme.of(context).colorScheme.secondary))),
 
                 ),
 

@@ -14,12 +14,11 @@ class ChangePassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text("Change Password",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-        ),
+        centerTitle: true,
+        title: Text("Change Password",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.bold,fontFamily: "inter"),),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.only(left: 20.0,right: 20,top: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,8 +26,10 @@ class ChangePassword extends StatelessWidget {
               child: Column(
                 children: [
                   CustomTextFormField(controller: currentPasswordController, hintText: "Current Passwod", prefixIcon: CupertinoIcons.padlock, textInputType: TextInputType.text),
-                  CustomTextFormField(controller: newPasswordController, hintText: "Current Passwod", prefixIcon: CupertinoIcons.padlock, textInputType: TextInputType.text,obscureText: true,),
-                  CustomTextFormField(controller: confirmPasswordController, hintText: "Current Passwod", prefixIcon: CupertinoIcons.padlock, textInputType: TextInputType.text,obscureText: true,)
+                  SizedBox(height: 10,),
+                  CustomTextFormField(controller: newPasswordController, hintText: "New Passwod", prefixIcon: CupertinoIcons.padlock, textInputType: TextInputType.text,obscureText: true,),
+                  SizedBox(height: 10,),
+                  CustomTextFormField(controller: confirmPasswordController, hintText: "Current New Passwod", prefixIcon: CupertinoIcons.padlock, textInputType: TextInputType.text,obscureText: true,)
                 ],
               ),
             ),

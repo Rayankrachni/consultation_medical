@@ -1,5 +1,6 @@
 
 
+import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/features/widgets/card_friend_widget.dart';
 import 'package:consultation_medical/features/widgets/card_search_widget.dart';
@@ -12,11 +13,9 @@ class InviteFriendScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:     Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Center(child: Text("Invite Friends",style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize: 18,fontWeight: FontWeight.w500),),),
-
-        ),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        centerTitle: true,
+        title: Text("Invite Friends",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: "inter"),),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 15.0,right: 15,top: 20,bottom: 15),
@@ -29,7 +28,12 @@ class InviteFriendScreen extends StatelessWidget {
                 ListView.builder(
                     itemCount: 7,
                     itemBuilder: (BuildContext context ,int index){
-                      return  FriendCardWidgets();
+                      return  Column(
+                        children: [
+                          FriendCardWidgets(),
+                          Divider(color: placeHolderColor,)
+                        ],
+                      );
                     }) ,
               ),
             ),

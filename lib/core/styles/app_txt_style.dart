@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 TextStyle AppTextStyle(
 {
@@ -6,11 +7,11 @@ TextStyle AppTextStyle(
   required double size,
   required FontWeight fontweight,
 }){
-return TextStyle(
+return GoogleFonts.inter(
+  fontSize: size,
   fontWeight: fontweight,
   color: color,
-  fontSize: size,
-  fontFamily: 'myriad',
+  decorationStyle: TextDecorationStyle.dotted,
 
 );
 }

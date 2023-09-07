@@ -54,18 +54,19 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text("Edit Profile",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-        ),
+        centerTitle: true,
+        title: Text("Edit Profile",
+          style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.only(left: 20.0,right: 15,top: 15),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomTextFormField(controller: nameController, hintText: "Name", prefixIcon: CupertinoIcons.person, textInputType: TextInputType.text),
                   CustomTextFormField(controller: phoneController, hintText: "Phone", prefixIcon: CupertinoIcons.phone, textInputType: TextInputType.text),
@@ -77,13 +78,12 @@ class _EditProfileState extends State<EditProfile> {
                       child: Text("Birth date",style: Theme.of(context).textTheme.headline3,),
                     ),
                   ),*/
-                  CustomTextFormField(controller: nameController, hintText: "Birth date", prefixIcon: CupertinoIcons.person, textInputType: TextInputType.text),
-
+                
                   Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10,bottom: 10),
-                      child: Text("Birth date",style: Theme.of(context).textTheme.headline3,),
+                      child: Text("Birth date",style: Theme.of(context).textTheme.headline2,),
                     ),
                   ),
                   Container(
@@ -99,6 +99,7 @@ class _EditProfileState extends State<EditProfile> {
                         title:Text("Birth Date",style: TextStyle(
                           color:Theme.of(context).colorScheme.secondary,
                           fontSize: 14,
+                          fontFamily: "inter"
                         ),),
                         leading: Icon(CupertinoIcons.calendar,color:Theme.of(context).colorScheme.secondary,size: 22,),
                         trailing: Icon(Icons.keyboard_arrow_down,size: 26,color:Theme.of(context).colorScheme.secondary,),
@@ -109,7 +110,7 @@ class _EditProfileState extends State<EditProfile> {
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10,bottom: 10),
-                      child: Text("Gender",style: Theme.of(context).textTheme.headline3,),
+                      child: Text("Gender",style: Theme.of(context).textTheme.headline2,),
                     ),
                   ),
 
@@ -138,7 +139,7 @@ class _EditProfileState extends State<EditProfile> {
                                 return DropdownMenuItem<String>(
 
                                   value: value,
-                                  child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal)),
+                                  child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: "inter")),
                                 );
                               }).toList(),
                               onChanged: (v){
@@ -148,7 +149,8 @@ class _EditProfileState extends State<EditProfile> {
                               isExpanded: true,
                               enableFeedback: true,
                               iconSize: 25,
-                              icon: Icon(Icons.keyboard_arrow_down),
+
+                              icon: Icon(Icons.keyboard_arrow_down,size: 26,color:Theme.of(context).colorScheme.secondary),
                               underline: Container(),
 
 
@@ -164,7 +166,10 @@ class _EditProfileState extends State<EditProfile> {
 
                 ],
               ),
-              SizedBox(height: AppSize.height*0.2,),
+
+
+              SizedBox(height: AppSize.height*0.32,),
+
               Padding(
                 padding: const EdgeInsets.only(bottom: 28.0),
                 child: DefaultButton(onPressed: (){}, text:"Save Changes"),

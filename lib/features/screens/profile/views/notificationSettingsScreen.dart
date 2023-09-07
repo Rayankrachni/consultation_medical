@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,118 +12,180 @@ class NotificationSetting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(
-            child:   Text("Notification",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:20,fontWeight: FontWeight.w500),),
-          ),
+
+          centerTitle: true,
+          title: Text("Notification",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: "inter"),),
         ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                title:Text("General Notification",style: TextStyle(
-                  color:Theme.of(context).colorScheme.secondary,
-                  fontSize: 16,
-                ),),
-                trailing: Switch(onChanged: (v){},value: true,)
+                title:Text("General Notification",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  )),
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Notification Sound",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Notification Sound",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.8,
+                    child: Switch(
+
+                      inactiveThumbColor: Colors.white,
+                      inactiveTrackColor: placeHolderColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: false,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Vibration",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Vibration",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child:Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Up update Notification",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Up update Notification",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Change Notification",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Change Notification",style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Appointment Alert",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Appointment Alert",style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child:Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("Daily Tips",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("Daily Tips",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(onChanged: (v){},value: true,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(
               color: placeHolderColor,
             ),
             SizedBox(
-              height: 40,
+              height: 50,
               child: ListTile(
-                  title:Text("New Services",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
+                  title:Text("New Services",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
-                  trailing: Switch(
-                    inactiveThumbColor: placeHolderColor,
-                    inactiveTrackColor: disablebuttonColor,
-                    onChanged: (v){},value: false,)
+                  trailing: Transform.scale(
+                    scale: 0.7,
+                    child: Switch(
+                      
+                      inactiveThumbColor: placeHolderColor,
+                      inactiveTrackColor: disablebuttonColor,
+                      activeTrackColor: Colors.blue,
+                      activeColor: Colors.white,
+
+                      onChanged: (v){},value: true,),
+                  )
               ),
             ),
             const Divider(

@@ -1,3 +1,4 @@
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:flutter/material.dart';
 
@@ -21,13 +22,14 @@ class FriendCardWidgets extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 10.0,top: 10),
         child: Row(
           children: [
-            const CircleAvatar(
+             CircleAvatar(
               radius: 30,
-              backgroundImage:  NetworkImage("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png")
+              backgroundColor: Colors.white,
+              backgroundImage:  NetworkImage("https://media.istockphoto.com/id/1309328823/fr/photo/verticale-headshot-de-lemploy%C3%A9-masculin-de-sourire-dans-le-bureau.jpg?b=1&s=612x612&w=0&k=20&c=Y8DpRjL_WZSVmV9LEMAJgogYMGMkqQsvcZ2Nb5LBmrk=")
             )
             ,
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 8.0,bottom: 6),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -44,15 +46,16 @@ class FriendCardWidgets extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Reminder your serial",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
-                              SizedBox(height: 5,),
-                              Text("+9000000999", style: TextStyle(color: textColor2,fontSize:12),maxLines: 1,overflow: TextOverflow.ellipsis,),
+                              Text("Friend's FullName ",
+                                style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: "inter"),),
+                              SizedBox(height: 10,),
+                              Text("+9000000999", style: TextStyle(color: textColor2,fontSize:12,fontFamily: "inter"),maxLines: 1,overflow: TextOverflow.ellipsis,),
 
                             ],
                           ),
                      ),
-                        !isInvited? SizedBox(
-                          width: AppSize.width*0.2,
+                        isInvited? SizedBox(
+                          width: AppSize.width*0.22,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: primary_Color, // Set the button's background color
@@ -64,12 +67,12 @@ class FriendCardWidgets extends StatelessWidget {
                                 // Set the minimum width and height
                                 // Add more properties as needed, e.g., padding, textStyle, etc.
                               ),
-                              onPressed: (){}, child: Text("invite",style: TextStyle(fontSize: 12),)),
+                              onPressed: (){}, child: Text("invite",style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),)),
                         ): SizedBox(
                           width: AppSize.width*0.25,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: disablebuttonColor, // Set the button's background color
+                                primary: disablebuttonColor2, // Set the button's background color
                                 onPrimary: Colors.white, // Set the text color
                                 elevation: 0, // Set the elevation (shadow) of the button
                                 shape: RoundedRectangleBorder(
@@ -78,11 +81,12 @@ class FriendCardWidgets extends StatelessWidget {
                                 // Set the minimum width and height
                                 // Add more properties as needed, e.g., padding, textStyle, etc.
                               ),
-                              onPressed: (){}, child: Text("invited",style: TextStyle(fontSize: 12),)),
+                              onPressed: (){}, child: Text("invited",style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),)),
                         )
                       ],
                     ),
                   ),
+
 
                 ],
               ),

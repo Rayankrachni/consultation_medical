@@ -5,24 +5,26 @@ import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 
 
-class DefaultButton extends StatelessWidget {
-  const DefaultButton({
+class DisableButton extends StatelessWidget {
+  const DisableButton({
     Key? key,
-    required this.onPressed,
     required this.text,
+    required this.color,
+    required this.textColor,
     this.isOnboading=false,
   }) : super(key: key);
 
-  final VoidCallback onPressed;
   final String text;
+  final Color color;
+  final Color textColor;
   final bool isOnboading;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: MaterialButton(
-        onPressed: onPressed,
-        color: primaryColor,
+        onPressed: (){},
+        color: color,
         minWidth: AppSize.width * 0.75,
         height: AppSize.height * 0.07,
         shape: OutlineInputBorder(
@@ -33,8 +35,8 @@ class DefaultButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              text,
-              style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color: Colors.white)
+                text,
+                style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color: textColor)
             ),
             const SizedBox(width: 10,),
             if(isOnboading) const Icon(Icons.arrow_forward,color: Colors.white,)

@@ -18,14 +18,14 @@ class HospitalWidgets extends StatelessWidget {
 
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  blurRadius: 1.0,
-                  offset:const Offset(0.1, 3)
-              )
-
-            ]
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.15),
+              spreadRadius: 2,
+              blurRadius: 7,
+              offset: Offset(1, 2), // changes position of shadow
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -50,13 +50,14 @@ class HospitalWidgets extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
                         width: AppSize.width*0.7,
-                        child: Text("this is just a reminder when you have a chance could you please gives me",
-                          style: TextStyle(color: CupertinoColors.label,fontSize:14),maxLines: 1,overflow: TextOverflow.ellipsis,)),
-                  ),
+                        child: Text("This is just a reminder when you have a chance could you please gives me",
+                          style:
+                          TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter',overflow: TextOverflow.ellipsis),),
+                    ),)
 
                 ],
               ),
-             Icon(CupertinoIcons.arrow_right_circle)
+             Icon(CupertinoIcons.arrow_right_circle,color: Theme.of(context).colorScheme.secondary,)
             ],
           ),
         )

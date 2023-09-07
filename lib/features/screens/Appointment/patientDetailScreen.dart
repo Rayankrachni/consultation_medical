@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_size.dart';
+import '../../../core/styles/app_txt_style.dart';
 import '../../widgets/button_Custom.dart';
 
 class PatientDetail extends StatelessWidget {
@@ -24,12 +25,14 @@ class PatientDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text('Appointment.patient-detail'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:20,fontWeight: FontWeight.w500),),
-        ),
+        centerTitle: true,
+        title:  Text('Appointment.patient-detail'.tr(),
+
+            style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary) ),
       ),
+
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,7 +100,7 @@ class PatientDetail extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10,bottom: 10),
+                  padding: const EdgeInsets.only(top: 15,bottom: 10),
                   child: Text('Appointment.gender'.tr(),style: Theme.of(context).textTheme.headline3,),
                 ),
                 Container(
@@ -127,7 +130,8 @@ class PatientDetail extends StatelessWidget {
                       alignment: Alignment.center,
                       isExpanded: true,
                       enableFeedback: true,
-                      iconSize: 20,
+                      iconSize: 25,
+                      iconEnabledColor: Theme.of(context).colorScheme.secondary,
                       underline: Container(),
 
 
@@ -136,7 +140,7 @@ class PatientDetail extends StatelessWidget {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 10,bottom: 10),
+                  padding: const EdgeInsets.only(top: 15,bottom: 10),
                   child: Text('Appointment.age'.tr(),style: Theme.of(context).textTheme.headline3,),
                 ),
                 Container(
@@ -166,7 +170,8 @@ class PatientDetail extends StatelessWidget {
                       alignment: Alignment.center,
                       isExpanded: true,
                       enableFeedback: true,
-                      iconSize: 20,
+                      iconSize: 25,
+                      iconEnabledColor: Theme.of(context).colorScheme.secondary,
                       underline: Container(),
 
 
@@ -176,7 +181,7 @@ class PatientDetail extends StatelessWidget {
 
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 10,bottom: 10),
+                  padding: const EdgeInsets.only(top: 20,bottom: 10),
                   child: Text('Appointment.write-prbl'.tr(),style: Theme.of(context).textTheme.headline3,),
                 ),
                 TextFormField(

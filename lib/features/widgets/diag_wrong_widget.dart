@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 import 'package:consultation_medical/core/const/strings.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ class _WrongDialogState extends State<WrongDialog> with TickerProviderStateMixin
                   height: 65,
                   width: 65,
                   decoration:const BoxDecoration(
-                      color: Colors.red,
+                      color: errorColor,
                       shape: BoxShape.circle
                   ),
                   child: Icon(Icons.calendar_month,color: Colors.white,size: 28,),
@@ -69,12 +70,8 @@ class _WrongDialogState extends State<WrongDialog> with TickerProviderStateMixin
                 SizedBox(height: 20,),
                 Text(
                   'Diag.Oops'.tr(),
-                  style: TextStyle(
-                    fontSize:20,
-                    fontFamily: regularfontFamilyName,
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: AppTextStyle(size:20, fontweight: FontWeight.bold, color: errorColor,)
+
                 ),
                 const SizedBox(height: 20,),
                 Wrap(
@@ -82,19 +79,16 @@ class _WrongDialogState extends State<WrongDialog> with TickerProviderStateMixin
                       Text(
                         'Diag.congrats-text'.tr(),
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize:12,
-                          fontFamily: regularfontFamilyName,
-                          color: Theme.of(context).colorScheme.onSecondary,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: AppTextStyle(size:12, fontweight: FontWeight.w500, color: Theme.of(context).colorScheme.onSecondary,)
+
                       ),
                     ]
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 20,),
 
                 SizedBox(
                   width: AppSize.width*0.45,
+                  height: 50,
                   child: ElevatedButton(onPressed: (){},
 
                       style: ElevatedButton.styleFrom(
@@ -108,11 +102,12 @@ class _WrongDialogState extends State<WrongDialog> with TickerProviderStateMixin
                         // Add more properties as needed, e.g., padding, textStyle, etc.
                       ),
 
-                      child:  Text( 'Button.try-again'.tr(),style: TextStyle(fontSize: 12,fontFamily: regularfontFamilyName),)),
+                      child:  Text( 'Button.try-again'.tr(),style:AppTextStyle(size: 15, fontweight: FontWeight.normal,color:Colors.white))),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(height: 20,),
                 SizedBox(
                   width: AppSize.width*0.45,
+                  height: 50,
                   child: ElevatedButton(onPressed: (){},
 
                       style: ElevatedButton.styleFrom(
@@ -128,7 +123,7 @@ class _WrongDialogState extends State<WrongDialog> with TickerProviderStateMixin
                         // Add more properties as needed, e.g., padding, textStyle, etc.
                       ),
 
-                      child: Text( 'Button.go-home'.tr(),style: TextStyle(fontSize: 12,fontFamily: regularfontFamilyName),)),
+                      child: Text( 'Button.go-home'.tr(),style:AppTextStyle(size: 15, fontweight: FontWeight.w500,color:  Theme.of(context).colorScheme.secondary))),
 
                 ),
 

@@ -1,5 +1,6 @@
 
 import 'package:consultation_medical/core/styles/app_size.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,18 +18,18 @@ class WriteReview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text('Review.write-review'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-        ),
+        centerTitle: true,
+        title: Text('Review.write-review'.tr(),
+          style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 12.0,right: 12),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-            SizedBox(height: AppSize.height*0.03),
+
             const CircleAvatar(
             radius: 65,
             backgroundImage: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),
@@ -36,35 +37,38 @@ class WriteReview extends StatelessWidget {
               SizedBox(height: AppSize.height*0.03),
             SizedBox(
                 width: AppSize.width*0.6,
-                child: Text("${'Review.review-title'.tr()} Wilson pk ?",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500,fontFamily: regularfontFamilyName),textAlign: TextAlign.center,)),
+                child: Text("${'Review.review-title'.tr()} Wilson spk ?",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: 'inter'),textAlign: TextAlign.center,)),
             SizedBox(height: 10,),
-            RatingBar.builder(
-              initialRating: 3,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-              itemBuilder: (context, _) =>Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: const Icon(
-                  CupertinoIcons.star_fill,
-                  color: Colors.amber,
-                  size:22,
+            SizedBox(
+              width: AppSize.width*0.5,
+              child: RatingBar.builder(
+                initialRating: 3,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
+                itemBuilder: (context, _) =>Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: const Icon(
+                    Icons.star_rounded,
+                    color: Colors.amber,
+                    size:20,
+                  ),
                 ),
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
               ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
             ),
-            SizedBox(height: AppSize.height*0.03),
+            SizedBox(height: AppSize.height*0.04),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10,bottom: 10),
-                  child: Text('Review.review-placeholder'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Review.review-placeholder'.tr(),style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Theme.of(context).colorScheme.secondary)),
                 ),
                 SizedBox(
                   width: AppSize.width,
@@ -86,6 +90,7 @@ class WriteReview extends StatelessWidget {
 
                     decoration: InputDecoration(
                       hintText:'Review.write-here'.tr(),
+
 
                       contentPadding: const EdgeInsets.symmetric(
                         vertical: 5.0,
@@ -111,7 +116,7 @@ class WriteReview extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         borderSide: BorderSide(
                           width: 1,
-                          color: primary_Color,
+                          color: placeHolderColor,
                         ),
                       ),
                       errorBorder:const OutlineInputBorder(
@@ -126,10 +131,10 @@ class WriteReview extends StatelessWidget {
                 ),
               ],
             ),
-              SizedBox(height: AppSize.height*0.03),
+              SizedBox(height: AppSize.height*0.04),
               SizedBox(
                 width: AppSize.width,
-                height: AppSize.height*0.065,
+                height: 60,
                 child: ElevatedButton(onPressed: (){
                   showDialog(
                     context: context,
@@ -158,8 +163,7 @@ class WriteReview extends StatelessWidget {
               SizedBox(height: AppSize.height*0.03),
               SizedBox(
                 width: AppSize.width,
-
-                height: AppSize.height*0.065,
+                height: 60,
                 child: ElevatedButton(onPressed: (){},
 
                     style: ElevatedButton.styleFrom(

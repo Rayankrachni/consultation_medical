@@ -4,24 +4,25 @@
   },
   "name": "name12",
   "onBoarding": {
-    "title1": "Fined your specialist doctor here",
+    "title1": "Find your specialist doctor here",
     "title2": "Easy to contacting your doctor",
-    "title3": "Book face to face appointments"
+    "title3": "Book face-to face appointments",
+    "get-started": "Get Started"
   },
   "Login": {
-    "signIn-title": "Sign In to Your account",
-    "signIn-subtitle": "Welcome Back! Please enter your details",
-    "signIn-Button": "Sign In",
+    "signIn-title": "Sign in to your account",
+    "signIn-subtitle": "Welcome back! Please enter your details",
+    "signIn-Button": "Sign in",
     "signIn-or": "or Sign in with",
-    "google": "google",
-    "apple": "apple",
+    "google": "Google",
+    "apple": "Apple",
     "dont-have-account":"Don't have an account?",
-    "forget-password": "Forget Password"
+    "forget-password": "Forgot Password?"
   },
   "Register": {
     "signUp-title": "Create an Account",
     "signUp-subtitle": "Create an Medicate account enjoy all services",
-    "signUp-Button": "Sign Up",
+    "signUp-Button": "Sign up",
     "signIn-or": "or Sign in with",
     "google": "google",
     "apple": "apple",
@@ -33,20 +34,22 @@
     "Otp-subtitle1": "We sent a code to ",
     "Otp-subtitle2": "Enter the code here to verify your identify",
     "resendCode": "Resend Code in",
-    "verify": "Verify"
+    "verify": "Confirm"
   },
   "Placeholder": {
     "name": "Full Name",
     "search-doctor": "Search  Doctor",
+    "search-specialist": "Search  specialist",
     "email": "Email",
     "search": "Search",
     "password": "Password",
-      "confirm-password": "Confirm Password"
+    "confirm-password": "Confirm Password"
   },
 
   "HomePage": {
     "home": "Home",
     "appointment": "Appointment",
+    "my-appointment": "My appointment",
     "messages": "Messages",
     "favorites": "Favorites" },
 
@@ -54,7 +57,9 @@
     "services": "Services",
     "doctors": "Doctors",
     "medicine": "Medicine",
+    "search-med": "Search  Medicine",
     "hospital": "Hospital",
+    "our-hosp": "Our Partner Hospitals",
     "consult": "Consult",
     "more": "More",
     "prev-doctors": "Previous Doctors",
@@ -67,6 +72,9 @@
   "Appointment": {
     "home": "Home",
     "appointment": "Appointment",
+    "biography": "Biography",
+    "schedule": "Schedule",
+
     "messages": "Messages",
     "favorites": "Favorites",
     "select-pack": "Select Package",
@@ -109,6 +117,8 @@
 
   "Button": {
     "next": "Next",
+    "make-appointment": "Make Appointment",
+    "skip": "Skip",
     "pay": "Pay",
     "view-app": "View Appointment",
     "go-home": "Go Home",
@@ -131,9 +141,10 @@
   "Review": {
     "write-review": "Write a Review",
     "review-title": "How was your experience with Dr.",
-    "review-text": "your review has been Successfully submitted, thanks you very much!",
+    "review-text": "Your review has been Successfully submitted, thank you very much!",
     "review-placeholder": "Write your review",
     "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
     "write-here": "Write here",
+    "reviews": "Review",
     "paypal": "Paypal" }
 }

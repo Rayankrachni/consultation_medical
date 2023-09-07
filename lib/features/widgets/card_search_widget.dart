@@ -1,6 +1,8 @@
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SearchCard extends StatelessWidget {
@@ -11,26 +13,27 @@ class SearchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15.0),
+      padding: const EdgeInsets.only(bottom:20.0),
       child: Container(
 
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  blurRadius: 1.0,
-                  offset:const Offset(0.1, 3)
-              )
-
-            ]
+            color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.all(Radius.circular(15)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.15),
+              spreadRadius:3,
+              blurRadius:3,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     height: 80,
@@ -46,14 +49,14 @@ class SearchCard extends StatelessWidget {
                           )
 
                         ],
-                        color: Colors.white,
-                        image: DecorationImage(image: NetworkImage("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png"),fit: BoxFit.contain,)
+                        color: Theme.of(context).cardColor,
+                        image: DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
                     ),
 
                   ),
-                  SizedBox(width: 5,),
                   SizedBox(
-                    width: AppSize.width*0.65,
+
+                    width: AppSize.width*0.6,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -68,10 +71,8 @@ class SearchCard extends StatelessWidget {
                                     color:Theme.of(context).colorScheme.secondary,
                                     fontSize: 15,fontWeight: FontWeight.w600
                                 ),),
-                                Text("Psychiatrist",style: TextStyle(
-                                    color:Theme.of(context).colorScheme.secondary,
-                                    fontSize: 12,fontWeight: FontWeight.normal
-                                ),),
+                                SizedBox(height: 2,),
+                                Text("Psychiatrist",style: AppTextStyle(size: 13, fontweight:  FontWeight.w500,color: textColor2,)),
                               ],
                             ),
 
@@ -87,11 +88,11 @@ class SearchCard extends StatelessWidget {
                             children: [
                              const Row(
                                 children: [
-                                  Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
-                                  Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
-                                  Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
-                                  Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
-                                  Icon(Icons.star,color: Colors.orangeAccent,size: 18,),
+                                  Icon(Icons.star,color: Color(0xffF7D268),size: 17),
+                                  Icon(Icons.star,color: Color(0xffF7D268),size: 17,),
+                                  Icon(Icons.star,color: Color(0xffF7D268),size: 17,),
+                                  Icon(Icons.star,color:Color(0xffF7D268),size: 17,),
+                                  Icon(Icons.star,color:Color(0xffF7D268),size: 17,),
                                 ],
                               ),
                               Row(
@@ -101,10 +102,8 @@ class SearchCard extends StatelessWidget {
                                       fontSize: 14,fontWeight: FontWeight.bold
                                   ),),
                                   SizedBox(width: 5,),
-                                  Text("(8545 Reviews)",style: TextStyle(
-                                      color: textColor2,
-                                      fontSize: 12,fontWeight: FontWeight.normal
-                                  ),),
+
+                                  Text("(8545 ${'Review.reviews'.tr()})",style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: textColor2,)),
                                 ],
                               )
                             ],
@@ -115,18 +114,19 @@ class SearchCard extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: AppSize.width*0.41,
+                    width: AppSize.width*0.4,
+                    height: 40,
                     child: ElevatedButton(onPressed: (){},
 
                       style: ElevatedButton.styleFrom(
                       primary: witeColor3, // Set the button's background color
                       onPrimary: Theme.of(context).colorScheme.secondary,
-                      elevation: 1, // Set the elevation (shadow) of the button
+                      elevation: 0, // Set the elevation (shadow) of the button
                      shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5), // Set the border radius
                           ),
@@ -137,20 +137,21 @@ class SearchCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.message,size: 16,),
+                            Icon(Icons.message,size: 16,color: Colors.black,),
                             SizedBox(width: 10,),
-                            Text("Messages",style: TextStyle(fontSize: 12),)
+                            Text('HomePage.messages'.tr(),style: AppTextStyle(size: 12, fontweight:  FontWeight.w600,color: Colors.black,))
                           ],
                         )),
                   ),
                   SizedBox(
-                    width: AppSize.width*0.41,
+                    width: AppSize.width*0.4,
+                    height: 40,
                     child: ElevatedButton(onPressed: onPressed,
 
                         style: ElevatedButton.styleFrom(
                           primary: primaryColor, // Set the button's background color
                           onPrimary: Colors.white, // Set the text color
-                          elevation: 1, // Set the elevation (shadow) of the button
+                          elevation: 0, // Set the elevation (shadow) of the button
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5), // Set the border radius
                           ),
@@ -162,8 +163,8 @@ class SearchCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(Icons.calendar_month,size: 16,),
-                            SizedBox(width: 10,),
-                            Text("Appointnement",style: TextStyle(fontSize: 12),)
+                            SizedBox(width: 5,),
+                            Text('HomePage.appointment'.tr(),style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: Colors.white,))
                           ],
                         )),
                   ),

@@ -1,5 +1,6 @@
 
 import 'package:consultation_medical/core/styles/app_colors.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,64 +9,58 @@ import '../const/strings.dart';
 ThemeData buildLightTheme(BuildContext context) {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    colorScheme:  ColorScheme(brightness: Brightness.light,
+    colorScheme: const ColorScheme(brightness: Brightness.light,
       primary: primary_Color,
       onPrimary: primary_Color,
       secondary: secondary_Color,
       onSecondary:secondary_Color,
       error: Color(0xFFF32424),
       onError: Color(0xFFF32424),
-      background: Color(0xFFF1F2F3),
-      onBackground: Color(0xFFFFFFFF),
+      background: Colors.white,
+      onBackground: filledColor,
       surface: Colors.transparent,
       onSurface:Colors.transparent,),
-    //useMaterial3: true,
+
     cardColor: Colors.white,
+
 
     primaryColor: primary_Color,
     iconTheme: const IconThemeData(
       color: Colors.grey
     ),
 
+    tabBarTheme: TabBarTheme(
+      unselectedLabelColor: textColor2 ,
+      labelColor: primary_Color,
+      unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary),
+      labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary)
+    ),
 
-    inputDecorationTheme:const InputDecorationTheme(
-      //prefixIconColor: Colors.grey,
 
-      hintStyle: TextStyle(
-          fontFamily: regularfontFamilyName,
-          fontSize: 14,
-      ),
-      labelStyle: TextStyle(
-          fontFamily: regularfontFamilyName,
-          fontSize: 14,
-      ),
+    inputDecorationTheme: InputDecorationTheme(
+
+        hintStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: placeHolderColor),
+        labelStyle:  AppTextStyle(size: 14, fontweight: FontWeight.w500,color: placeHolderColor)
       // Customize other input decoration properties as needed
     ),
-   bottomNavigationBarTheme:const BottomNavigationBarThemeData(
+   bottomNavigationBarTheme: BottomNavigationBarThemeData(
      showSelectedLabels: true,
      showUnselectedLabels: true,
      selectedItemColor: primaryColor2,
      unselectedItemColor: textColor2,
-     unselectedLabelStyle: TextStyle(color:textColor2,fontSize: 14),
+     unselectedLabelStyle: AppTextStyle(size: 12, fontweight: FontWeight.normal,color: textColor2),
      selectedIconTheme: IconThemeData(color:primaryColor2),
      unselectedIconTheme: IconThemeData(color:textColor2),
-     selectedLabelStyle: TextStyle(color:primary_Color,fontSize: 14),
+     selectedLabelStyle: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: primary_Color),
    ),
 
-    textTheme:const TextTheme(
+    textTheme: TextTheme(
       subtitle1:  TextStyle(color: Colors.black),
-      headline1: TextStyle(
-          fontSize: 28,fontWeight: FontWeight.bold,fontFamily: 'inter',color: Colors.black
-      ),
-      headline2: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.grey,fontFamily: 'inter'
-      ),
-      headline3: TextStyle(
-          fontSize: 14,fontWeight: FontWeight.normal,fontFamily: 'inter',color: Colors.black
-      ),
-      headline4: TextStyle(
-          fontSize: 15, color: primary_Color,fontFamily: 'inter'
-      ),
+      headline1: AppTextStyle(size: 25, fontweight: FontWeight.w600,color: Colors.black),
+      headline2: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: Color(
+          0xff58585d)),
+      headline3: AppTextStyle(size: 12, fontweight: FontWeight.w500,color:authSubtitleColor),
+      headline4: AppTextStyle(size: 15, fontweight: FontWeight.w500,color: primaryColor1),
       headline5: TextStyle(
           fontFamily: 'inter',
           fontSize: 12,
@@ -99,8 +94,9 @@ ThemeData buildLightTheme(BuildContext context) {
     textSelectionTheme:const TextSelectionThemeData(
       cursorColor:  primary_Color,
     ),
-
+      useMaterial3: true,
     switchTheme: SwitchThemeData(
+
       thumbColor: MaterialStateProperty.all<Color>(primary_Color),
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
@@ -131,58 +127,52 @@ ThemeData buildDarkTheme() {
       onSecondary:Colors.white,
       error: Color(0xFFF32424),
       onError: Color(0xFFF32424),
-      background: Color(0xFFF1F2F3),
-      onBackground: Color(0xFFFFFFFF),
+      background: Color(0xFF1A1A1A),
+      onBackground: Colors.black54,
       surface: Colors.transparent,
       onSurface:Colors.transparent,),
     appBarTheme: AppBarTheme(
       color:  Colors.grey[900],
       elevation: 0,
       iconTheme:const IconThemeData(
-          color: Colors.black
+          color: Colors.white
       ),
     ),
 
 
-    inputDecorationTheme:const InputDecorationTheme(
-      //prefixIconColor: Colors.grey,
+    inputDecorationTheme: InputDecorationTheme(
+      //prefixIconColor: Colors.wh,
 
-      hintStyle: TextStyle(
-          fontFamily: 'inter',
-          fontSize: 14,
+        hintStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: Colors.white54),
+        labelStyle:  AppTextStyle(size: 14, fontweight: FontWeight.w500,color: Colors.white54)
 
-          color: Colors.white54
-      ),
-      labelStyle: TextStyle(
-          fontFamily: 'inter',
-          fontSize: 14,
-          color: Colors.white54
-      ),
       // Customize other input decoration properties as needed
     ),
 
-
-    textTheme:const TextTheme(
-      headline1: TextStyle(
-          fontSize: 37,fontWeight: FontWeight.bold,fontFamily: regularfontFamilyName,color: Colors.white
-      ),
-      headline2: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,color: Colors.white,fontFamily:regularfontFamilyName
-      ),
-      headline3: TextStyle(
-          fontSize: 16,fontWeight: FontWeight.normal,fontFamily: regularfontFamilyName,color: Colors.white
-      ),
-      headline4: TextStyle(
-          fontSize: 15, color: primary_Color,fontFamily: regularfontFamilyName
-      ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      selectedItemColor: primaryColor2,
+      unselectedItemColor: Colors.white,
+      unselectedLabelStyle: AppTextStyle(size: 12, fontweight: FontWeight.normal,color: Colors.white),
+      selectedIconTheme: IconThemeData(color:primaryColor2),
+      unselectedIconTheme: IconThemeData(color:Colors.white),
+      selectedLabelStyle: AppTextStyle(size: 14, fontweight: FontWeight.normal,color:primary_Color),
+    ),
+    textTheme: TextTheme(
+      subtitle1:  TextStyle(color: Colors.white),
+      headline1: AppTextStyle(size: 25, fontweight: FontWeight.w600,color: Colors.white),
+      headline2: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: Color(
+          0xff9e9ea2)),
+      headline3: AppTextStyle(size: 12, fontweight: FontWeight.w600,color:authSubtitleColor),
+      headline4: AppTextStyle(size: 15, fontweight: FontWeight.w500,color: primaryColor1),
       headline5: TextStyle(
-          fontFamily: 'ZonaPro-ExtraLight',
+          fontFamily: 'inter',
           fontSize: 12,
           color: Colors.grey
       ),
-      headline6: TextStyle(
-          fontSize: 14,fontWeight: FontWeight.bold,fontFamily: 'ZonaPro-ExtraLight',color: Colors.white
-      ),
+
+
       // Add more text styles as needed
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -204,15 +194,18 @@ ThemeData buildDarkTheme() {
 
 
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(primary_Color), // Replace with your desired color for the switch thumb
+      thumbColor: MaterialStateProperty.all<Color>(Colors.white),
+      trackOutlineColor:MaterialStateProperty.all<Color>(Colors.white),
+
+      // Replace with your desired color for the switch thumb
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return Colors.blue.withOpacity(0.5); // Replace with your desired color for the active track
+          return Colors.white.withOpacity(0.5); // Replace with your desired color for the active track
         }
-        return Colors.grey.withOpacity(0.5); // Replace with your desired color for the inactive track
+        return Colors.white.withOpacity(0.5); // Replace with your desired color for the inactive track
       }),
     ),
-    cardColor: Colors.grey[850],
+    cardColor: Colors.grey[900],
     primaryColor: primary_Color,
     scaffoldBackgroundColor: Colors.grey[900],
   );

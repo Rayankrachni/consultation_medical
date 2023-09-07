@@ -1,5 +1,6 @@
 
 import 'package:consultation_medical/core/const/strings.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/styles/app_colors.dart';
@@ -13,7 +14,7 @@ class HealthCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           border: Border(
-              bottom:BorderSide(color: filledColor)
+              bottom:BorderSide(color: placeHolderColor)
           )
       ),
       child: Padding(
@@ -40,7 +41,7 @@ class HealthCard extends StatelessWidget {
 
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+              padding: const EdgeInsets.only(left: 15.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,9 +52,10 @@ class HealthCard extends StatelessWidget {
                   SizedBox(height: 10,),
                   SizedBox(
                       width: AppSize.width*0.5,
-                      child: Text("Aug 17,2023 . 4min read ",
-                        style: TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),maxLines: 2,overflow: TextOverflow.ellipsis,)),
+                      child: Text("Aug 17,2023  .  4 min read ",
+                        style: AppTextStyle(size: 12, fontweight: FontWeight.w500,color: textColor2))),
                 ],
+                //TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),maxLines: 2,overflow: TextOverflow.ellipsis,
               ),
             )
           ],

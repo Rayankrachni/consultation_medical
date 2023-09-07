@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/helper/app_navigator.dart';
 import '../../../core/styles/app_colors.dart';
+import '../../../core/styles/app_txt_style.dart';
 import '../../widgets/button_Custom.dart';
 import '../../widgets/diag_success_widget.dart';
 
@@ -27,7 +28,7 @@ class CreditCradScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +39,9 @@ class CreditCradScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10,bottom: 10),
-                  child: Text('Payment.card-name'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Payment.card-name'.tr(),style: AppTextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                    size: 12, fontweight: FontWeight.w600,)),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -94,9 +97,12 @@ class CreditCradScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 10,bottom: 10),
-                  child: Text('Payment.card-number'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  padding: const EdgeInsets.only(top: 20,bottom: 10),
+                  child: Text('Payment.card-number'.tr(),style: AppTextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  size: 12, fontweight: FontWeight.w600,)),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -159,8 +165,10 @@ class CreditCradScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 10),
-                          child: Text('Payment.date-expiry'.tr(),style: Theme.of(context).textTheme.headline3,),
+                          padding: const EdgeInsets.only(top: 20,bottom: 10),
+                          child: Text('Payment.date-expiry'.tr(),style: AppTextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                            size: 12, fontweight: FontWeight.w600,)),
                         ),
                         SizedBox(
                           width: AppSize.width*0.4,
@@ -226,8 +234,10 @@ class CreditCradScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 10),
-                          child: Text('Payment.cvv'.tr(),style: Theme.of(context).textTheme.headline3,),
+                          padding: const EdgeInsets.only(top: 20,bottom: 10),
+                          child: Text('Payment.cvv'.tr(),style: AppTextStyle(
+                          color: Theme.of(context).colorScheme.secondary,
+                          size: 12, fontweight: FontWeight.w600,)),
                         ),
                         SizedBox(
                           width: AppSize.width*0.4,
@@ -298,13 +308,15 @@ class CreditCradScreen extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return WrongDialog();
+                    return SuccessDialog();
 
-                     // SuccessDialog();
+                      //WrongDialog();
+
+                     //
                   },
                 );
                },
-                  text: 'Button.pay'.tr()),
+                  text: "${'Button.pay'.tr()} \$40"),
             )
            //CustomTextFormField(controller: controller, hintText: hintText, prefixIcon: prefixIcon, textInputType: textInputType)
           ],

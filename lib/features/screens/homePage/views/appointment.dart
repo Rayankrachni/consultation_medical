@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/cancelled_card_widget.dart';
 import 'package:consultation_medical/features/widgets/completed_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -39,16 +40,16 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
           controller: _tabController,
           tabs: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("UpComming",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text("UpComming",),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Completed",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text("Completed"),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Cancelled",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text("Cancelled",),
             ),
 
           ],
@@ -59,6 +60,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
         child: TabBarView(
           controller: _tabController,
           children: [
+
             Tab1Screen(),
             Tab2Screen(),
             Tab3Screen(),
@@ -72,35 +74,26 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
 class Tab1Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: SizedBox(
-          child: ListView.builder(itemBuilder: (BuildContext context,int index){
-            return UpCommingWidget();
-          }),
-        ));
+    return ListView.builder(itemBuilder: (BuildContext context,int index){
+      return UpCommingWidget();
+    });
   }
 }
 
 class Tab2Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: SizedBox(
-          child: ListView.builder(itemBuilder: (BuildContext context,int index){
-            return CompleteWidget();
-          }),
-        ));
+    return ListView.builder(itemBuilder: (BuildContext context,int index){
+      return CompleteWidget();
+    });
   }
 }
 
 class Tab3Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: SizedBox(
-          child: ListView.builder(itemBuilder: (BuildContext context,int index){
-            return CancelledWidget();
-          }),
-        ));
+    return ListView.builder(itemBuilder: (BuildContext context,int index){
+      return CancelledWidget();
+    });
   }
 }

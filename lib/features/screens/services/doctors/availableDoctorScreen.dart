@@ -11,8 +11,11 @@ class AvailableDoctorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Center(child: Text("Available Doctors",style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w500),),),
-      ),
+        centerTitle: true,
+        title:Text("Available Doctors",
+          style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),)),
+
+
       body: Padding(
         padding: const EdgeInsets.only(left: 15.0,right: 15,top: 20,bottom: 0),
         child: SizedBox(

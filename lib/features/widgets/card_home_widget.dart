@@ -1,5 +1,6 @@
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 
 class FistHomeCard extends StatelessWidget {
@@ -13,20 +14,19 @@ class FistHomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: AppSize.width*0.44,
-      height:AppSize.width*0.5,
+      height:AppSize.width*0.48,
       decoration: BoxDecoration(
 
           color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
-                blurRadius:4.0,
-                spreadRadius: 1.0,
-                offset:const Offset(2, 3)
-            )
-
-          ]
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: Offset(0, 2), // changes position of shadow
+          ),
+        ],
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -42,54 +42,28 @@ class FistHomeCard extends StatelessWidget {
                 )
               ),
             ),
-            Container(
-              height: 70,
-              width: 70,
-              decoration:const BoxDecoration(
-
-                  shape: BoxShape.circle,
-                image: DecorationImage(image: NetworkImage("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png"),)
-              ),
-
+            CircleAvatar(
+              radius: 30,
+              backgroundImage: NetworkImage("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png"),
             ),
             const SizedBox(height: 10,),
-             Text(title,style: TextStyle(
-                 color:Theme.of(context).colorScheme.secondary,
-                fontSize: 15,fontWeight: FontWeight.w600
-            ),),
-            SizedBox(height: 5,),
-            Text(category,style: TextStyle(
-                color:Theme.of(context).colorScheme.secondary,
-                fontSize: 11,fontWeight: FontWeight.normal
-            ),),
-            const SizedBox(height: 10,),
+
+             Text(title,style: AppTextStyle(size: 15, fontweight:  FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
+
+            Text(category,style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:authSubtitleColor,)),
+            const SizedBox(height: 15,),
             Container(
               width: 100,
-              decoration: BoxDecoration(
+              decoration:const  BoxDecoration(
                color: homebutolor,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        blurRadius: 1.0,
-                        offset:const Offset(0.1, 3)
-                    )
 
-                ]
              ),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Center(
-                  child: isAvailable ? Text("Available",style: TextStyle(
-                      color: primaryColor,
-                      fontFamily: 'inter',
-                      fontSize: 11,fontWeight: FontWeight.normal
-                  ),):
-                  Text("Busy now",style: TextStyle(
-                      color: Colors.red,
-                      fontFamily: 'inter',
-                      fontSize: 11,fontWeight: FontWeight.normal
-                  ),),
+                  child: isAvailable ? Text("Available",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:primary_Color,),):
+                  Text("Busy now",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:Colors.red,)),
                 ),
               ),
 

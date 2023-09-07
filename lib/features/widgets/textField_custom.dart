@@ -1,5 +1,6 @@
 
 import 'package:consultation_medical/core/styles/app_colors.dart';
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +47,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
         if(!widget.hide) Padding(
           padding: const EdgeInsets.only(top: 10,bottom: 10),
-          child: Text(widget.hintText,style: Theme.of(context).textTheme.headline3,),
+          child: Text(widget.hintText,style: Theme.of(context).textTheme.headline2 ),
         ),
 
         TextFormField(
@@ -74,12 +75,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             prefixIcon: Icon(
               widget.prefixIcon,
               size: 20,
-            ),
-            hintStyle: const TextStyle(
-                fontFamily: 'myriad',
-
-                fontSize: 14,
-                color: Colors.grey
             ),
              suffixIcon:widget.obscureText? IconButton(
               onPressed: (){
@@ -118,7 +113,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               borderRadius: BorderRadius.all(Radius.circular(10)),
               borderSide: BorderSide(
                 width: 1,
-                color: primaryColor,
+                color: placeHolderColor,
               ),
             ),
             errorBorder:const OutlineInputBorder(

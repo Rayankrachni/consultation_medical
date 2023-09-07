@@ -19,9 +19,9 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text("My Profile",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-        ),
+        centerTitle: true,
+        title: Text("My Profile",
+        style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -53,12 +53,10 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),    SizedBox(height: 10,),
-                Text("User Full Name",style: TextStyle(
-                    color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,fontWeight: FontWeight.w500
-                ),),
-                SizedBox(height: 5,),
-                Text("Good Morning 👋",style: TextStyle(
+                Text("User Full Name",style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.bold,fontFamily: 'inter'),),
+
+                SizedBox(height: 10,),
+                const Text("+213 540060592",style: TextStyle(
                     color: textColor2,
                     fontSize: 12,
                     fontFamily: regularfontFamilyName
@@ -72,22 +70,20 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0,right: 20,top: 10,bottom: 10),
-                        child: Text("Account Settings",style: TextStyle(
-                            color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 16,fontWeight: FontWeight.w500
-                        ),),
+                        child: Text("Account Settings",
+                          style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
+
                       ),
                        GestureDetector(
                          onTap: (){push(context: context, screen: EditProfile());},
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Edit Profile",style: TextStyle(
-                                color:Theme.of(context).colorScheme.secondary,
-                                fontSize: 14,
-                            ),),
-                            leading: Icon(CupertinoIcons.person,color:Theme.of(context).colorScheme.secondary,size: 22,),
-                            trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
+                            title:Text("Edit Profile",
+                              style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter'),),
+
+                             leading: Icon(CupertinoIcons.person,color:Theme.of(context).colorScheme.secondary,size: 25,),
+                            trailing: Icon(Icons.arrow_forward_ios,size: 14,color:Theme.of(context).colorScheme.secondary,),
                       ),
                          ),
                        ),
@@ -99,11 +95,9 @@ class ProfileScreen extends StatelessWidget {
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Change Password",style: TextStyle(
-                              color:Theme.of(context).colorScheme.secondary,
-                              fontSize: 14,
-                            ),),
-                            leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,size: 20,),
+                            title:Text("Change Password",
+                                style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
+                            leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                       ),
                          ),
@@ -116,11 +110,9 @@ class ProfileScreen extends StatelessWidget {
                         child: SizedBox(
                           height: 40,
                           child: ListTile(
-                            title:Text("Notification",style: TextStyle(
-                              color:Theme.of(context).colorScheme.secondary,
-                              fontSize: 14,
-                            ),),
-                            leading: Icon(Icons.notifications_none,color:Theme.of(context).colorScheme.secondary,size: 22,),
+                            title:Text("Notification",
+                                style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
+                            leading: Icon(Icons.notifications_none,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                           ),
                         ),
@@ -133,11 +125,9 @@ class ProfileScreen extends StatelessWidget {
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Invite Friends",style: TextStyle(
-                              color:Theme.of(context).colorScheme.secondary,
-                              fontSize: 14,
-                            ),),
-                            leading: Icon(CupertinoIcons.person_2_alt,color:Theme.of(context).colorScheme.secondary,size: 22,),
+                            title:Text("Invite Friends",
+                                style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
+                            leading: Icon(CupertinoIcons.person_2,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                       ),
                          ),
@@ -148,11 +138,9 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Language",style: TextStyle(
-                            color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 14,
-                          ),),
-                          leading: Icon(Icons.language,color:Theme.of(context).colorScheme.secondary,size: 22,),
+                          title:Text("Language",
+                              style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
+                          leading: Icon(Icons.language,color:Theme.of(context).colorScheme.secondary,size: 25,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                         ),
                       ),
@@ -161,18 +149,14 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0,right: 20,top: 10,bottom: 10),
-                        child: Text("About Us",style: TextStyle(
-                            color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 16,fontWeight: FontWeight.w500
-                        ),),
+                        child: Text("About Us",
+                          style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
                       ),
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Privacy Policy",style: TextStyle(
-                            color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 14,
-                          ),),
+                          title:Text("Privacy Policy",
+                              style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                           leading: Icon(Icons.privacy_tip_outlined,color:Theme.of(context).colorScheme.secondary,size: 22,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                         ),
@@ -183,11 +167,9 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Contact Us",style: TextStyle(
-                            color:Theme.of(context).colorScheme.secondary,
-                            fontSize: 14,
-                          ),),
-                          leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,),
+                          title:Text("Contact Us",
+                              style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
+                          leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,size: 25,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
                         ),
                       ),

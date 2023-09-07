@@ -13,20 +13,19 @@ class AvailableDoctorCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 10.0,top: 10.0,bottom: 10.0),
       child: Container(
-        height: AppSize.height*0.25,
-        width: AppSize.width*0.4,
+        height: AppSize.height*0.3,
+        width: AppSize.width*0.37,
         decoration: BoxDecoration(
 
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  blurRadius:4.0,
-                  spreadRadius: 1.0,
-                  offset:const Offset(2, 3)
-              )
-
-            ],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.15),
+              spreadRadius: 3,
+              blurRadius: 4,
+              offset: Offset(0, 2), // changes position of shadow
+            ),
+          ],
             color:Theme.of(context).cardColor,
          ),
         child: Column(
@@ -35,7 +34,7 @@ class AvailableDoctorCard extends StatelessWidget {
           children: [
 
             Container(
-              height: AppSize.height*0.15,
+              height: AppSize.height*0.18,
               decoration: BoxDecoration(
 
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -60,8 +59,8 @@ class AvailableDoctorCard extends StatelessWidget {
 
 
                 width:AppSize.width*0.15,
-                decoration:const BoxDecoration(
-                  color: filledColor,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.onBackground,
                   borderRadius: BorderRadius.all(Radius.circular(5))
                 ),
                 child: Padding(
@@ -86,21 +85,21 @@ class AvailableDoctorCard extends StatelessWidget {
               padding: const EdgeInsets.only(left: 5.0,right: 5.0),
               child: SizedBox(
                 width: AppSize.width*0.3,
-                child: Text("Dr Wilson",style: TextStyle(
+                child: Text("Dr. Wilson",style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,fontWeight: FontWeight.w500,
+                    fontSize: 16,fontWeight: FontWeight.w700,
                     fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 5.0,right: 5.0),
+              padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 3),
               child: SizedBox(
                 width: AppSize.width*0.2,
                 child:const Text("Cardiology",style: TextStyle(
                     color:textColor2,
-                    fontSize: 12,fontWeight: FontWeight.normal,
+                    fontSize: 12,fontWeight: FontWeight.w600,
                     fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),

@@ -20,8 +20,8 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     Home(),
     AppointmentScreen(),
-    Payment(),
-    //MessagesScreen(),
+   // Payment(),
+    MessagesScreen(),
     //NotificationScreen(),
     FavoriteScreen(),
   ];

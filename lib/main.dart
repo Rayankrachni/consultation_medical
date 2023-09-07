@@ -51,12 +51,12 @@ class _MyAppState extends State<MyApp> {
 
 
               return MaterialApp(
-                  title: 'Flutter Demo',
                   debugShowCheckedModeBanner: false,
                   localizationsDelegates: context.localizationDelegates,
                   supportedLocales: context.supportedLocales,
                   locale: context.locale,
-                  theme: appModel.darkTheme ? buildDarkTheme() : buildLightTheme(context),
+                  theme:buildLightTheme(context),
+                  //appModel.darkTheme ? buildDarkTheme() : buildLightTheme(context),
 
                   home:  SplashScreen()
               );})
