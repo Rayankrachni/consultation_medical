@@ -14,7 +14,7 @@ class FistHomeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: AppSize.width*0.44,
-      height:AppSize.width*0.48,
+      //height:AppSize.width*0.48,
       decoration: BoxDecoration(
 
           color: Theme.of(context).cardColor,
@@ -31,51 +31,49 @@ class FistHomeCard extends StatelessWidget {
           ),
         ],
       ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-          Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: isAvailable? Icon(
-                  Icons.verified,color: primaryColor,size: 17,
-                ):Icon(
-                  Icons.verified,color: Colors.transparent,size: 17,
-                )
+      child: Column(
+        children: [
+        Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.topLeft,
+              child: isAvailable? Icon(
+                Icons.verified,color: primaryColor,size: 17,
+              ):Icon(
+                Icons.verified,color: Colors.transparent,size: 17,
+              )
+            ),
+          ),
+          CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),
+          ),
+          const SizedBox(height: 10,),
+
+           Text(title,style: AppTextStyle(size: 15, fontweight:  FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
+          const SizedBox(height: 5,),
+          Text(category,style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:authSubtitleColor,)),
+          const SizedBox(height: 15,),
+          Container(
+            width: 80,
+            decoration:const  BoxDecoration(
+             color: homebutolor,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+
+           ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8.0,bottom: 8),
+              child: Center(
+                child: isAvailable ? Text("Available",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:primary_Color,),):
+                Text("Busy Now",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:Colors.red,)),
               ),
             ),
-            CircleAvatar(
-              radius: 30,
-              backgroundImage: NetworkImage("https://www.pngall.com/wp-content/uploads/2018/05/Doctor-PNG-Clipart.png"),
-            ),
-            const SizedBox(height: 10,),
 
-             Text(title,style: AppTextStyle(size: 15, fontweight:  FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
-
-            Text(category,style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:authSubtitleColor,)),
-            const SizedBox(height: 15,),
-            Container(
-              width: 100,
-              decoration:const  BoxDecoration(
-               color: homebutolor,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-
-             ),
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Center(
-                  child: isAvailable ? Text("Available",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:primary_Color,),):
-                  Text("Busy now",style: AppTextStyle(size: 11, fontweight:  FontWeight.w500,color:Colors.red,)),
-                ),
-              ),
-
-            ),
-            const SizedBox(height: 10,),
+          ),
+          const SizedBox(height: 10,),
 
 
-          ],
-        ),
+        ],
       ),
     );
   }

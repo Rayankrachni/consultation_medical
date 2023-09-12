@@ -13,15 +13,15 @@ class MedicineWidget extends StatelessWidget {
 
       decoration: BoxDecoration(
 
-          color: Colors.white,
+        color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(Radius.circular(5)),
-        boxShadow: [
+        boxShadow:  [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 3,
-            blurRadius: 7,
-            offset: Offset(2, 2), // changes position of shadow
-          ),
+            offset: Offset(0, 7),
+            blurRadius: 29,
+            spreadRadius: 0,
+          )
         ],
       ),
       child: Padding(

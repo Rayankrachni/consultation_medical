@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/notification_widget.dart';
 import 'package:flutter/material.dart';
 class NotificationScreen extends StatelessWidget {
@@ -8,39 +9,36 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child:   Text("Notification",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-            ),
+        centerTitle: true,
+        title: Text("Notification",
+          style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary),),
       ),
       body: Padding(
-        padding:  EdgeInsets.all(15.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        padding:  EdgeInsets.only(top: 15.0,left: 15,right: 15),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-            Text("Today",style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-            SizedBox(height: 10,),
-            NotificationWidget(),
-            NotificationWidget(),
-            NotificationWidget(),
-            SizedBox(height: 10,),
-            Text("Yesterday",style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
-            SizedBox(height: 10,),
-            Expanded(
-              child: SizedBox(
-
-                child:
-                ListView.builder(
-                    itemCount: 5,
-                    itemBuilder: (BuildContext context ,int index){
-                      return   NotificationWidget();
-                    }) ,
-              ),
-            ),
+              Text("Today",style: AppTextStyle(size: 16, fontweight: FontWeight.w700,color:Theme.of(context).colorScheme.secondary)),
+              const SizedBox(height: 10,),
+              const NotificationWidget(),
+              const NotificationWidget(),
+              const NotificationWidget(),
+              const SizedBox(height: 10,),
+              Text("Yesterday",style:AppTextStyle(size: 16, fontweight: FontWeight.w700,color:Theme.of(context).colorScheme.secondary)),
+              SizedBox(height: 10,),
+              NotificationWidget(),
+              NotificationWidget(),
+              NotificationWidget(),
+              NotificationWidget(),
+              NotificationWidget(),
+              NotificationWidget(),
 
 
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -31,7 +31,7 @@ class InviteFriendScreen extends StatelessWidget {
                       return  Column(
                         children: [
                           FriendCardWidgets(),
-                          Divider(color: placeHolderColor,)
+                         // Divider(color: placeHolderColor,)
                         ],
                       );
                     }) ,

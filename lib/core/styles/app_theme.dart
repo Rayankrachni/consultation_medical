@@ -3,7 +3,6 @@ import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../const/strings.dart';
 
 ThemeData buildLightTheme(BuildContext context) {
@@ -26,10 +25,13 @@ ThemeData buildLightTheme(BuildContext context) {
 
     primaryColor: primary_Color,
     iconTheme: const IconThemeData(
-      color: Colors.grey
+      color: Colors.grey,
+
     ),
 
     tabBarTheme: TabBarTheme(
+
+      indicatorColor: primary_Color,
       unselectedLabelColor: textColor2 ,
       labelColor: primary_Color,
       unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary),
@@ -40,9 +42,11 @@ ThemeData buildLightTheme(BuildContext context) {
     inputDecorationTheme: InputDecorationTheme(
 
         hintStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: placeHolderColor),
-        labelStyle:  AppTextStyle(size: 14, fontweight: FontWeight.w500,color: placeHolderColor)
+        labelStyle:  AppTextStyle(size: 14, fontweight: FontWeight.w500,color: placeHolderColor),
+
       // Customize other input decoration properties as needed
     ),
+
    bottomNavigationBarTheme: BottomNavigationBarThemeData(
      showSelectedLabels: true,
      showUnselectedLabels: true,
@@ -94,8 +98,10 @@ ThemeData buildLightTheme(BuildContext context) {
     textSelectionTheme:const TextSelectionThemeData(
       cursorColor:  primary_Color,
     ),
-      useMaterial3: true,
+      //useMaterial3: true,
+
     switchTheme: SwitchThemeData(
+
 
       thumbColor: MaterialStateProperty.all<Color>(primary_Color),
       trackColor: MaterialStateProperty.resolveWith((states) {
@@ -105,10 +111,103 @@ ThemeData buildLightTheme(BuildContext context) {
         return Colors.grey.withOpacity(0.5);
       }),
     ),
+    datePickerTheme: DatePickerThemeData(
+      rangePickerHeaderForegroundColor: Colors.white,
+      shadowColor: Colors.black,
+      rangePickerBackgroundColor: Colors.white,
+      //headerBackgroundColor: Colors.black,
+        rangePickerHeaderBackgroundColor: Colors.red,
+      rangePickerHeaderHeadlineStyle: AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white),
+      rangePickerHeaderHelpStyle:       AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white),
+      headerBackgroundColor: primary_Color,
+
+
+        yearOverlayColor: MaterialStateColor.resolveWith(
+              (Set<MaterialState> states) {
+            if (states.contains(MaterialState.selected)) {
+              // Color when the year is selected
+              return Colors.red; // You can change this to your desired color
+            }
+            // Color when the year is not selected
+            return Colors.grey; // You can change this to your desired color
+          },
+        ),
+       dayOverlayColor:MaterialStateColor.resolveWith(
+             (Set<MaterialState> states) {
+           if (states.contains(MaterialState.selected)) {
+             // Color when the year is selected
+             return Colors.red; // You can change this to your desired color
+           }
+           // Color when the year is not selected
+           return Colors.grey; // You can change this to your desired color
+         },
+       ),
+       dayBackgroundColor: MaterialStateColor.resolveWith(
+             (Set<MaterialState> states) {
+           if (states.contains(MaterialState.selected)) {
+             // Color when the year is selected
+             return primary_Color; // You can change this to your desired color
+           }
+           // Color when the year is not selected
+           return Colors.white; // You can change this to your desired color
+         },
+       ),
+       rangePickerShadowColor: Colors.black,
+       surfaceTintColor: Colors.black,
+       rangeSelectionBackgroundColor: Colors.black,
+       rangePickerSurfaceTintColor: Colors.black,
+    rangeSelectionOverlayColor: MaterialStateColor.resolveWith(
+          (Set<MaterialState> states) {
+        if (states.contains(MaterialState.selected)) {
+          // Color when the year is selected
+          return Colors.red; // You can change this to your desired color
+        }
+        // Color when the year is not selected
+        return Colors.grey; // You can change this to your desired color
+      },
+    ),
+       todayBackgroundColor: MaterialStateColor.resolveWith(
+             (Set<MaterialState> states) {
+           if (states.contains(MaterialState.selected)) {
+             // Color when the year is selected
+             return primary_Color; // You can change this to your desired color
+           }
+           // Color when the year is not selected
+           return Colors.white; // You can change this to your desired color
+         },
+       ),
+       todayForegroundColor: MaterialStateColor.resolveWith(
+             (Set<MaterialState> states) {
+           if (states.contains(MaterialState.selected)) {
+             // Color when the year is selected
+             return Colors.white; // You can change this to your desired color
+           }
+           // Color when the year is not selected
+           return Colors.black; // You can change this to your desired color
+         },
+       ),
+       dayForegroundColor:    MaterialStateColor.resolveWith(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+          // Color when the year is selected
+          return Colors.white; // You can change this to your desired color
+          }
+          // Color when the year is not selected
+          return Colors.grey; // You can change this to your desired color
+          },
+          ),
+        headerForegroundColor: Colors.white,
+      //rangePickerHeaderBackgroundColor:primary_Color,
+      headerHelpStyle:
+      AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white),
+      yearStyle: AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white),
+      headerHeadlineStyle: AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white),
+      dayStyle: AppTextStyle(size: 12, fontweight: FontWeight.w700,color: Colors.white)
+    ),
 
     appBarTheme:const AppBarTheme(
       color:  Colors.transparent,
-      elevation: 0,
+      elevation:0,
       iconTheme: IconThemeData(
           color: Colors.black
       ),
@@ -116,7 +215,7 @@ ThemeData buildLightTheme(BuildContext context) {
   );
 }
 
-ThemeData buildDarkTheme() {
+ThemeData buildDarkTheme(BuildContext context) {
   final ThemeData base = ThemeData.dark();
 
   return base.copyWith(
@@ -138,8 +237,9 @@ ThemeData buildDarkTheme() {
           color: Colors.grey
       ),
     ),
+    unselectedWidgetColor: Colors.black,
 
-
+    useMaterial3: true,
     inputDecorationTheme: InputDecorationTheme(
       //prefixIconColor: Colors.wh,
 
@@ -155,18 +255,29 @@ ThemeData buildDarkTheme() {
       selectedItemColor: primaryColor2,
       unselectedItemColor: Colors.white,
       unselectedLabelStyle: AppTextStyle(size: 12, fontweight: FontWeight.normal,color: Colors.white),
-      selectedIconTheme: IconThemeData(color:primaryColor2),
-      unselectedIconTheme: IconThemeData(color:Colors.white),
+      selectedIconTheme:const IconThemeData(color:primaryColor2),
+      unselectedIconTheme:const IconThemeData(color:Colors.white),
       selectedLabelStyle: AppTextStyle(size: 14, fontweight: FontWeight.normal,color:primary_Color),
     ),
+    dividerColor: Colors.white,
+
+    tabBarTheme: TabBarTheme(
+        unselectedLabelColor: Colors.white ,
+        labelColor: primary_Color,
+
+        //dividerColor: Colors.white,
+        unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary),
+        labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary)
+    ),
+
+
     textTheme: TextTheme(
-      subtitle1:  TextStyle(color: Colors.white),
-      headline1: AppTextStyle(size: 25, fontweight: FontWeight.w600,color: Colors.white),
-      headline2: AppTextStyle(size: 14, fontweight: FontWeight.w500,color: Color(
-          0xff9e9ea2)),
+      subtitle1: const TextStyle(color: Colors.white,  fontFamily: 'inter',),
+      headline1: AppTextStyle(size: 25, fontweight: FontWeight.w600,color: Colors.white,),
+      headline2: AppTextStyle(size: 14, fontweight: FontWeight.w500,color:const Color(0xff9e9ea2)),
       headline3: AppTextStyle(size: 12, fontweight: FontWeight.w600,color:authSubtitleColor),
       headline4: AppTextStyle(size: 15, fontweight: FontWeight.w500,color: primaryColor1),
-      headline5: TextStyle(
+      headline5:const TextStyle(
           fontFamily: 'inter',
           fontSize: 12,
           color: Colors.grey
@@ -205,7 +316,7 @@ ThemeData buildDarkTheme() {
         return Colors.white.withOpacity(0.5); // Replace with your desired color for the inactive track
       }),
     ),
-    cardColor: Colors.grey[900],
+    cardColor: Color(0xff424242),
     primaryColor: primary_Color,
     scaffoldBackgroundColor: Colors.grey[900],
   );

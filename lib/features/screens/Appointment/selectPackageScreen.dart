@@ -32,162 +32,83 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
               style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary) ),
         ),
   
-        body:Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+        body:Padding(
+          padding: const EdgeInsets.only(left: 20,right: 15,bottom: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
 
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Appointment.select-duration'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
                   SizedBox(height: 10,),
-                  Container(
-                    width: AppSize.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(
-                            color: placeHolderColor
-                        )
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12.0,right: 8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
+                  Center(
+                    child: Container(
+                      width: AppSize.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(
+                              color: placeHolderColor
+                          )
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 12.0,right: 8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
 
-                          Icon(Icons.access_time_filled,color: Theme.of(context).colorScheme.secondary,),
-                          SizedBox(width: 10,),
-                          SizedBox(
+                            Icon(Icons.access_time_filled,color: Theme.of(context).colorScheme.secondary,),
+                            SizedBox(width: 10,),
+                            SizedBox(
 
-                            width: AppSize.width*0.7,
-                            child: DropdownButton(
+                              width: AppSize.width*0.7,
+                              child: DropdownButton(
 
-                                value: duration[0],
-                                items: duration.map<DropdownMenuItem<String>>((String value) {
-                                  return DropdownMenuItem<String>(
+                                  value: duration[0],
+                                  items: duration.map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
 
-                                    value: value,
-                                    child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500)),
-                                  );
-                                }).toList(),
-                                onChanged: (v){
-                                  selectedValue = v!;
-                                },
-                              alignment: Alignment.center,
-                              isExpanded: true,
-                              enableFeedback: true,
-                              iconSize: 20,
-                              underline: Container(),
+                                      value: value,
+                                      child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500)),
+                                    );
+                                  }).toList(),
+                                  onChanged: (v){
+                                    selectedValue = v!;
+                                  },
+                                alignment: Alignment.center,
+                                isExpanded: true,
+                                enableFeedback: true,
+                                iconSize: 20,
+                                underline: Container(),
 
 
+                              ),
                             ),
-                          ),
-                          //Icon(Icons.access_time_sharp,color: Theme.of(context).colorScheme.secondary,),
-                          SizedBox(width: 10,),
-                        ],
+                            //Icon(Icons.access_time_sharp,color: Theme.of(context).colorScheme.secondary,),
+                            SizedBox(width: 10,),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(height: 30,),
                   Text('Appointment.select-pack'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w500),),
                   SizedBox(height: 30,),
-                  Container(
 
-                    decoration: BoxDecoration(
-
-                        color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color.fromRGBO(99, 99, 99, 0.2),
-                              offset: Offset(0, 2),
-                              blurRadius: 8,
-                              spreadRadius: 0,
-                            ),
-                          ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12.0,right: 0.0,top: 10,bottom: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-
-                            height: 45,
-                            width:45,
-                            decoration:const BoxDecoration(
-                                color: filledColor,
-                                shape: BoxShape.circle
-                            ),
-                            child: Icon(CupertinoIcons.chat_bubble_2_fill,color: primary_Color,),
-                          ),
-                          SizedBox(
-                            width: AppSize.width*0.75,
-                            child: RadioListTile(
-                              title: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Appointment.messaging'.tr(),style:AppTextStyle(size: 14, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
-                                      SizedBox(height: 5,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 8.0),
-                                        child: Text('Appointment.messaging-desc'.tr(),style: AppTextStyle(
-                                          color: textColor2,
-                                          size: 10, fontweight: FontWeight.w500, ) )
-                                      ),
-
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                        Text('\$ 20',style: AppTextStyle(
-                                          color: doollarColor,
-                                          size: 14, fontweight: FontWeight.bold,) ),
-                                      SizedBox(height: 5,),
-                                      Text('Appointment.duration'.tr(),style: AppTextStyle(
-                                        color: textColor2,
-                                        size: 10, fontweight: FontWeight.normal, ) )
-
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              value:'Appointment.messaging'.tr(),
-                              groupValue: pack,
-                              onChanged: (value){
-                                setState(() {
-                                  pack = value.toString();
-                                });
-                              },
-                              controlAffinity: ListTileControlAffinity.trailing,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-
-                  SizedBox(height: 30,),
                   Container(
                     decoration: BoxDecoration(
 
-                        color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                      boxShadow: [
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow:const [
                         BoxShadow(
-                          color: Color.fromRGBO(99, 99, 99, 0.2),
-                          offset: Offset(0, 2),
-                          blurRadius: 8,
+                          color: Color.fromRGBO(100, 100, 111, 0.2),
+                          offset: Offset(0, 7),
+                          blurRadius: 29,
                           spreadRadius: 0,
-                        ),
+                        )
                       ],
                     ),
                     child: Padding(
@@ -204,14 +125,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                                 color: filledColor,
                               ),
                               child: Center(
-                                child: Container(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  decoration:const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child:Icon(CupertinoIcons.phone_fill,color: primary_Color,),
-                                ),
+                                child: Icon(Icons.chat,color: primary_Color,),
                               ),
                             ),
 
@@ -219,6 +133,92 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                           SizedBox(
                             width: AppSize.width*0.72,
                             child: RadioListTile(
+                              activeColor: primary_Color,
+                              title:Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Messaging'.tr(),style:AppTextStyle(size: 14, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
+                                      SizedBox(height: 5,),
+                                      Text('chat Messages with doctor'.tr(),style: AppTextStyle(
+                                        color: textColor2,
+                                        size: 10, fontweight: FontWeight.w500, ) )
+
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text('\$ 20',
+                                          style: AppTextStyle(
+                                            color: doollarColor,
+                                            size: 14, fontweight: FontWeight.bold,) ),
+                                      SizedBox(height: 5,),
+                                      Text('Appointment.duration'.tr()
+                                          ,style: AppTextStyle(
+                                            color: textColor2,
+                                            size: 10, fontweight: FontWeight.normal, ) )
+
+                                    ],
+                                  ),
+                                ],
+                              ),
+
+                              value: 'Messaging'.tr(),
+                              groupValue: pack,
+                              onChanged: (value){
+                                setState(() {
+                                  pack = value.toString();
+                                });
+                              },
+                              controlAffinity: ListTileControlAffinity.trailing,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 30,),
+                  Container(
+                    decoration: BoxDecoration(
+
+                        color: Theme.of(context).cardColor,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      boxShadow:const [
+                        BoxShadow(
+                          color: Color.fromRGBO(100, 100, 111, 0.2),
+                          offset: Offset(0, 7),
+                          blurRadius: 29,
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0,right: 0.0,top: 10,bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Center(
+                            child: Container(
+                              width:45.0,
+                              height: 45.0,
+                              decoration:const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: filledColor,
+                              ),
+                              child: Center(
+                                child: Icon(CupertinoIcons.phone_fill,color: primary_Color,),
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(
+                            width: AppSize.width*0.72,
+                            child: RadioListTile(
+                              activeColor: primary_Color,
                               title:Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -273,11 +273,11 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                       boxShadow:const [
                         BoxShadow(
-                          color: Color.fromRGBO(99, 99, 99, 0.2),
-                          offset: Offset(0, 2),
-                          blurRadius: 8,
+                          color: Color.fromRGBO(100, 100, 111, 0.2),
+                          offset: Offset(0, 7),
+                          blurRadius: 29,
                           spreadRadius: 0,
-                        ),
+                        )
                       ],
                     ),
                     child: Padding(
@@ -294,14 +294,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                                 color: filledColor,
                               ),
                               child: Center(
-                                child: Container(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  decoration:const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Icon(CupertinoIcons.video_camera_solid,color: primary_Color,),
-                                ),
+                                child: Icon(CupertinoIcons.video_camera_solid,color: primary_Color,size: 32,),
                               ),
                             ),
 
@@ -309,6 +302,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                           SizedBox(
                             width: AppSize.width*0.72,
                             child: RadioListTile(
+                              activeColor: primary_Color,
                               title: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -356,19 +350,21 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
 
                 ],
               ),
-            ),
 
 
 
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: DefaultButton(
+              Center(
+                child: SizedBox(
+                  width: AppSize.width*0.9,
+                  child: DefaultButton(
 
-                  onPressed: (){
-                    push(context: context, screen: PatientDetail());
-                    }, text: 'Button.next'.tr()),
-            )
-          ],
+                      onPressed: (){
+                        push(context: context, screen: PatientDetail());
+                        }, text: 'Button.next'.tr()),
+                ),
+              )
+            ],
+          ),
         )
     );
   }

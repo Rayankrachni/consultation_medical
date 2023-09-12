@@ -23,7 +23,7 @@ class HealthCard extends StatelessWidget {
           children: [
             Container(
               height: 80,
-              width: 110,
+              width:AppSize.width*0.28,
               decoration: BoxDecoration(
 
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -41,7 +41,7 @@ class HealthCard extends StatelessWidget {
 
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 15.0),
+              padding: const EdgeInsets.only(left: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

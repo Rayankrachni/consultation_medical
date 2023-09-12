@@ -18,13 +18,14 @@ class _EditProfileState extends State<EditProfile> {
 
   TextEditingController phoneController= TextEditingController();
 
-  TextEditingController birthday=TextEditingController();
+  TextEditingController birthday=TextEditingController(text: "Birth day ");
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String selectedItem = 'Male';
 
   bool isEmptyBirthday=false;
+
 
   final List<String> gender = ['Male', 'Female'];
 
@@ -33,10 +34,14 @@ class _EditProfileState extends State<EditProfile> {
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
+
       initialDate: selectedDate,
+
+
       firstDate: DateTime(1960),
       lastDate: DateTime(2101),
     );
+
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
@@ -56,7 +61,7 @@ class _EditProfileState extends State<EditProfile> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Edit Profile",
-          style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
+          style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: 'inter'),),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20.0,right: 15,top: 15),
@@ -90,19 +95,22 @@ class _EditProfileState extends State<EditProfile> {
 
                     decoration: BoxDecoration(
                       border: Border.all(color: placeHolderColor),
-                      borderRadius: BorderRadius.all(Radius.circular(10))
+                      borderRadius:const BorderRadius.all(Radius.circular(10))
                     ),
                     child: GestureDetector(
                       onTap: (){_selectDate(context);},
                      // onTap: (){push(context: context, screen: EditProfile());},
                       child: ListTile(
-                        title:Text("Birth Date",style: TextStyle(
+                        title:Text( birthday.text,style: TextStyle(
                           color:Theme.of(context).colorScheme.secondary,
                           fontSize: 14,
                           fontFamily: "inter"
                         ),),
                         leading: Icon(CupertinoIcons.calendar,color:Theme.of(context).colorScheme.secondary,size: 22,),
-                        trailing: Icon(Icons.keyboard_arrow_down,size: 26,color:Theme.of(context).colorScheme.secondary,),
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Icon(Icons.keyboard_arrow_down,size: 26,color:Theme.of(context).colorScheme.secondary,),
+                        ),
                       ),
                     ),
                   ),
@@ -125,7 +133,7 @@ class _EditProfileState extends State<EditProfile> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8.0,right: 8.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.transgender,color: Theme.of(context).colorScheme.secondary,size: 17,),
                           SizedBox(width: 20,),

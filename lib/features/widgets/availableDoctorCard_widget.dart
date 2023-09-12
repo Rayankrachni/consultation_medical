@@ -17,14 +17,14 @@ class AvailableDoctorCard extends StatelessWidget {
         width: AppSize.width*0.37,
         decoration: BoxDecoration(
 
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-          boxShadow: [
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow:  [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.15),
-              spreadRadius: 3,
-              blurRadius: 4,
-              offset: Offset(0, 2), // changes position of shadow
-            ),
+              color: Colors.grey.withOpacity(0.1),
+              offset: Offset(0, 7),
+              blurRadius: 10,
+              spreadRadius: 0,
+            )
           ],
             color:Theme.of(context).cardColor,
          ),
@@ -37,7 +37,10 @@ class AvailableDoctorCard extends StatelessWidget {
               height: AppSize.height*0.18,
               decoration:const BoxDecoration(
 
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(5),
+                    topLeft: Radius.circular(5),
+                  ),
                   boxShadow: [
                     BoxShadow(
                       color: Color.fromRGBO(99, 99, 99, 0.2),
@@ -86,9 +89,9 @@ class AvailableDoctorCard extends StatelessWidget {
               padding: const EdgeInsets.only(left: 5.0,right: 5.0),
               child: SizedBox(
                 width: AppSize.width*0.3,
-                child: Text("Dr. Wilson",style: TextStyle(
+                child: Text("Dr. Michel",style: TextStyle(
                     color:Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,fontWeight: FontWeight.w700,
+                    fontSize: 15,fontWeight: FontWeight.w700,
                     fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),
@@ -100,7 +103,7 @@ class AvailableDoctorCard extends StatelessWidget {
                 width: AppSize.width*0.2,
                 child:const Text("Cardiology",style: TextStyle(
                     color:textColor2,
-                    fontSize: 12,fontWeight: FontWeight.w600,
+                    fontSize: 12,fontWeight: FontWeight.w500,
                     fontFamily: 'inter',
                     overflow: TextOverflow.ellipsis
                 ),),

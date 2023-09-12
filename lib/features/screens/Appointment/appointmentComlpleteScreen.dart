@@ -1,13 +1,16 @@
 
 
 import 'package:consultation_medical/core/helper/app_navigator.dart';
+import 'package:consultation_medical/core/helper/theme/app_theme_provider.dart';
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/features/screens/Appointment/CallEndedScreen.dart';
+import 'package:consultation_medical/features/screens/call/callScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/styles/app_txt_style.dart';
 
@@ -21,6 +24,7 @@ class AppointmentSCompleteScreen extends StatefulWidget {
 class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen> {
   @override
   Widget build(BuildContext context) {
+    ThemeProvider provider=Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -103,8 +107,8 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                       Container(
                         height: 45,
                         width: 45,
-                        decoration:const BoxDecoration(
-                            color: filledColor,
+                        decoration: BoxDecoration(
+                            color:provider.darkTheme?Colors.black45 :filledColor,
                             shape: BoxShape.circle
                         ),
                         child:const Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 25,),
@@ -113,7 +117,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                   ),
                 ),
                 const SizedBox(height: 10,),
-                const Divider(color: textColor2,thickness: 1,),
+                Divider(color: Colors.grey.withOpacity(0.2),thickness: 1,),
                 const SizedBox(height: 10,),
                 Text("Patient Information",style:AppTextStyle(size: 18, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary,)),
                 const SizedBox(height: 10,),
@@ -205,9 +209,15 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Problem",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6.0),
+                            child: Text("Problem",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
+                          ),
                           const SizedBox(width: 10,),
-                          Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6.0),
+                            child: Text(":",style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,)),
+                          ),
                           const SizedBox(width: 10,),
                           SizedBox(
                               width: AppSize.width*0.65,
@@ -240,11 +250,11 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        spreadRadius: 7,
-                        blurRadius: 7,
-                        offset:const Offset(0, 2), // changes position of shadow
-                      ),
+                        color: Color.fromRGBO(100, 100, 111, 0.2),
+                        offset: Offset(0, 7),
+                        blurRadius: 29,
+                        spreadRadius: 0,
+                      )
                     ],
                   ),
                   child: Padding(
@@ -256,9 +266,9 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                           child: Container(
                             width:45.0,
                             height: 45.0,
-                            decoration:const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: filledColor,
+                              color:provider.darkTheme?Colors.black45 :filledColor,
                             ),
                             child:const Center(
                               child: Icon(CupertinoIcons.video_camera_solid,color: primary_Color,size: 30,),
@@ -311,7 +321,8 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
             DefaultButton(
 
                 onPressed: (){
-                  push(context: context, screen:const CallEndedScreen());
+                  push(context: context, screen: CallScreen());
+                  //push(context: context, screen:const CallEndedScreen());
                 }, text: 'Video Call Start 2:30 pm'.tr())
           ],
         ),

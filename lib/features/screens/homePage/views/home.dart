@@ -35,13 +35,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 15.0),
+      padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0),
       child: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             const SizedBox(height: 30,),
+             const SizedBox(height:20,),
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

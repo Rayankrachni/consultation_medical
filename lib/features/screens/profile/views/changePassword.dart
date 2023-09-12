@@ -15,7 +15,8 @@ class ChangePassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Change Password",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.bold,fontFamily: "inter"),),
+        title: Text("Change Password",
+          style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.bold,fontFamily: "inter"),),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20.0,right: 20,top: 20),

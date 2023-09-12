@@ -41,7 +41,7 @@ class CreditCradScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10,bottom: 10),
                   child: Text('Payment.card-name'.tr(),style: AppTextStyle(
                     color: Theme.of(context).colorScheme.secondary,
-                    size: 12, fontweight: FontWeight.w600,)),
+                    size: 12, fontweight: FontWeight.normal,)),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -102,7 +102,7 @@ class CreditCradScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20,bottom: 10),
                   child: Text('Payment.card-number'.tr(),style: AppTextStyle(
                   color: Theme.of(context).colorScheme.secondary,
-                  size: 12, fontweight: FontWeight.w600,)),
+                  size: 12, fontweight: FontWeight.normal,)),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -168,7 +168,7 @@ class CreditCradScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 20,bottom: 10),
                           child: Text('Payment.date-expiry'.tr(),style: AppTextStyle(
                             color: Theme.of(context).colorScheme.secondary,
-                            size: 12, fontweight: FontWeight.w600,)),
+                            size: 12, fontweight: FontWeight.normal,)),
                         ),
                         SizedBox(
                           width: AppSize.width*0.4,
@@ -237,7 +237,7 @@ class CreditCradScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 20,bottom: 10),
                           child: Text('Payment.cvv'.tr(),style: AppTextStyle(
                           color: Theme.of(context).colorScheme.secondary,
-                          size: 12, fontweight: FontWeight.w600,)),
+                          size: 12, fontweight: FontWeight.normal,)),
                         ),
                         SizedBox(
                           width: AppSize.width*0.4,

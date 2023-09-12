@@ -5,9 +5,16 @@ import 'package:flutter/material.dart';
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_size.dart';
 
-class FriendCardWidgets extends StatelessWidget {
+class FriendCardWidgets extends StatefulWidget {
   FriendCardWidgets({super.key});
+
+  @override
+  State<FriendCardWidgets> createState() => _FriendCardWidgetsState();
+}
+
+class _FriendCardWidgetsState extends State<FriendCardWidgets> {
   bool isInvited=false;
+
   @override
   Widget build(BuildContext context) {
 
@@ -67,7 +74,11 @@ class FriendCardWidgets extends StatelessWidget {
                                 // Set the minimum width and height
                                 // Add more properties as needed, e.g., padding, textStyle, etc.
                               ),
-                              onPressed: (){}, child: Text("invite",style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),)),
+                              onPressed: (){
+                                setState(() {
+                                  isInvited=true;
+                                });
+                              }, child: Text("invite",style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Colors.white),)),
                         ): SizedBox(
                           width: AppSize.width*0.25,
                           child: ElevatedButton(

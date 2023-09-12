@@ -7,12 +7,12 @@ import '../../../core/styles/app_txt_style.dart';
 
 
 
-class ChatScreen extends StatefulWidget {
+class ChatScreen2 extends StatefulWidget {
   @override
-  State createState() => ChatScreenState();
+  State createState() => ChatScreen2State();
 }
 
-class ChatScreenState extends State<ChatScreen> {
+class ChatScreen2State extends State<ChatScreen2> {
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = TextEditingController();
 
@@ -30,21 +30,16 @@ class ChatScreenState extends State<ChatScreen> {
     return IconTheme(
       data: IconThemeData(color: Colors.blue),
       child: Container(
-        width: AppSize.width,
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-        padding: EdgeInsets.all(9),
+        padding: EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            IconButton(
-                icon:const Icon(CupertinoIcons.smiley,color: textColor2,),
-                onPressed: () { }),
             Flexible(
               child:
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Container(
+              SizedBox(
 
+                child: Container(
                   constraints:const BoxConstraints(
                     maxHeight: 100.0, // Adjust the maximum height as needed
                   ),
@@ -77,6 +72,7 @@ class ChatScreenState extends State<ChatScreen> {
               ),
 
             ),
+            SizedBox(width: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -103,7 +99,6 @@ class ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 1,
 
 
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -149,7 +144,7 @@ class ChatScreenState extends State<ChatScreen> {
               itemBuilder: (_, int index) => _messages[index],
             ),
           ),
-          Divider(height: 1.0,color: Colors.grey,),
+          Divider(height: 1.0),
           _buildTextComposer(),
         ],
       ),

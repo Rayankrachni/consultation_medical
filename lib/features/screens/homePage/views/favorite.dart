@@ -32,7 +32,10 @@ class FavoriteScreen extends StatelessWidget {
                  itemCount: 7,
                  itemBuilder: (BuildContext context ,int index){
                    //SelectPackageScreen
-                  return  SearchCard(onPressed: (){push(context: context, screen: MakeAppointmentScreen());},);
+                  return  Padding(
+                    padding: const EdgeInsets.only(left: 4.0,right: 4),
+                    child: SearchCard(onPressed: (){push(context: context, screen: MakeAppointmentScreen());},),
+                  );
                 }) ,
               ),
             ),

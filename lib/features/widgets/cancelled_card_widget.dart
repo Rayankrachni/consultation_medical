@@ -1,6 +1,8 @@
 
+import 'package:consultation_medical/core/helper/theme/app_theme_provider.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_size.dart';
@@ -9,20 +11,21 @@ class CancelledWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider provider =Provider.of<ThemeProvider>(context);
     return  Padding(
       padding: const EdgeInsets.only(bottom: 30.0,left: 5,right: 5),
       child: Container(
 
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.15),
-                  spreadRadius:3,
-                  blurRadius:3,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
+            boxShadow:  [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.15),
+                offset: Offset(0, 7),
+                blurRadius: 29,
+                spreadRadius: 0,
+              )
 
 
 
@@ -67,7 +70,7 @@ class CancelledWidget extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 7.0,bottom: 7),
                             child: Row(
                               children: [
-                                Text("Video call",style:AppTextStyle(size: 12, fontweight: FontWeight.w600,color:textColor1)),
+                                Text("Video call",style:AppTextStyle(size: 12, fontweight: FontWeight.w600,color:provider.darkTheme? Colors.white :textColor1,)),
                                 SizedBox(width: 10,),
                                 Text("Cancelled",style:AppTextStyle(size: 12, fontweight: FontWeight.w500,color:errorColor)),
                               ],
@@ -89,8 +92,8 @@ class CancelledWidget extends StatelessWidget {
                     Container(
                       height: 45,
                       width: 45,
-                      decoration:const BoxDecoration(
-                          color: filledColor,
+                      decoration: BoxDecoration(
+                          color:provider.darkTheme?Colors.black45 :filledColor,
                           shape: BoxShape.circle
                       ),
                       child: Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 22,),

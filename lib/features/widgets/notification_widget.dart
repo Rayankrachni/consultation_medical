@@ -37,8 +37,8 @@ class NotificationWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Reminder your serial",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
-                        Text("10m ago",style: TextStyle(color: textColor2,fontSize:12,),),
+                        Text("Reminder your serial",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
+                        Text("10m ago",style: TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),),
                       ],
                     ),
                   ),
@@ -46,7 +46,7 @@ class NotificationWidget extends StatelessWidget {
                   SizedBox(
                       width: AppSize.width*0.5,
                       child: Text("this is just a reminder when you have a chance could you please gives me",
-                        style: TextStyle(color: textColor2,fontSize:12),maxLines: 2,overflow: TextOverflow.ellipsis,)),
+                        style: TextStyle(color: textColor2,fontSize:12,fontFamily: "inter"),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                 ],
               ),
             )

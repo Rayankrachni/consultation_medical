@@ -38,20 +38,20 @@ class _PaymentState extends State<Payment> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left: 20.0,right: 20,top: 15),
                   child: Container(
                     height: 70,
                     decoration: BoxDecoration(
 
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.all(Radius.circular(5)),
-                      boxShadow:const [
+                      boxShadow: [
                         BoxShadow(
-                          color: Color.fromRGBO(99, 99, 99, 0.2),
-                          offset: Offset(0, 2),
-                          blurRadius: 8,
+                          color: Colors.grey.withOpacity(0.12),
+                          offset: Offset(0, 7),
+                          blurRadius: 29,
                           spreadRadius: 0,
-                        ),
+                        )
                       ],
                     ),
                     child: Padding(
@@ -72,6 +72,7 @@ class _PaymentState extends State<Payment> {
                           SizedBox(
                             width: AppSize.width*0.7,
                             child: RadioListTile(
+                              activeColor: primary_Color,
                               title: Text('Payment.paypal'.tr(),
                                   style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
                               value:'Payment.paypal'.tr(),
@@ -90,7 +91,7 @@ class _PaymentState extends State<Payment> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left: 20.0,right: 20,top: 15),
                   child: Container(
                     height: 70,
                     decoration: BoxDecoration(
@@ -99,11 +100,11 @@ class _PaymentState extends State<Payment> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.15),
-                          spreadRadius: 3,
-                          blurRadius: 4,
-                          offset: Offset(0, 2), // changes position of shadow
-                        ),
+                          color: Colors.grey.withOpacity(0.12),
+                          offset: Offset(0, 7),
+                          blurRadius: 29,
+                          spreadRadius: 0,
+                        )
                       ],
                     ),
                     child: Padding(
@@ -135,6 +136,7 @@ class _PaymentState extends State<Payment> {
                           SizedBox(
                             width: AppSize.width*0.7,
                             child: RadioListTile(
+                              activeColor: primary_Color,
                               title: Text('Payment.credit-card'.tr(),
                                   style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
                               value: 'Payment.credit-card'.tr(),
@@ -153,7 +155,7 @@ class _PaymentState extends State<Payment> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.only(left: 20.0,right: 20,top: 15),
                   child: Container(
                     height: 70,
                     decoration: BoxDecoration(
@@ -162,11 +164,11 @@ class _PaymentState extends State<Payment> {
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.15),
-                            spreadRadius: 3,
-                            blurRadius: 4,
-                            offset: Offset(0, 2), // changes position of shadow
-                          ),
+                            color: Colors.grey.withOpacity(0.12),
+                            offset: Offset(0, 7),
+                            blurRadius: 29,
+                            spreadRadius: 0,
+                          )
                         ],
                     ),
                     child: Padding(
@@ -198,6 +200,7 @@ class _PaymentState extends State<Payment> {
                           SizedBox(
                             width: AppSize.width*0.7,
                             child: RadioListTile(
+                              activeColor: primary_Color,
                               title: Text('Payment.google-play'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)),
 
                               value: 'Payment.google-play'.tr(),

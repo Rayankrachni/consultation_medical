@@ -24,7 +24,6 @@ class _SearchScreenState extends State<SearchScreen> {
     'Beagle Retriever',
     'Retriever',
     'Labrador Beagle',
-
     'Beagle',
     'Labrador',
     'Retriever Retriever',
@@ -35,7 +34,9 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         centerTitle: true,
         title: Text(
           'Placeholder.search-doctor'.tr(),
@@ -47,8 +48,64 @@ class _SearchScreenState extends State<SearchScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomTextFormField(controller: name, hintText: 'Placeholder.search-specialist'.tr(), prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
-              SizedBox(height: 20,),
+              TextFormField(
+                controller: name,
+
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Toast.empty-field'.tr();
+                  }
+                  return null;
+                },
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
+
+                style: TextStyle(color: Theme.of(context).colorScheme.secondary,),
+
+                decoration: InputDecoration(
+                  hintText: 'Placeholder.search-specialist'.tr(),
+
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 5.0,
+                    horizontal: 20.0,
+                  ),
+                  prefixIcon: Icon(
+                    CupertinoIcons.search,
+                    color: Colors.grey,
+                    size: 20,
+                  ),
+
+                  enabledBorder:const OutlineInputBorder(
+                    borderRadius:BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      width: 1,
+                      color: placeHolderColor,
+                    ),
+                  ),
+                  focusedErrorBorder:const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide:  BorderSide(
+                      width: 1,
+                      color: placeHolderColor,
+                    ),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      width: 1,
+                        color: primary_Color
+                    ),
+                  ),
+                  errorBorder:const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10),),
+                    borderSide:  BorderSide(
+                      width: 1,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              ),
+             const SizedBox(height: 20,),
 
               SearchCard(onPressed: (){},),
               SearchCard(onPressed: (){},),
@@ -59,7 +116,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 children: [
                   Text("Search History", style: AppTextStyle(size: 16, fontweight: FontWeight.w500,color: Theme.of(context).colorScheme.secondary)
                   ),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline))
+                  IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline,color: Theme.of(context).colorScheme.secondary,))
                 ],
               ) ,
               SizedBox(
@@ -74,7 +131,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           padding: const EdgeInsets.only(top: 5.0,right:5 ,bottom: 5),
                           child: Container(
 
-                              decoration: BoxDecoration(
+                              decoration:const BoxDecoration(
                                 color: Color(0xffF6F7FD),
                                 borderRadius: BorderRadius.all(Radius.circular(5))
                               ),

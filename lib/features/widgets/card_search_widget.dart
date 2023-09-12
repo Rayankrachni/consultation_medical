@@ -18,14 +18,14 @@ class SearchCard extends StatelessWidget {
 
         decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              color: Color.fromRGBO(99, 99, 99, 0.2),
-              offset: Offset(0, 2),
-              blurRadius: 8,
+              color: Colors.grey.withOpacity(0.12),
+              offset: Offset(0, 7),
+              blurRadius: 29,
               spreadRadius: 0,
-            ),
+            )
           ],
         ),
         child: Padding(
@@ -37,7 +37,7 @@ class SearchCard extends StatelessWidget {
                 children: [
                   Container(
                     height: 80,
-                    width: 80,
+                    width: 85,
                     decoration: BoxDecoration(
 
                         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -56,7 +56,7 @@ class SearchCard extends StatelessWidget {
                   ),
                   SizedBox(
 
-                    width: AppSize.width*0.6,
+                    width: AppSize.width*0.63,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -69,10 +69,10 @@ class SearchCard extends StatelessWidget {
                               children: [
                                 Text("Dr Mary Rose c",style: TextStyle(
                                     color:Theme.of(context).colorScheme.secondary,
-                                    fontSize: 15,fontWeight: FontWeight.w600
+                                    fontSize: 15,fontWeight: FontWeight.w600,fontFamily: "inter"
                                 ),),
-                                SizedBox(height: 2,),
-                                Text("Psychiatrist",style: AppTextStyle(size: 13, fontweight:  FontWeight.w500,color: textColor2,)),
+                                SizedBox(height: 4,),
+                                Text("Psychiatrist",style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: textColor2,)),
                               ],
                             ),
 

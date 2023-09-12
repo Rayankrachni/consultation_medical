@@ -20,7 +20,7 @@ class WriteReview extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Review.write-review'.tr(),
-          style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
+          style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: "inter"),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -37,7 +37,7 @@ class WriteReview extends StatelessWidget {
               SizedBox(height: AppSize.height*0.03),
             SizedBox(
                 width: AppSize.width*0.6,
-                child: Text("${'Review.review-title'.tr()} Wilson spk ?",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: 'inter'),textAlign: TextAlign.center,)),
+                child: Text("${'Review.review-title'.tr()} Wilson spk ?",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: "inter"),textAlign: TextAlign.center,)),
             SizedBox(height: 10,),
             SizedBox(
               width: AppSize.width*0.5,
@@ -48,8 +48,8 @@ class WriteReview extends StatelessWidget {
                 allowHalfRating: true,
                 itemCount: 5,
                 itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
-                itemBuilder: (context, _) =>Padding(
-                  padding: const EdgeInsets.all(2.0),
+                itemBuilder: (context, _) =>const Padding(
+                  padding: const EdgeInsets.all(4.0),
                   child: const Icon(
                     Icons.star_rounded,
                     color: Colors.amber,

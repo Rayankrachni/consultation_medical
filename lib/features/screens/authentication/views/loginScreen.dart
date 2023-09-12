@@ -21,7 +21,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(top: 20.0,left: 20,right: 20),
         child: SingleChildScrollView(
 
           child: Column(
@@ -76,15 +76,14 @@ class LoginScreen extends StatelessWidget {
                         height: 50,
                         decoration: BoxDecoration(
                           color:Theme.of(context).colorScheme.background,
-                            borderRadius:const BorderRadius.all(Radius.circular(5)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.1),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
+                            borderRadius:const BorderRadius.all(Radius.circular(5)),     boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            offset: Offset(0, 7),
+                            blurRadius: 29,
+                            spreadRadius: 0,
+                          )
+                        ],
 
                         ),
                         child: Row(
@@ -109,10 +108,10 @@ class LoginScreen extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.2),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: Offset(0, 3), // changes position of shadow
-                            ),
+                              offset: Offset(0, 7),
+                              blurRadius: 29,
+                              spreadRadius: 0,
+                            )
                           ],
 
                         ),

@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/cancelled_card_widget.dart';
 import 'package:consultation_medical/features/widgets/completed_card_widget.dart';
@@ -30,25 +31,30 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.5,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         automaticallyImplyLeading: false,
         title:    Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Center(child: Text("Favorite Doctors",style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize: 20,fontWeight: FontWeight.w500),),),
+          child: Center(child: Text("My Appointment",style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary)),),
 
         ),
         bottom: TabBar(
+
+
           controller: _tabController,
-          tabs: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+          tabs: const [
+             Padding(
+              padding:  EdgeInsets.only(bottom: 10.0),
               child: Text("UpComming",),
+
             ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+             Padding(
+              padding:  EdgeInsets.only(bottom: 10.0),
               child: Text("Completed"),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
+              padding:  EdgeInsets.only(bottom: 10.0),
               child: Text("Cancelled",),
             ),
 

@@ -3,6 +3,7 @@ import 'package:consultation_medical/core/styles/app_theme.dart';
 import 'package:consultation_medical/features/splashScreen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -48,15 +49,15 @@ class _MyAppState extends State<MyApp> {
         child: Consumer<ThemeProvider>(
             builder: (context, value, child) {
 
-
+              SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
 
               return MaterialApp(
                   debugShowCheckedModeBanner: false,
                   localizationsDelegates: context.localizationDelegates,
                   supportedLocales: context.supportedLocales,
                   locale: context.locale,
-                  theme:buildLightTheme(context),
-                  //appModel.darkTheme ? buildDarkTheme() : buildLightTheme(context),
+                  theme:appModel.darkTheme ? buildDarkTheme(context) : buildLightTheme(context),
+                  //
 
                   home:  SplashScreen()
               );})

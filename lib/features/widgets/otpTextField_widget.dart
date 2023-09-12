@@ -18,7 +18,7 @@ class CustomOtpTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: AppSize.width*0.12,
+      width: AppSize.width*0.13,
       child: TextFormField(
         controller: controller,
 
@@ -30,8 +30,9 @@ class CustomOtpTextFormField extends StatelessWidget {
         },
         keyboardType: TextInputType.number,
         textInputAction: TextInputAction.next,
+        maxLength: 1,
 
-        style: TextStyle(color:Theme.of(context).colorScheme.secondary,),
+        style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize: 14),
         obscureText: false,
         decoration:const InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
