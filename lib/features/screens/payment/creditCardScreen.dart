@@ -1,22 +1,17 @@
 import 'package:consultation_medical/core/styles/app_size.dart';
-import 'package:consultation_medical/features/widgets/diag_review_success-widget.dart';
-import 'package:consultation_medical/features/widgets/diag_wrong_widget.dart';
-import 'package:consultation_medical/features/widgets/textField_custom.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/helper/app_navigator.dart';
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_txt_style.dart';
 import '../../widgets/button_Custom.dart';
 import '../../widgets/diag_success_widget.dart';
 
-class CreditCradScreen extends StatelessWidget {
-  CreditCradScreen({super.key});
+class CreditCardScreen extends StatelessWidget {
+  CreditCardScreen({super.key});
   TextEditingController cardNameController=TextEditingController();
 
   TextEditingController cardNumberController=TextEditingController();
-  TextEditingController cvveController=TextEditingController();
+  TextEditingController cvvController=TextEditingController();
 
   TextEditingController expiryDateController=TextEditingController();
   @override
@@ -67,7 +62,7 @@ class CreditCradScreen extends StatelessWidget {
                     ),
 
 
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder:const OutlineInputBorder(
                       borderRadius:BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(
                         width: 1,
@@ -128,7 +123,7 @@ class CreditCradScreen extends StatelessWidget {
                     ),
 
 
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder:const OutlineInputBorder(
                       borderRadius:BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(
                         width: 1,
@@ -173,7 +168,7 @@ class CreditCradScreen extends StatelessWidget {
                         SizedBox(
                           width: AppSize.width*0.4,
                           child: TextFormField(
-                            controller: cardNameController,
+                            controller:expiryDateController ,
 
                             validator: (value) {
                               if (value!.isEmpty) {
@@ -196,7 +191,7 @@ class CreditCradScreen extends StatelessWidget {
                               ),
 
 
-                              enabledBorder: OutlineInputBorder(
+                              enabledBorder:const OutlineInputBorder(
                                 borderRadius:BorderRadius.all(Radius.circular(10)),
                                 borderSide: BorderSide(
                                   width: 1,
@@ -242,7 +237,7 @@ class CreditCradScreen extends StatelessWidget {
                         SizedBox(
                           width: AppSize.width*0.4,
                           child: TextFormField(
-                            controller: cardNameController,
+                            controller: cvvController,
 
                             validator: (value) {
                               if (value!.isEmpty) {
@@ -265,7 +260,7 @@ class CreditCradScreen extends StatelessWidget {
                               ),
 
 
-                              enabledBorder: OutlineInputBorder(
+                              enabledBorder:const OutlineInputBorder(
                                 borderRadius:BorderRadius.all(Radius.circular(10)),
                                 borderSide: BorderSide(
                                   width: 1,
@@ -308,7 +303,7 @@ class CreditCradScreen extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return SuccessDialog();
+                    return const SuccessDialog();
 
                       //WrongDialog();
 
@@ -318,7 +313,6 @@ class CreditCradScreen extends StatelessWidget {
                },
                   text: "${'Button.pay'.tr()} \$40"),
             )
-           //CustomTextFormField(controller: controller, hintText: hintText, prefixIcon: prefixIcon, textInputType: textInputType)
           ],
         ),
       ),

@@ -22,13 +22,9 @@ class _OnBoardingState extends State<OnBoarding> {
 
   final PageController _pageController = PageController();
   int _currentPage = 0;
-  List<String> _titles = ['onBoarding.title1'.tr(), 'onBoarding.title2'.tr(),'onBoarding.title3'.tr()];
-  List<String> _imgs = ['assets/images/onBorad1.png', 'assets/images/onBorad2.png','assets/images/onBorad3.png'];
-  List<String> _descriptions = [
-    "Welcome to our app! Explore the amazing features.",
-    "Discover a world of possibilities with our app.",
-    "Get started and enjoy the experience."
-  ];
+  final List<String> _titles =  ['onBoarding.title1'.tr(), 'onBoarding.title2'.tr(),'onBoarding.title3'.tr()];
+  final List<String> _imgs =  ['assets/images/onBorad1.png', 'assets/images/onBorad2.png','assets/images/onBorad3.png'];
+
 
   void _onPageChanged(int index) {
     setState(() {
@@ -48,7 +44,7 @@ class _OnBoardingState extends State<OnBoarding> {
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.0),
+          padding:const EdgeInsets.symmetric(vertical: 40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -86,10 +82,6 @@ class _OnBoardingState extends State<OnBoarding> {
                               textAlign: TextAlign.center,
                             ),
                           ),
-
-
-
-
                         ],
                       ),
                     );
@@ -100,14 +92,15 @@ class _OnBoardingState extends State<OnBoarding> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _buildPageIndicator(),
               ),
-              SizedBox(height:40.0),
+              const SizedBox(height:40.0),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 0),
                 child: DefaultButton(
                   isOnboading: true,
+                  color: Color(0xff256bfe),
                   onPressed:
                     _currentPage == _titles.length - 1 ? _navigateToHome : () => _pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration:const Duration(milliseconds: 300),
                       curve: Curves.ease,
                     ),
 

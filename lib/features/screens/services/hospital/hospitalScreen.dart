@@ -28,19 +28,19 @@ class HospitalScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomTextFormField(controller: searchController, hintText: "Search  Hospital", prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
+            CustomTextFormField(controller: searchController, hintText: 'Home.search-hos'.tr(), prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
             const SizedBox(height: 20,),
             Text('Home.our-hosp'.tr(),style:
              TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:16,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
 
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Expanded(
               child: SizedBox(
                 child:
                 ListView.builder(
                     itemCount: 7,
                     itemBuilder: (BuildContext context ,int index){
-                      return  HospitalWidgets();
+                      return const HospitalWidgets();
                     }) ,
               ),
             ),

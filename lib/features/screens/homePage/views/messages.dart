@@ -4,7 +4,6 @@ import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/screens/chatScreen/chatScreen.dart';
-import 'package:consultation_medical/features/screens/searchScreen/chatapp.dart';
 import 'package:consultation_medical/features/widgets/card_search_widget.dart';
 import 'package:consultation_medical/features/widgets/message_search_widget.dart';
 import 'package:easy_localization/easy_localization.dart';

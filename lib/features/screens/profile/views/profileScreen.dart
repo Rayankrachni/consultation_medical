@@ -7,6 +7,7 @@ import 'package:consultation_medical/features/screens/profile/views/changePasswo
 import 'package:consultation_medical/features/screens/profile/views/editProfile.dart';
 import 'package:consultation_medical/features/screens/profile/views/inviteFriendScreen.dart';
 import 'package:consultation_medical/features/screens/profile/views/notificationSettingsScreen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("My Profile",
+        title: Text('Profile.my-profile'.tr(),
         style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
       ),
       body: Padding(
@@ -33,7 +34,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 60,
-                  backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
+                  backgroundImage:const NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
                   child: Padding(
                     padding:  const EdgeInsets.all(5.0),
                     child: Align(
@@ -47,15 +48,15 @@ class ProfileScreen extends StatelessWidget {
                               color: Theme.of(context).primaryColor
                           ),
                           child: Padding(
-                              padding: EdgeInsets.only(right: 20),
+                              padding: const EdgeInsets.only(right: 20),
                               child: IconButton(icon:const Icon(Icons.edit,size: 15,),onPressed: (){},)),
                         )
                     ),
                   ),
-                ),    SizedBox(height: 10,),
+                ),    const SizedBox(height: 10,),
                 Text("User Full Name",style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.bold,fontFamily: 'inter'),),
 
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 const Text("+213 540060592",style: TextStyle(
                     color: textColor2,
                     fontSize: 12,
@@ -70,16 +71,16 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0,right: 20,top: 10,bottom: 10),
-                        child: Text("Account Settings",
+                        child: Text('Profile.account-setting'.tr(),
                           style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
 
                       ),
                        GestureDetector(
-                         onTap: (){push(context: context, screen: EditProfile());},
+                         onTap: (){push(context: context, screen: const EditProfile());},
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Edit Profile",
+                            title:Text('Profile.edit-prof'.tr(),
                               style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter'),),
 
                              leading: Icon(CupertinoIcons.person,color:Theme.of(context).colorScheme.secondary,size: 25,),
@@ -95,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Change Password",
+                            title:Text('Profile.change-pswd'.tr(),
                                 style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                             leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -106,11 +107,11 @@ class ProfileScreen extends StatelessWidget {
                         color: placeHolderColor,
                       ),
                       GestureDetector(
-                        onTap: (){push(context: context, screen: NotificationSetting());},
+                        onTap: (){push(context: context, screen: const NotificationSetting());},
                         child: SizedBox(
                           height: 40,
                           child: ListTile(
-                            title:Text("Notification",
+                            title:Text('Home.notification'.tr(),
                                 style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                             leading: Icon(Icons.notifications_none,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -121,11 +122,11 @@ class ProfileScreen extends StatelessWidget {
                         color: placeHolderColor,
                       ),
                        GestureDetector(
-                         onTap: (){push(context: context, screen: InviteFriendScreen());},
+                         onTap: (){push(context: context, screen:const InviteFriendScreen());},
                          child: SizedBox(
                            height: 40,
                            child: ListTile(
-                            title:Text("Invite Friends",
+                            title:Text('Profile.inv-friend'.tr(),
                                 style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                             leading: Icon(CupertinoIcons.person_2,color:Theme.of(context).colorScheme.secondary,size: 25,),
                             trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -138,7 +139,7 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Language",
+                          title:Text('Profile.language'.tr(),
                               style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                           leading: Icon(Icons.language,color:Theme.of(context).colorScheme.secondary,size: 25,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -155,7 +156,7 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Privacy Policy",
+                          title:Text('Profile.privacy-policy'.tr(),
                               style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                           leading: Icon(Icons.privacy_tip_outlined,color:Theme.of(context).colorScheme.secondary,size: 22,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -167,7 +168,7 @@ class ProfileScreen extends StatelessWidget {
                       SizedBox(
                         height: 40,
                         child: ListTile(
-                          title:Text("Contact Us",
+                          title:Text('Profile.contact-us'.tr(),
                               style:TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: 'inter')),
                           leading: Icon(CupertinoIcons.padlock,color:Theme.of(context).colorScheme.secondary,size: 25,),
                           trailing: Icon(Icons.arrow_forward_ios,size: 16,color:Theme.of(context).colorScheme.secondary,),
@@ -176,10 +177,6 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                 )
-
-
-
-
               ],
             ),
           ),

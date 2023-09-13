@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 100,
+                        width: 70,
                         height: 2,
                         color: placeHolderColor,
                       ),
@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                         child: Text('Login.signIn-or'.tr(),style: Theme.of(context).textTheme.headline3,),
                       ),
                       Container(
-                        width: 100,
+                        width: 70,
                         height: 2,
                         color: placeHolderColor,
                       ),

@@ -247,8 +247,8 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                   decoration: BoxDecoration(
 
                     color: Theme.of(context).cardColor,
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
+                    borderRadius:const BorderRadius.all(Radius.circular(5)),
+                    boxShadow: const[
                       BoxShadow(
                         color: Color.fromRGBO(100, 100, 111, 0.2),
                         offset: Offset(0, 7),
@@ -301,7 +301,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
                                       style: AppTextStyle(
                                         color: doollarColor,
                                         size: 16, fontweight: FontWeight.bold,) ),
-                                  SizedBox(height: 5,),
+                                  const SizedBox(height: 5,),
                                   Text('Appointment.duration'.tr(),style: AppTextStyle(
                                     color: textColor2,
                                     size: 10, fontweight: FontWeight.normal, ) )
@@ -321,7 +321,7 @@ class _AppointmentSCompleteScreenState extends State<AppointmentSCompleteScreen>
             DefaultButton(
 
                 onPressed: (){
-                  push(context: context, screen: CallScreen());
+                  push(context: context, screen:const CallScreen());
                   //push(context: context, screen:const CallEndedScreen());
                 }, text: 'Video Call Start 2:30 pm'.tr())
           ],

@@ -1,4 +1,5 @@
 
+import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/styles/app_colors.dart';
@@ -11,7 +12,7 @@ class MessageCardWidget extends StatelessWidget {
     return  Container(
       decoration: BoxDecoration(
           border: Border(
-              bottom:BorderSide(color: filledColor)
+              bottom:BorderSide(color: Colors.grey.withOpacity(0.2),width: 2)
           )
       ),
       child: Padding(
@@ -39,18 +40,18 @@ class MessageCardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Reminder your serial",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w500),),
-                            SizedBox(height: 5,),
+                            Text("Dr. Elizabeth Augus",style:AppTextStyle(size: 15, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary,),),
+                            const SizedBox(height: 5,),
                             SizedBox(
                                 width: AppSize.width*0.5,
-                                child: Text("this is just a reminder when you have a chance could you please gives me",
-                                  style: TextStyle(color: textColor2,fontSize:12),maxLines: 1,overflow: TextOverflow.ellipsis,)),
+                                child:const  Text("this is just a reminder when you have a chance could you please gives me",
+                                  style: TextStyle(color: textColor2,fontSize:14,fontFamily: "inter"),maxLines: 1,overflow: TextOverflow.ellipsis,)),
 
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text("10Day ago",style: TextStyle(color: textColor2,fontSize:12,),),
+                          padding: const EdgeInsets.only(top: 13.0),
+                          child: Text("10Day ago",style:AppTextStyle(size: 12, fontweight: FontWeight.normal,color: textColor2),),
                         ),
                       ],
                     ),

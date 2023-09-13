@@ -11,10 +11,12 @@ class DefaultButton extends StatelessWidget {
     required this.onPressed,
     required this.text,
     this.isOnboading=false,
+    this.color=primaryColor,
   }) : super(key: key);
 
   final VoidCallback onPressed;
   final String text;
+  final Color color;
   final bool isOnboading;
 
   @override
@@ -22,7 +24,7 @@ class DefaultButton extends StatelessWidget {
     return Center(
       child: MaterialButton(
         onPressed: onPressed,
-        color: primaryColor,
+        color: color,
         minWidth: AppSize.width * 0.75,
         height: AppSize.height * 0.07,
         shape: OutlineInputBorder(

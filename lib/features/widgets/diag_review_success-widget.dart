@@ -53,7 +53,7 @@ class _SuccessReviewDialogState extends State<SuccessReviewDialog> with TickerPr
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Container(
-            padding: EdgeInsets.all(25.0),
+            padding:const EdgeInsets.all(25.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,9 +67,9 @@ class _SuccessReviewDialogState extends State<SuccessReviewDialog> with TickerPr
                       color: primary_Color,
                       shape: BoxShape.circle
                   ),
-                  child: Icon(Icons.star_rounded,color: Colors.white,size: 40,),
+                  child: const Icon(Icons.star_rounded,color: Colors.white,size: 50,),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Text(
                   'Diag.review-success'.tr(),
                     style: AppTextStyle(size: 18, fontweight: FontWeight.bold,color: Theme.of(context).colorScheme.secondary)
@@ -85,18 +85,18 @@ class _SuccessReviewDialogState extends State<SuccessReviewDialog> with TickerPr
                       ),
                     ]
                 ),
-                SizedBox(height:20,),
+                const SizedBox(height:20,),
 
                 SizedBox(
                   width: AppSize.width*0.5,
                   height: 50,
                   child: ElevatedButton(onPressed: (){
-                    pushAndRemove(context: context, screen: HomePage());
+                    pushAndRemove(context: context, screen:const HomePage());
                   },
 
                       style: ElevatedButton.styleFrom(
-                        primary: primary_Color, // Set the button's background color
-                        onPrimary: Colors.white,
+                        foregroundColor: Colors.white,
+                        backgroundColor: primary_Color,
                         elevation: 1, // Set the elevation (shadow) of the button
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10), // Set the border radius
@@ -110,10 +110,6 @@ class _SuccessReviewDialogState extends State<SuccessReviewDialog> with TickerPr
                         child: Text( 'Button.ok'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color: Colors.white),),
                       )),
                 ),
-
-
-
-
               ],
             ),
           ),

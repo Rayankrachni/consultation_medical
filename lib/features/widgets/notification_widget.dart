@@ -8,7 +8,7 @@ class NotificationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
         border: Border(
           bottom:BorderSide(color: filledColor)
         )
@@ -38,14 +38,17 @@ class NotificationWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Reminder your serial",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.w700,fontFamily: 'inter'),),
-                        Text("10m ago",style: TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),),
+                        const Padding(
+                          padding:  EdgeInsets.all(2.0),
+                          child: Text("10m ago",style: TextStyle(color: textColor2,fontSize:12,fontFamily: 'inter'),),
+                        ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 5,),
                   SizedBox(
-                      width: AppSize.width*0.5,
-                      child: Text("this is just a reminder when you have a chance could you please gives me",
+                      width: AppSize.width*0.6,
+                      child:const Text("This is just a reminder reminder when you have a chance could you please gives me",
                         style: TextStyle(color: textColor2,fontSize:12,fontFamily: "inter"),maxLines: 2,overflow: TextOverflow.ellipsis,)),
                 ],
               ),

@@ -37,7 +37,7 @@ class CallScreen extends StatelessWidget {
                     decoration: BoxDecoration(
 
                         borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",),fit: BoxFit.cover
                         )
                     ),
@@ -90,9 +90,9 @@ class CallScreen extends StatelessWidget {
                                   color: filledColor,
                                   shape: BoxShape.circle,
                                 ),
-                                child: Icon(Icons.video_camera_back_outlined, color: Colors.black, size: 22),
+                                child:const Icon(Icons.video_camera_back_outlined, color: Colors.black, size: 22),
                               ),
-                              SizedBox(width: 20),
+                              const SizedBox(width: 20),
                               InkWell(
                                 onTap: (){
                                   push(context: context, screen:const CallEndedScreen());
@@ -111,11 +111,11 @@ class CallScreen extends StatelessWidget {
                               Container(
                                 height: 55,
                                 width: 55,
-                                decoration: BoxDecoration(
+                                decoration:const BoxDecoration(
                                   color: filledColor,
                                   shape: BoxShape.circle,
                                 ),
-                                child: Icon(Icons.keyboard_voice_outlined, color: Colors.black, size: 25),
+                                child:const Icon(Icons.keyboard_voice_outlined, color: Colors.black, size: 25),
                               ),
                             ],
                           ),
@@ -125,7 +125,7 @@ class CallScreen extends StatelessWidget {
                   ),
                 ),
 
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                 ],
               )
             ],

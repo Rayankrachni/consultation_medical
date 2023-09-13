@@ -6,7 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SearchCard extends StatelessWidget {
-  SearchCard({super.key,required this.onPressed});
+  const SearchCard({super.key,required this.onPressed});
 
   final VoidCallback onPressed;
 
@@ -18,11 +18,11 @@ class SearchCard extends StatelessWidget {
 
         decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius:const BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.12),
-              offset: Offset(0, 7),
+              offset:const Offset(0, 7),
               blurRadius: 29,
               spreadRadius: 0,
             )
@@ -40,7 +40,7 @@ class SearchCard extends StatelessWidget {
                     width: 85,
                     decoration: BoxDecoration(
 
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius:const BorderRadius.all(Radius.circular(5)),
                         boxShadow: [
                           BoxShadow(
                               color: Colors.grey.withOpacity(0.2),
@@ -50,7 +50,7 @@ class SearchCard extends StatelessWidget {
 
                         ],
                         color: Theme.of(context).cardColor,
-                        image: DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
+                        image:const DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
                     ),
 
                   ),
@@ -71,15 +71,15 @@ class SearchCard extends StatelessWidget {
                                     color:Theme.of(context).colorScheme.secondary,
                                     fontSize: 15,fontWeight: FontWeight.w600,fontFamily: "inter"
                                 ),),
-                                SizedBox(height: 4,),
+                                const SizedBox(height: 4,),
                                 Text("Psychiatrist",style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: textColor2,)),
                               ],
                             ),
 
-                            IconButton(onPressed: (){}, icon:Icon( Icons.favorite,color: Colors.red,))
+                            IconButton(onPressed: (){}, icon:const Icon( Icons.favorite,color: Colors.red,))
                           ],
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         SizedBox(
 
                           width: AppSize.width*0.65,
@@ -101,7 +101,7 @@ class SearchCard extends StatelessWidget {
                                       color: Theme.of(context).colorScheme.secondary,
                                       fontSize: 14,fontWeight: FontWeight.bold
                                   ),),
-                                  SizedBox(width: 5,),
+                                  const SizedBox(width: 5,),
 
                                   Text("(8545 ${'Review.reviews'.tr()})",style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: textColor2,)),
                                 ],
@@ -114,7 +114,7 @@ class SearchCard extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -137,8 +137,8 @@ class SearchCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.message,size: 16,color: Colors.black,),
-                            SizedBox(width: 10,),
+                            const Icon(Icons.message,size: 16,color: Colors.black,),
+                            const SizedBox(width: 10,),
                             Text('HomePage.messages'.tr(),style: AppTextStyle(size: 12, fontweight:  FontWeight.w600,color: Colors.black,))
                           ],
                         )),
@@ -162,8 +162,8 @@ class SearchCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.calendar_month,size: 16,),
-                            SizedBox(width: 5,),
+                            const Icon(Icons.calendar_month,size: 16,),
+                            const SizedBox(width: 5,),
                             Text('HomePage.appointment'.tr(),style: AppTextStyle(size: 12, fontweight:  FontWeight.w500,color: Colors.white,))
                           ],
                         )),

@@ -58,7 +58,7 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
               color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(16.0),
             ),
-            padding: EdgeInsets.all(25.0),
+            padding:const EdgeInsets.all(25.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -72,9 +72,9 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                       color: Colors.black,
                       shape: BoxShape.circle
                   ),
-                  child: Icon(Icons.calendar_month,color: Colors.white,size: 28,),
+                  child:const Icon(Icons.calendar_month,color: Colors.white,size: 28,),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Text(
                   'Diag.Congratulations'.tr(),
                   style: AppTextStyle(size:20, fontweight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondary,)
@@ -91,7 +91,7 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                     ),
                   ]
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
 
                 SizedBox(
                   width: AppSize.width*0.45,
@@ -112,12 +112,12 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                       ),
 
                       child:  Text( 'Button.view-app'.tr(),style:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Colors.white)))),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 SizedBox(
                   width: AppSize.width*0.45,
                   height: 50,
                   child: ElevatedButton(onPressed: (){
-                    pushAndRemove(context: context, screen: HomePage());
+                    pushAndRemove(context: context, screen:const HomePage());
                   },
 
                       style: ElevatedButton.styleFrom(
@@ -126,7 +126,7 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                         elevation: 1,
 
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(color: primary_Color),
+                          side:const BorderSide(color: primary_Color),
                           borderRadius: BorderRadius.circular(10), // Set the border radius
                         ),
                         // Set the minimum width and height
@@ -134,11 +134,7 @@ class _SuccessDialogState extends State<SuccessDialog> with TickerProviderStateM
                       ),
 
                       child: Text( 'Button.go-home'.tr(),style:AppTextStyle(size: 15, fontweight: FontWeight.w500,color:  Theme.of(context).colorScheme.secondary))),
-
                 ),
-
-
-
               ],
             ),
           ),

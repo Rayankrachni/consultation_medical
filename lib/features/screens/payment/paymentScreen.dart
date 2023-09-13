@@ -1,13 +1,10 @@
-import 'package:consultation_medical/core/const/strings.dart';
 import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/screens/payment/creditCardScreen.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
-import 'package:consultation_medical/features/widgets/payment_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/styles/app_colors.dart';
 
 class Payment extends StatefulWidget {
@@ -44,11 +41,11 @@ class _PaymentState extends State<Payment> {
                     decoration: BoxDecoration(
 
                         color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius:const BorderRadius.all(Radius.circular(5)),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.12),
-                          offset: Offset(0, 7),
+                          offset: const Offset(0, 7),
                           blurRadius: 29,
                           spreadRadius: 0,
                         )
@@ -64,7 +61,7 @@ class _PaymentState extends State<Payment> {
                             height: 40,
                             width:40,
                             decoration:const BoxDecoration(
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                                 shape: BoxShape.circle
                             ),
                             child: Image.asset("assets/images/paypal.png",fit: BoxFit.fill,),
@@ -97,11 +94,11 @@ class _PaymentState extends State<Payment> {
                     decoration: BoxDecoration(
 
                         color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.12),
-                          offset: Offset(0, 7),
+                          offset:const Offset(0, 7),
                           blurRadius: 29,
                           spreadRadius: 0,
                         )
@@ -118,7 +115,7 @@ class _PaymentState extends State<Payment> {
                               height: 40.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                               ),
                               child: Center(
                                 child: Container(
@@ -161,11 +158,11 @@ class _PaymentState extends State<Payment> {
                     decoration: BoxDecoration(
 
                         color: Theme.of(context).cardColor,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius:const BorderRadius.all(Radius.circular(5)),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.12),
-                            offset: Offset(0, 7),
+                            offset:const Offset(0, 7),
                             blurRadius: 29,
                             spreadRadius: 0,
                           )
@@ -182,7 +179,7 @@ class _PaymentState extends State<Payment> {
                               height: 40.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                               ),
                               child: Center(
                                 child: Container(
@@ -225,10 +222,10 @@ class _PaymentState extends State<Payment> {
 
 
             Padding(
-              padding: const EdgeInsets.only(bottom: 15.0,left: 5),
+              padding: const EdgeInsets.only(bottom: 20.0,left: 5),
               child: SizedBox(
                   width: AppSize.width*0.9,
-                  child: DefaultButton(onPressed: (){push(context: context, screen: CreditCradScreen());}, text: 'Button.next'.tr())),
+                  child: DefaultButton(onPressed: (){push(context: context, screen: CreditCardScreen());}, text: 'Button.next'.tr())),
             )
           ],
         ),

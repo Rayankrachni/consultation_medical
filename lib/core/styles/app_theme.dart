@@ -34,8 +34,8 @@ ThemeData buildLightTheme(BuildContext context) {
       indicatorColor: primary_Color,
       unselectedLabelColor: textColor2 ,
       labelColor: primary_Color,
-      unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary),
-      labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary)
+      unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary),
+      labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)
     ),
 
 
@@ -266,8 +266,8 @@ ThemeData buildDarkTheme(BuildContext context) {
         labelColor: primary_Color,
 
         //dividerColor: Colors.white,
-        unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary),
-        labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary)
+        unselectedLabelStyle:AppTextStyle(size: 14, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary),
+        labelStyle: AppTextStyle(size: 14, fontweight: FontWeight.w600,color:Theme.of(context).colorScheme.secondary)
     ),
 
 

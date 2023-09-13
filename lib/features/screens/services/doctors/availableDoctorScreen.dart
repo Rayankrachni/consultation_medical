@@ -2,6 +2,7 @@
 
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/features/widgets/card_search_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AvailableDoctorScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class AvailableDoctorScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:Text("Available Doctors",
+        title:Text('Home.available-docts'.tr(),
           style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: 'inter'),)),
 
 

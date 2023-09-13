@@ -43,7 +43,7 @@ class PatientDetail extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 10,bottom: 10),
-                  child: Text('Appointment.name'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Appointment.name'.tr(),style: AppTextStyle(size: 12, fontweight: FontWeight.normal),),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -69,7 +69,7 @@ class PatientDetail extends StatelessWidget {
                     ),
 
 
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder:const OutlineInputBorder(
                       borderRadius:BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(
                         width: 1,
@@ -101,7 +101,7 @@ class PatientDetail extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 10),
-                  child: Text('Appointment.gender'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Appointment.gender'.tr(),style: AppTextStyle(size: 12, fontweight: FontWeight.normal),),
                 ),
                 Container(
 
@@ -141,13 +141,13 @@ class PatientDetail extends StatelessWidget {
 
                 Padding(
                   padding: const EdgeInsets.only(top: 15,bottom: 10),
-                  child: Text('Appointment.age'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Appointment.age'.tr(),style: AppTextStyle(size: 12, fontweight: FontWeight.normal),),
                 ),
                 Container(
 
                   width: AppSize.width,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
                       border: Border.all(
                           color: placeHolderColor
                       )
@@ -161,7 +161,7 @@ class PatientDetail extends StatelessWidget {
                         return DropdownMenuItem<String>(
 
                           value: value,
-                          child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal)),
+                          child: Text(value,style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal)),
                         );
                       }).toList(),
                       onChanged: (v){
@@ -182,7 +182,7 @@ class PatientDetail extends StatelessWidget {
 
                 Padding(
                   padding: const EdgeInsets.only(top: 20,bottom: 10),
-                  child: Text('Appointment.write-prbl'.tr(),style: Theme.of(context).textTheme.headline3,),
+                  child: Text('Appointment.write-prbl'.tr(),style: AppTextStyle(size: 12, fontweight: FontWeight.normal),),
                 ),
                 TextFormField(
                   controller: cardNameController,
@@ -200,7 +200,7 @@ class PatientDetail extends StatelessWidget {
 
                   maxLines: 5,
                   decoration: InputDecoration(
-                    hintText:'Appointment.write-prbl'.tr(),
+                    hintText:''.tr(),
 
                     contentPadding: const EdgeInsets.symmetric(
                       vertical: 5.0,
@@ -208,7 +208,7 @@ class PatientDetail extends StatelessWidget {
                     ),
 
 
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder:const OutlineInputBorder(
                       borderRadius:BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(
                         width: 1,
@@ -244,7 +244,7 @@ class PatientDetail extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: DefaultButton(onPressed: (){
-                  push(context: context, screen: Payment());
+                  push(context: context, screen: const Payment());
               },
                   text: 'Button.next'.tr()),
             )

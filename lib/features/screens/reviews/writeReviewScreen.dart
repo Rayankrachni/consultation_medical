@@ -2,7 +2,6 @@
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -10,7 +9,7 @@ import '../../../core/const/strings.dart';
 import '../../../core/styles/app_colors.dart';
 import '../../widgets/diag_review_success-widget.dart';
 class WriteReview extends StatelessWidget {
-   WriteReview({super.key});
+  WriteReview({super.key});
 
   TextEditingController reviewController=TextEditingController();
 
@@ -38,7 +37,7 @@ class WriteReview extends StatelessWidget {
             SizedBox(
                 width: AppSize.width*0.6,
                 child: Text("${'Review.review-title'.tr()} Wilson spk ?",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: "inter"),textAlign: TextAlign.center,)),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             SizedBox(
               width: AppSize.width*0.5,
               child: RatingBar.builder(
@@ -47,10 +46,10 @@ class WriteReview extends StatelessWidget {
                 direction: Axis.horizontal,
                 allowHalfRating: true,
                 itemCount: 5,
-                itemPadding: EdgeInsets.symmetric(horizontal: 0.0),
+                itemPadding:const EdgeInsets.symmetric(horizontal: 0.0),
                 itemBuilder: (context, _) =>const Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: const Icon(
+                  padding:  EdgeInsets.all(4.0),
+                  child:  Icon(
                     Icons.star_rounded,
                     color: Colors.amber,
                     size:20,
@@ -98,7 +97,7 @@ class WriteReview extends StatelessWidget {
                       ),
 
 
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder:const OutlineInputBorder(
                         borderRadius:BorderRadius.all(Radius.circular(10)),
                         borderSide: BorderSide(
                           width: 1,
@@ -139,7 +138,7 @@ class WriteReview extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return SuccessReviewDialog();
+                      return const SuccessReviewDialog();
                       //WrongDialog();
 
                       // SuccessDialog();
@@ -158,7 +157,7 @@ class WriteReview extends StatelessWidget {
                       // Add more properties as needed, e.g., padding, textStyle, etc.
                     ),
 
-                    child:  Text( 'Button.submit'.tr(),style: TextStyle(fontSize: 14,fontFamily: regularfontFamilyName),)),
+                    child:  Text( 'Button.submit'.tr(),style:const TextStyle(fontSize: 14,fontFamily: regularfontFamilyName),)),
               ),
               SizedBox(height: AppSize.height*0.03),
               SizedBox(
@@ -172,14 +171,14 @@ class WriteReview extends StatelessWidget {
                       elevation: 1,
 
                       shape: RoundedRectangleBorder(
-                        side: BorderSide(color: primary_Color),
+                        side: const BorderSide(color: primary_Color),
                         borderRadius: BorderRadius.circular(10), // Set the border radius
                       ),
                       // Set the minimum width and height
                       // Add more properties as needed, e.g., padding, textStyle, etc.
                     ),
 
-                    child: Text( 'Button.cancel'.tr(),style: TextStyle(fontSize: 14,fontFamily: regularfontFamilyName),)),
+                    child: Text( 'Button.cancel'.tr(),style: const TextStyle(fontSize: 14,fontFamily: "inter"),)),
 
               ),
 

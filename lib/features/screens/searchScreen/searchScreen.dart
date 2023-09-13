@@ -69,7 +69,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     vertical: 5.0,
                     horizontal: 20.0,
                   ),
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     CupertinoIcons.search,
                     color: Colors.grey,
                     size: 20,
@@ -114,7 +114,7 @@ class _SearchScreenState extends State<SearchScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Search History", style: AppTextStyle(size: 16, fontweight: FontWeight.w500,color: Theme.of(context).colorScheme.secondary)
+                  Text('Placeholder.search-history'.tr(), style: AppTextStyle(size: 16, fontweight: FontWeight.w500,color: Theme.of(context).colorScheme.secondary)
                   ),
                   IconButton(onPressed: (){}, icon: Icon(Icons.delete_outline,color: Theme.of(context).colorScheme.secondary,))
                 ],
@@ -137,16 +137,11 @@ class _SearchScreenState extends State<SearchScreen> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 20.0,right: 20,top: 5,bottom: 5),
-                                child: Text("$chip",style: TextStyle(color: Colors.black54),),
+                                child: Text(chip,style:const TextStyle(color: Colors.black54),),
                               )),
-                        ),
-                  )
-                      .toList(),
-
+                              ),  ).toList(),
                 ),
               ),
-
-
             ],
           ),
         ),

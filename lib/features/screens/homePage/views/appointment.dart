@@ -3,6 +3,7 @@ import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
 import 'package:consultation_medical/features/widgets/cancelled_card_widget.dart';
 import 'package:consultation_medical/features/widgets/completed_card_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/upComming_widget.dart';
@@ -36,26 +37,26 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
         automaticallyImplyLeading: false,
         title:    Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Center(child: Text("My Appointment",style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary)),),
+          child: Center(child: Text('HomePage.my-appointment'.tr(),style: AppTextStyle(size: 18, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary)),),
 
         ),
         bottom: TabBar(
 
 
           controller: _tabController,
-          tabs: const [
+          tabs:  [
              Padding(
-              padding:  EdgeInsets.only(bottom: 10.0),
-              child: Text("UpComming",),
+              padding:const  EdgeInsets.only(bottom: 10.0),
+              child: Text('HomePage.upComing'.tr(),),
 
             ),
              Padding(
-              padding:  EdgeInsets.only(bottom: 10.0),
-              child: Text("Completed"),
+              padding:const  EdgeInsets.only(bottom: 10.0),
+              child: Text('HomePage.completed'.tr(),),
             ),
             Padding(
-              padding:  EdgeInsets.only(bottom: 10.0),
-              child: Text("Cancelled",),
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text('HomePage.cancelled'.tr(),),
             ),
 
           ],
@@ -65,7 +66,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
         padding: const EdgeInsets.all(15.0),
         child: TabBarView(
           controller: _tabController,
-          children: [
+          children: const [
 
             Tab1Screen(),
             Tab2Screen(),
@@ -78,15 +79,19 @@ class _AppointmentScreenState extends State<AppointmentScreen> with SingleTicker
 }
 
 class Tab1Screen extends StatelessWidget {
+  const Tab1Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (BuildContext context,int index){
-      return UpCommingWidget();
+      return const UpComingWidget();
     });
   }
 }
 
 class Tab2Screen extends StatelessWidget {
+  const Tab2Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (BuildContext context,int index){
@@ -96,10 +101,12 @@ class Tab2Screen extends StatelessWidget {
 }
 
 class Tab3Screen extends StatelessWidget {
+  const Tab3Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (BuildContext context,int index){
-      return CancelledWidget();
+      return const CancelledWidget();
     });
   }
 }

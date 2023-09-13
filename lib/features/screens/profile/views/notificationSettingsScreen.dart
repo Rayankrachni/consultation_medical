@@ -1,7 +1,7 @@
 
 import 'package:consultation_medical/core/helper/theme/app_theme_provider.dart';
 import 'package:consultation_medical/core/styles/app_txt_style.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,10 +18,10 @@ class NotificationSetting extends StatelessWidget {
         appBar: AppBar(
 
           centerTitle: true,
-          title: Text("Notification",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: "inter"),),
+          title: Text('Home.notification'.tr(),style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w700,fontFamily: "inter"),),
         ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class NotificationSetting extends StatelessWidget {
               child: SizedBox(
                 height: 50,
                 child: ListTile(
-                    title:Text("General Notification",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                    title:Text('Home.theme-mode'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                     )),
                     trailing: Theme(
                       data: Theme.of(context).copyWith(
@@ -66,7 +66,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                title:Text("General Notification",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                title:Text('Home.general-notification'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   )),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(
@@ -95,7 +95,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Notification Sound",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.not-sound'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(
@@ -124,7 +124,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Vibration",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.vibration'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing:Theme(
                     data: Theme.of(context).copyWith(
@@ -153,7 +153,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Up update Notification",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.update'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(
@@ -182,7 +182,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Change Notification",style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.change-not'.tr(),style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing:Theme(
                     data: Theme.of(context).copyWith(
@@ -211,7 +211,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Appointment Alert",style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.app-alert'.tr(),style:  AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(
@@ -240,7 +240,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("Daily Tips",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.tips'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(
@@ -269,7 +269,7 @@ class NotificationSetting extends StatelessWidget {
             SizedBox(
               height: 50,
               child: ListTile(
-                  title:Text("New Services",style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
+                  title:Text('Home.new-services'.tr(),style: AppTextStyle(size: 16, fontweight: FontWeight.normal,color:Theme.of(context).colorScheme.secondary,
                   ),),
                   trailing: Theme(
                     data: Theme.of(context).copyWith(

@@ -37,14 +37,14 @@ class FistHomeCard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.topLeft,
-              child: isAvailable? Icon(
+              child: isAvailable?const  Icon(
                 Icons.verified,color: primaryColor,size: 17,
-              ):Icon(
+              ):const Icon(
                 Icons.verified,color: Colors.transparent,size: 17,
               )
             ),
           ),
-          CircleAvatar(
+          const CircleAvatar(
             radius: 30,
             backgroundImage: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),
           ),
@@ -58,7 +58,7 @@ class FistHomeCard extends StatelessWidget {
             width: 80,
             decoration:const  BoxDecoration(
              color: homebutolor,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
 
            ),
             child: Padding(

@@ -24,7 +24,7 @@ class MedicineScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextFormField(controller: searchController, hintText: 'Home.search-med'.tr(), prefixIcon: CupertinoIcons.search, textInputType: TextInputType.text,hide:true),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Expanded(
               child: SizedBox(
                 child:
@@ -33,7 +33,7 @@ class MedicineScreen extends StatelessWidget {
                     itemBuilder: (BuildContext context ,int index){
                       return  MedicineWidget();
                     },
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, // Number of items per row
                       mainAxisSpacing: 20.0, // Spacing between rows
                       crossAxisSpacing: 20.0, // Spacing between columns

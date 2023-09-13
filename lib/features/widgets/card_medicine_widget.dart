@@ -14,11 +14,11 @@ class MedicineWidget extends StatelessWidget {
       decoration: BoxDecoration(
 
         color: Theme.of(context).cardColor,
-          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderRadius:const BorderRadius.all(Radius.circular(5)),
         boxShadow:  [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
-            offset: Offset(0, 7),
+            offset:const Offset(0, 7),
             blurRadius: 29,
             spreadRadius: 0,
           )
@@ -42,13 +42,13 @@ class MedicineWidget extends StatelessWidget {
 
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Text("1st Cef",style: AppTextStyle(size: 14, fontweight: FontWeight.normal,color: Theme.of(context).colorScheme.secondary)),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Text("500 mg",style:AppTextStyle(size: 10, fontweight: FontWeight.normal,color: textColor2),),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Text("Cefadroxii Monohydrate",style: AppTextStyle(size: 10, fontweight: FontWeight.normal,color: textColor2)),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Text("Price:\$12",style: AppTextStyle(size: 14, fontweight: FontWeight.w700,color: Theme.of(context).colorScheme.secondary)),
 
 

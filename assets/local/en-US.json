@@ -2,7 +2,7 @@
   "splash": {
     "loading": "Loading ..."
   },
-  "name": "name12",
+  "name": "name",
   "onBoarding": {
     "title1": "Find your specialist doctor here",
     "title2": "Easy to contacting your doctor",
@@ -13,7 +13,7 @@
     "signIn-title": "Sign in to your account",
     "signIn-subtitle": "Welcome back! Please enter your details",
     "signIn-Button": "Sign in",
-    "signIn-or": "or Sign in with",
+    "signIn-or": "or sign in with",
     "google": "Google",
     "apple": "Apple",
     "dont-have-account":"Don't have an account?",
@@ -22,7 +22,7 @@
   "Register": {
     "signUp-title": "Create an Account",
     "signUp-subtitle": "Create an Medicate account enjoy all services",
-    "signUp-Button": "Sign up",
+    "signUp-Button": "Sign Up",
     "signIn-or": "or Sign in with",
     "google": "google",
     "apple": "apple",
@@ -39,6 +39,7 @@
   "Placeholder": {
     "name": "Full Name",
     "search-doctor": "Search  Doctor",
+    "search-history": "Search History",
     "search-specialist": "Search  specialist",
     "email": "Email",
     "search": "Search",
@@ -50,7 +51,12 @@
     "home": "Home",
     "appointment": "Appointment",
     "my-appointment": "My appointment",
+    "upComing": "UpComing",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "online": "Online",
     "messages": "Messages",
+    "type-message": "Type a Message",
     "favorites": "Favorites" },
 
   "Home": {
@@ -58,6 +64,7 @@
     "doctors": "Doctors",
     "medicine": "Medicine",
     "search-med": "Search  Medicine",
+    "search-hos": "Search  Hospital",
     "hospital": "Hospital",
     "our-hosp": "Our Partner Hospitals",
     "consult": "Consult",
@@ -66,7 +73,20 @@
     "available-docts": "Available Doctors",
     "health-new": "Health News",
     "see-all": "See All",
-    "good-morning": "Good Morning"
+    "good-morning": "Good Morning",
+    "notification": "Notification",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "theme-mode": "Theme Mode",
+    "general-notification": "General Notification",
+    "not-sound": "Notification Sound",
+    "vibration": "Vibration",
+    "update": "Up update Notification",
+    "change-not":"Change Notification",
+    "app-alert": "Appointment Alert",
+    "tips": "Daily Tips",
+    "new-services": "New Services",
+    "fav-doctor": "Favorite Doctors"
   },
 
   "Appointment": {
@@ -83,9 +103,12 @@
     "messaging": "  Messaging",
     "messaging-desc": "Chat Message with Doctor",
     "name": "Name",
+    "phone": "Phone",
+    "birth-date": "Birth date",
     "duration": "/30 Minits",
     "gender": "Gender",
     "age": "Age",
+    "save-changes": "Save Changes",
     "write-prbl": "Write Your Problem",
     "video-call": "Video Call",
     "video-call-desc": "Video Call with Doctor",
@@ -146,5 +169,25 @@
     "congrats-text": "Appointment successfully booked. You will receive a notification and the doctor you selected will contact you ",
     "write-here": "Write here",
     "reviews": "Review",
-    "paypal": "Paypal" }
+    "leave-rev": "Leave a Review",
+    "paypal": "Paypal" },
+
+  "Profile": {
+    "inv-friend": "Invite Friends",
+    "edit-profile": "Edit Profile",
+    "change-pswd": "Change Password",
+    "current-psw": "Current Password",
+    "new-psw": "Current Password",
+    "confirm-new-psw": "Current Password",
+    "my-profile": "My Profile",
+    "account-setting": "Account Settings",
+    "edit-prof": "Edit Profile",
+    "language": "Language",
+    "privacy-policy": "Privacy Policy",
+    "contact-us": "Contact Us",
+    "invite": "invite",
+    "invited": "invited"
+
+
+  }
 }

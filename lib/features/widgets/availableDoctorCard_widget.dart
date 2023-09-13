@@ -17,11 +17,11 @@ class AvailableDoctorCard extends StatelessWidget {
         width: AppSize.width*0.37,
         decoration: BoxDecoration(
 
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius:const BorderRadius.all(Radius.circular(10)),
           boxShadow:  [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
-              offset: Offset(0, 7),
+              offset:const Offset(0, 7),
               blurRadius: 10,
               spreadRadius: 0,
             )
@@ -55,7 +55,7 @@ class AvailableDoctorCard extends StatelessWidget {
               ),
 
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
 
             Padding(
               padding: const EdgeInsets.only(top: 5.0,left: 5.0,right: 5.0),
@@ -65,15 +65,15 @@ class AvailableDoctorCard extends StatelessWidget {
                 width:AppSize.width*0.15,
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.onBackground,
-                  borderRadius: BorderRadius.all(Radius.circular(5))
+                  borderRadius: const BorderRadius.all(Radius.circular(5))
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 4.0,bottom: 4),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(CupertinoIcons.star_fill,color: Colors.amber,size: 12,),
-                      SizedBox(width: 3,),
+                      const Icon(CupertinoIcons.star_fill,color: Colors.amber,size: 12,),
+                      const SizedBox(width: 3,),
                       Text("4.8",style: TextStyle(
                           color:Theme.of(context).colorScheme.secondary,
                           fontSize: 12,fontWeight: FontWeight.normal,
@@ -84,7 +84,7 @@ class AvailableDoctorCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.only(left: 5.0,right: 5.0),
               child: SizedBox(

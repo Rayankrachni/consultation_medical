@@ -7,22 +7,22 @@ import 'package:provider/provider.dart';
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_size.dart';
 class CancelledWidget extends StatelessWidget {
-  CancelledWidget({super.key});
+  const CancelledWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     ThemeProvider provider =Provider.of<ThemeProvider>(context);
     return  Padding(
-      padding: const EdgeInsets.only(bottom: 30.0,left: 5,right: 5),
+      padding: const EdgeInsets.only(bottom: 20.0,left: 5,right: 5),
       child: Container(
 
         decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-            borderRadius: BorderRadius.all(Radius.circular(15)),
+            borderRadius:const BorderRadius.all(Radius.circular(15)),
             boxShadow:  [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.15),
-                offset: Offset(0, 7),
+                offset:const Offset(0, 7),
                 blurRadius: 29,
                 spreadRadius: 0,
               )
@@ -45,7 +45,7 @@ class CancelledWidget extends StatelessWidget {
                       width: 100,
                       decoration: BoxDecoration(
 
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderRadius:const BorderRadius.all(Radius.circular(5)),
                           boxShadow: [
                             BoxShadow(
                                 color: Colors.grey.withOpacity(0.2),
@@ -55,7 +55,7 @@ class CancelledWidget extends StatelessWidget {
 
                           ],
                           color: Colors.white,
-                          image: DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
+                          image:const DecorationImage(image: NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg"),fit: BoxFit.cover,)
                       ),
 
                     ),
@@ -68,18 +68,16 @@ class CancelledWidget extends StatelessWidget {
 
                           Padding(
                             padding: const EdgeInsets.only(top: 7.0,bottom: 7),
-                            child: Row(
-                              children: [
-                                Text("Video call",style:AppTextStyle(size: 12, fontweight: FontWeight.w600,color:provider.darkTheme? Colors.white :textColor1,)),
-                                SizedBox(width: 10,),
-                                Text("Cancelled",style:AppTextStyle(size: 12, fontweight: FontWeight.w500,color:errorColor)),
-                              ],
+                            child: Row( children: [
+                                  Text("Video call",style:AppTextStyle(size: 12, fontweight: FontWeight.w600,color:provider.darkTheme? Colors.white :textColor1,)),
+                                  const SizedBox(width: 10,),
+                                  Text("Cancelled",style:AppTextStyle(size: 12, fontweight: FontWeight.w500,color:errorColor)),
+                                ],
                             ),
                           ),
-                          Row(
-                            children: [
-                              Icon(Icons.calendar_month,color: primary_Color,size: 18,),
-                              SizedBox(width: 5,),
+                          Row(children: [
+                              const Icon(Icons.calendar_month,color: primary_Color,size: 18,),
+                              const SizedBox(width: 5,),
                               Text("Today 2:30 pm-3:00 pm",style: TextStyle(
                                 color:Theme.of(context).colorScheme.secondary,
                                  fontSize: 12,fontWeight: FontWeight.normal
@@ -96,12 +94,12 @@ class CancelledWidget extends StatelessWidget {
                           color:provider.darkTheme?Colors.black45 :filledColor,
                           shape: BoxShape.circle
                       ),
-                      child: Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 22,),
+                      child:const Icon(Icons.video_camera_back_sharp,color: primaryColor,size: 22,),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
 
             ],
           ),

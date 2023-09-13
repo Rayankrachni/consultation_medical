@@ -3,6 +3,7 @@
 import 'package:consultation_medical/core/helper/app_navigator.dart';
 import 'package:consultation_medical/core/styles/app_size.dart';
 import 'package:consultation_medical/features/widgets/card_search_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../Appointment/makeAppointementScreen.dart';
@@ -22,7 +23,7 @@ class FavoriteScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: Center(child: Text("Favorite Doctors",style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize: 20,fontWeight: FontWeight.w500),),),
+              child: Center(child: Text('Home.fav-doctor'.tr(),style: TextStyle( color:Theme.of(context).colorScheme.secondary,fontSize: 20,fontWeight: FontWeight.w500),),),
 
             ),
             Expanded(

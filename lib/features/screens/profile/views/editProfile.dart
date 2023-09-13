@@ -1,13 +1,14 @@
 import 'package:consultation_medical/core/styles/app_colors.dart';
 import 'package:consultation_medical/features/widgets/button_Custom.dart';
 import 'package:consultation_medical/features/widgets/textField_custom.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/styles/app_size.dart';
 
 class EditProfile extends StatefulWidget {
-  EditProfile({super.key});
+  const EditProfile({super.key});
 
   @override
   State<EditProfile> createState() => _EditProfileState();
@@ -60,7 +61,7 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Edit Profile",
+        title: Text('Profile.edit-profile',
           style:  TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:18,fontWeight: FontWeight.w600,fontFamily: 'inter'),),
       ),
       body: Padding(
@@ -73,9 +74,9 @@ class _EditProfileState extends State<EditProfile> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CustomTextFormField(controller: nameController, hintText: "Name", prefixIcon: CupertinoIcons.person, textInputType: TextInputType.text),
-                  CustomTextFormField(controller: phoneController, hintText: "Phone", prefixIcon: CupertinoIcons.phone, textInputType: TextInputType.text),
-                  SizedBox(height: 10,),
+                  CustomTextFormField(controller: nameController, hintText: 'Appointment.name'.tr(), prefixIcon: CupertinoIcons.person, textInputType: TextInputType.text),
+                  CustomTextFormField(controller: phoneController, hintText: 'Appointment.phone'.tr(), prefixIcon: CupertinoIcons.phone, textInputType: TextInputType.text),
+                  const SizedBox(height: 10,),
                   /*Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -88,7 +89,7 @@ class _EditProfileState extends State<EditProfile> {
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10,bottom: 10),
-                      child: Text("Birth date",style: Theme.of(context).textTheme.headline2,),
+                      child: Text('Appointment.birth-date'.tr(),style: Theme.of(context).textTheme.headline2,),
                     ),
                   ),
                   Container(
@@ -118,14 +119,14 @@ class _EditProfileState extends State<EditProfile> {
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10,bottom: 10),
-                      child: Text("Gender",style: Theme.of(context).textTheme.headline2,),
+                      child: Text('Appointment.gender'.tr(),style: Theme.of(context).textTheme.headline2,),
                     ),
                   ),
 
                   Container(
                     width: AppSize.width,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderRadius: const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(
                             color: placeHolderColor
                         )
@@ -136,7 +137,7 @@ class _EditProfileState extends State<EditProfile> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.transgender,color: Theme.of(context).colorScheme.secondary,size: 17,),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           SizedBox(
 
                             width: AppSize.width*0.73,
@@ -147,7 +148,7 @@ class _EditProfileState extends State<EditProfile> {
                                 return DropdownMenuItem<String>(
 
                                   value: value,
-                                  child: Text("$value",style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: "inter")),
+                                  child: Text(value,style: TextStyle(color:Theme.of(context).colorScheme.secondary,fontSize:14,fontWeight: FontWeight.normal,fontFamily: "inter")),
                                 );
                               }).toList(),
                               onChanged: (v){
@@ -165,7 +166,7 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                           ),
                           //Icon(Icons.access_time_sharp,color: Theme.of(context).colorScheme.secondary,),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                         ],
                       ),
                     ),
@@ -180,7 +181,7 @@ class _EditProfileState extends State<EditProfile> {
 
               Padding(
                 padding: const EdgeInsets.only(bottom: 28.0),
-                child: DefaultButton(onPressed: (){}, text:"Save Changes"),
+                child: DefaultButton(onPressed: (){}, text:'Appointment.save-changes'.tr()),
               ),
 
 

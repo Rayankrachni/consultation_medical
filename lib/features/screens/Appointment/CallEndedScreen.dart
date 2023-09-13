@@ -40,7 +40,7 @@ class _CallEndedScreenState extends State<CallEndedScreen> {
                     ),
                     SizedBox(height: AppSize.height*0.1,),
                     Text("The consultation session has ended",style:AppTextStyle(size: 16, fontweight: FontWeight.bold,color:Theme.of(context).colorScheme.secondary)),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Text("Recording have been save in activity",style:AppTextStyle(size: 14, fontweight: FontWeight.w500,color:Theme.of(context).colorScheme.secondary)),
 
                   ],
@@ -69,13 +69,13 @@ class _CallEndedScreenState extends State<CallEndedScreen> {
 
                       child:  Text( 'Leave Review'.tr(),style:AppTextStyle(size: 15, fontweight: FontWeight.normal,color:Colors.white))),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 SizedBox(
                   width: AppSize.width,
                   height: 60,
                   child: ElevatedButton(onPressed: (){
 
-                    pushAndRemove(context: context, screen: HomePage());
+                    pushAndRemove(context: context, screen: const HomePage());
                   },
 
                       style: ElevatedButton.styleFrom(
@@ -84,7 +84,7 @@ class _CallEndedScreenState extends State<CallEndedScreen> {
                         elevation: 1,
 
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(color: primary_Color),
+                          side: const BorderSide(color: primary_Color),
                           borderRadius: BorderRadius.circular(10), // Set the border radius
                         ),
                         // Set the minimum width and height

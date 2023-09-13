@@ -66,7 +66,17 @@
     "available-docts": "Available Doctors",
     "health-new": "Health News",
     "see-all": "See All",
-    "good-morning": "Good Morning"
+    "good-morning": "Good Morning",
+    "notification": "Notification",
+    "theme-mode": "Theme Mode",
+    "general-notification": "General Notification",
+    "not-sound": "Notification Sound",
+    "vibration": "Vibration",
+    "update": "Up update Notification",
+    "change-not":"Change Notification",
+    "app-alert": "Appointment Alert",
+    "tips": "Daily Tips",
+    "new-services": "New Services"
   },
 
   "Appointment": {
@@ -117,7 +127,7 @@
 
   "Button": {
     "next": "Next",
-    "make-appointment": "Make Appointment",
+    "make-appointment": "Make an Appointment",
     "skip": "Skip",
     "pay": "Pay",
     "view-app": "View Appointment",

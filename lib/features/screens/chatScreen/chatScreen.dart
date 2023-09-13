@@ -1,4 +1,5 @@
 import 'package:consultation_medical/core/styles/app_size.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,11 +29,11 @@ class ChatScreenState extends State<ChatScreen> {
 
   Widget _buildTextComposer() {
     return IconTheme(
-      data: IconThemeData(color: Colors.blue),
+      data: const IconThemeData(color: Colors.blue),
       child: Container(
         width: AppSize.width,
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-        padding: EdgeInsets.all(9),
+        padding:const EdgeInsets.all(9),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -58,17 +59,17 @@ class ChatScreenState extends State<ChatScreen> {
                     ),
                     maxLines: null, // This allows the text to go to the next line
                     decoration: InputDecoration(
-                      hintText: "Type a Message",
+                      hintText: 'HomePage.type-message'.tr(),
                       hintStyle: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.normal,
                         color: Theme.of(context).colorScheme.secondary,
                         fontFamily: 'inter',
                       ),
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder:const UnderlineInputBorder(
                         borderSide: BorderSide.none,
                       ),
-                      focusedBorder: UnderlineInputBorder(
+                      focusedBorder:const UnderlineInputBorder(
                         borderSide: BorderSide.none,
                       ),
                     ),
@@ -80,19 +81,17 @@ class ChatScreenState extends State<ChatScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.file_present_outlined, color: placeHolderColor),
+                const Icon(Icons.file_present_outlined, color: placeHolderColor),
                 IconButton(
-                    icon: Icon(Icons.send),
+                    icon:const Icon(Icons.send),
                     onPressed: () {
                       if(_textController.text.isNotEmpty){
                         _handleSubmitted(_textController.text);
                       }
-
                     }
                 ),
               ],
             )
-
           ],
         ),
       ),
@@ -116,27 +115,27 @@ class ChatScreenState extends State<ChatScreen> {
                   backgroundImage:
                   NetworkImage("https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg")
               ),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 12,),
+                  const SizedBox(height: 12,),
                   Text("Dr Mechaeele Augus ",style:
                   AppTextStyle(size: 14, fontweight: FontWeight.w600,color: Theme.of(context).colorScheme.secondary),),
-                  SizedBox(height:5,),
-                  Text("Online ",
+                  const SizedBox(height:5,),
+                  Text('HomePage.online'.tr(),
                     style:
                     AppTextStyle(size: 14, fontweight: FontWeight.normal,color: primary_Color),),
-                  Divider(color: textColor2,thickness: 2,),
+                  const Divider(color: textColor2,thickness: 2,),
                 ],
               )
             ],
           ),
         ),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.video_camera,size: 33,)),
-          IconButton(onPressed: (){}, icon: Icon(CupertinoIcons.phone,size: 25,)),
+          IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.video_camera,size: 33,)),
+          IconButton(onPressed: (){}, icon: const Icon(CupertinoIcons.phone,size: 25,)),
         ],
       ),
       body: Column(
@@ -149,7 +148,7 @@ class ChatScreenState extends State<ChatScreen> {
               itemBuilder: (_, int index) => _messages[index],
             ),
           ),
-          Divider(height: 1.0,color: Colors.grey,),
+          const Divider(height: 1.0,color: Colors.grey,),
           _buildTextComposer(),
         ],
       ),
@@ -179,8 +178,8 @@ class ChatMessage extends StatelessWidget {
               maxWidth: AppSize.width * 0.7, // Specify your desired max width
             ),
             margin: const EdgeInsets.symmetric(vertical: 10.0),
-            padding: EdgeInsets.only(left: 15, right: 15),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            decoration:const  BoxDecoration(
               color: primary_Color, // Replace with your desired colors
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -202,9 +201,8 @@ class ChatMessage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             const Icon(CupertinoIcons.checkmark_alt, color: primary_Color, size: 16),
-            // Double check icon
-            SizedBox(width: 4), // Add some space between the icon and text
-            Text("$formattedTime", style: AppTextStyle(size: 11, fontweight: FontWeight.normal, color: textColor2)),
+            const SizedBox(width: 4), // Add some space between the icon and text
+            Text(formattedTime, style: AppTextStyle(size: 11, fontweight: FontWeight.normal, color: textColor2)),
           ],
         )
       ],

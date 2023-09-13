@@ -8,14 +8,14 @@ import 'package:provider/provider.dart';
 
 import '../../core/styles/app_colors.dart';
 import '../../core/styles/app_size.dart';
-class UpCommingWidget extends StatelessWidget {
-  const UpCommingWidget({super.key});
+class UpComingWidget extends StatelessWidget {
+  const UpComingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     ThemeProvider provider =Provider.of<ThemeProvider>(context);
     return  Padding(
-      padding: const EdgeInsets.only(bottom: 30.0,left: 5,right: 5),
+      padding: const EdgeInsets.only(bottom: 20.0,left: 5,right: 5),
       child: Container(
 
         decoration: BoxDecoration(

@@ -122,7 +122,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                               height: 45.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                               ),
                               child: Center(
                                 child: Icon(Icons.chat,color: primary_Color,),
@@ -207,7 +207,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                               height: 45.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                               ),
                               child: Center(
                                 child: Icon(CupertinoIcons.phone_fill,color: primary_Color,),
@@ -291,7 +291,7 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
                               height: 45.0,
                               decoration:const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: filledColor,
+                                color: Color(0xffe7f0fe),
                               ),
                               child: Center(
                                 child: Icon(CupertinoIcons.video_camera_solid,color: primary_Color,size: 32,),
@@ -353,15 +353,13 @@ class _SelectPackageScreenState extends State<SelectPackageScreen> {
 
 
 
-              Center(
-                child: SizedBox(
-                  width: AppSize.width*0.9,
-                  child: DefaultButton(
 
-                      onPressed: (){
-                        push(context: context, screen: PatientDetail());
-                        }, text: 'Button.next'.tr()),
-                ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: DefaultButton(onPressed: (){
+                  push(context: context, screen: PatientDetail());
+                },
+                    text: 'Button.next'.tr()),
               )
             ],
           ),

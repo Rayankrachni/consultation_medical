@@ -2,8 +2,6 @@ import 'package:consultation_medical/features/screens/homePage/views/appointment
 import 'package:consultation_medical/features/screens/homePage/views/favorite.dart';
 import 'package:consultation_medical/features/screens/homePage/views/home.dart';
 import 'package:consultation_medical/features/screens/homePage/views/messages.dart';
-import 'package:consultation_medical/features/screens/homePage/views/notificationScreen.dart';
-import 'package:consultation_medical/features/screens/payment/paymentScreen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +16,10 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    Home(),
+    const Home(),
     AppointmentScreen(),
-   // Payment(),
     MessagesScreen(),
-    //NotificationScreen(),
-    FavoriteScreen(),
+    const FavoriteScreen(),
   ];
 
   @override
@@ -42,20 +38,20 @@ class _HomePageState extends State<HomePage> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon:const Icon(Icons.home),
             label: 'HomePage.home'.tr(),
 
           ),
            BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
+            icon:const Icon(Icons.calendar_month),
             label: 'HomePage.appointment'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon:const Icon(Icons.message),
             label: 'HomePage.messages'.tr(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
+            icon:const Icon(Icons.favorite_border),
             label: 'HomePage.favorites'.tr(),
 
           ),
